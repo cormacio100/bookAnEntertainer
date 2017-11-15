@@ -4,5 +4,5 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 # Create your views here.
-def get_index(request):
-    return render(request, 'homes/index.html')
+def list_entertainers_all(request):
+    return render(request, 'entertainers/entertainers.html')
