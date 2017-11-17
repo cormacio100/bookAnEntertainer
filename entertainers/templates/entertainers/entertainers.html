@@ -22,7 +22,7 @@
                     <td>{{ entertainer.desc_remove_underscore }}</td>
                     <td>{{ entertainer.init_cap_genre }}</td>
                     <td>{{ entertainer.init_cap_location }}</td>
-                    <td>{{ entertainer.bio_summary }}</td>
+                    <td>{{ entertainer.bio_summary }}<a href="{% url 'entertainer_profile' entertainer.id %}">...Read More</a></td>
                     <td><img src="{{ entertainer.image.url }}"></td>
                 </tr>
             {% endfor %}
