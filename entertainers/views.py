@@ -9,3 +9,11 @@ def list_entertainers_all(request):
     entertainers = Entertainer.objects.all()
     args = {'entertainers': entertainers}
     return render(request, 'entertainers/entertainers.html',args)
+
+
+#   display the detail of individual entertainers
+def entertainer_details(request,entertainer_id):
+    args = {'entertainer_id',entertainer_id}
+    return render(request,'entertainers/entertainer_details.html',args)
+
+

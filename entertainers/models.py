@@ -81,6 +81,7 @@ class Entertainer(models.Model):
     )
     bio = models.TextField()
 
+    #   SPECIAL FUNCTION
     #   display title in admin instead of "Entertainer object"
     def __unicode__(self):
         return self.title
@@ -93,3 +94,6 @@ class Entertainer(models.Model):
 
     def init_cap_location(self):
         return self.location[0].upper()+self.location[1:].lower()
+
+    def bio_summary(self):
+        return self.bio[:100]
