@@ -3,16 +3,13 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-
-
-
 # Create your models here.
 class Entertainer(models.Model):
 
     #   DEFINE CHOICES LISTS WITH CONSTANTS
     ENT_TYPES = (
         ('BAND', 'Band'),
-        ('SOLO_MUSICIAN', 'Solo Musician')
+        ('SOLO_PERFORMER', 'Solo Performer')
     )
     GENRE_TYPES = (
         ('ROCK', 'Rock'),
@@ -65,12 +62,12 @@ class Entertainer(models.Model):
         max_length=255
     )
     description = models.CharField(
-        max_length=4,
+        max_length=14,
         choices=ENT_TYPES,
         default='BAND'
     )
     genre = models.CharField(
-        max_length=4,
+        max_length=9,
         choices=GENRE_TYPES,
         default='ROCK'
     )
@@ -87,3 +84,12 @@ class Entertainer(models.Model):
     #   display title in admin instead of "Entertainer object"
     def __unicode__(self):
         return self.title
+
+    def desc_remove_underscore(self):
+        return self.description.replace('_',' ')
+
+    def init_cap_genre(self):
+        return self.genre[0].upper()+self.genre[1:].lower()
+
+    def init_cap_location(self):
+        return self.location[0].upper()+self.location[1:].lower()
