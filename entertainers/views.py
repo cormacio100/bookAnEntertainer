@@ -12,8 +12,8 @@ def list_entertainers_all(request):
 
 
 #   display the detail of individual entertainers
-def entertainer_details(request,entertainer_id):
-    args = {'entertainer_id',entertainer_id}
-    return render(request,'entertainers/entertainer_details.html',args)
+def display_entertainer_profile(request,entertainer_id):
+    args = {'entertainer_id': entertainer_id}
+    return render(request,'entertainers/entertainer_profile.html',args)
 
 
