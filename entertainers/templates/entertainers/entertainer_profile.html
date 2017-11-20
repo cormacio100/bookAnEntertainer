@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Entertainer Profile</h2>
-    <p>{{ entertainer.title }}</p>
-    <p><img src="{{ entertainer.image.url }}"></p>
-    <p>{{ entertainer.description }}</p>
-    <p>{{ entertainer.genre }}</p>
-    <p>{{ entertainer.location }}</p>
-    <p>{{ entertainer.bio }}</p>
+    <div id="profile_header">
+        <h2>{{ entertainer.title }}</h2>
+    </div>
+    <div id="profile_body">
+        <p><img src="{{ entertainer.image.url }}" class="img-fluid" style="max-width:600px;"></p>
+        <p>{{ entertainer.description }}</p>
+        <p>Genre: {{ entertainer.genre }}</p>
+        <p>Location: {{ entertainer.location }}</p>
+        <div>
+            <h4>Bio:</h4>
+            <p>{{ entertainer.bio }}</p>
+        </div>
+    </div>
 {% endblock %}

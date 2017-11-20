@@ -23,9 +23,26 @@
                     <td>{{ entertainer.init_cap_genre }}</td>
                     <td>{{ entertainer.init_cap_location }}</td>
                     <td>{{ entertainer.bio_summary }}<a href="{% url 'entertainer_profile' entertainer.id %}">...Read More</a></td>
-                    <td><img src="{{ entertainer.image.url }}"></td>
+                    <td><img src="{{ entertainer.image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;"></td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <hr>
+    <div class="card-deck">
+        {% for entertainer in entertainers %}
+            <div class="card">
+                <img class="card-img-top" src="{{ entertainer.image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{ entertainer.title }}</h4>
+                    <p class="card-text">
+                        {{ entertainer.bio_summary }}
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><a href="{% url 'entertainer_profile' entertainer.id %}">...Read More</a></small>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
