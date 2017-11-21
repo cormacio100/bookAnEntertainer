@@ -1,6 +1,32 @@
-body{
+/* FONTS */
+body,
+.community-name,
+.publisher-nav-color{
     color:#7c6659;
     font-family: 'Righteous', cursive;
+}
+.orange-links{
+    color:#dd6622;
+    font-family: 'Righteous', cursive;
+}
+.text-centered{
+    text-align:center;
+}
+.img-centered{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.navbar-brand{
+    color:#dd6622;
+}
+.grey-text{
+    color:#bab4b0;
+    margin-right:1em;
+}
+.orange-text{
+    color:#dd6622;
+    margin-right:1em;
 }
 /*  NAVBAR */
 .navbar-grey{
@@ -13,21 +39,29 @@ body{
 .nav-link{
     color:#7c6659;
 }
-
-
+.nav-link:hover{
+    color: #dd6622;
+}
 /* ENTERTAINER PROFILE */
 .ent_profile_image{
-    border:1px solid #dd6622;
-    -webkit-border-radius: 28px;
-    -moz-border-radius: 28px;
-    border-radius: 28px;
-}
-.highlight{
-    color:#dd6622;
-    margin-right:1em;
+    xborder: 4px solid #bab4b0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
-
+#profile_body{
+    margin-top:2em;
+}
+.row{
+    margin-bottom:1em;
+}
+.tabbed{
+    margin-top:1em;
+}
+.top-line{
+    padding-top:1em;
+}
 /* BUTTONS */
 .full_btn {
     -webkit-border-radius: 28;
@@ -41,32 +75,42 @@ body{
     text-decoration: none;
     margin-bottom: 1em;
 }
-
 .full_btn:hover {
-    background: #bab4b0;
+    xbackground: #bab4b0;
+    box-shadow: 5px 5px 5px #bab4b0;
     text-decoration: none;
     margin-bottom: 1em;
 }
-
-
 .outline_btn {
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #dd6622;
-  font-size: 16px;
-  background: #ffffff;
-  padding: 10px 20px 10px 20px;
-  border: solid #dd6622 2px;
-  text-decoration: none;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #dd6622;
+    font-size: 16px;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
+    border: solid #dd6622 2px;
+    text-decoration: none;
+}
+.outline_btn:hover {
+    text-decoration: none;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
+    xborder: solid #bab4b0 2px;
+    xcolor: #bab4b0;
+    box-shadow: 5px 5px 5px #bb6622;
 }
 
-.outline_btn:hover {
-
-  text-decoration: none;
-    background: #ffffff;
-    border: solid #bab4b0 2px;
-  padding: 10px 20px 10px 20px;
-color: #bab4b0;
+#pills-profile-tab.active,
+#pills-set-list-tab.active,
+#pills-influences-tab.active,
+#pills-setup-tab.active,
+#pills-contact-tab.active{
+    background-color: #dd6622;
+}
+/* FOOTER */
+footer{
+    text-align:center;
+    color: #dd6622;
 }

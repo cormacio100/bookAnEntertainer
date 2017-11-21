@@ -1,38 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div id="profile_header">
-        header section
-    </div>
     <div id="profile_body" class="container">
         <div class="row">
             <div class="col-lg-8">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block w-100" src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="First slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 img-centered" src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-centered" src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="Second slide">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="Second slide">
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="row">
                     <div class="col">
-                        <img src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image" style="max-width:300px;">
+                        <img src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image img-centered" style="max-width:300px;">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col text-centered">
                         <h2>{{ entertainer.title }}</h2>
                     </div>
                 </div>
@@ -55,46 +52,40 @@
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                        <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                        <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Booking Info</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-2">
+                        <div class="row tabbed">
+                            <div class="col-1">
                                 <h4>Bio:</h4>
                             </div>
-                            <div class="col-10">
+                            <div class="col-11">
                                 <div class="row">
                                     <div class="col-12 profile-elem">
-                                        Description: <span class="highlight">{{ entertainer.description }}</span> Genre: <span class="highlight">{{ entertainer.genre }}</span> Location: <span class="highlight">{{ entertainer.location }}</span>
+                                        Description: <span class="orange-text">{{ entertainer.description }}</span> Genre: <span class="orange-text">{{ entertainer.genre }}</span> Location: <span class="orange-text">{{ entertainer.location }}</span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 profile-elem">
-                                        {{ entertainer.bio }}
+                                        <span class="grey-text">{{ entertainer.bio }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Profile</div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact</div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <h4>Bio:</h4>
-            <p>{{ entertainer.bio }}</p>
-        </div>
-        <div id="disqus_thread"></div>
-        <script>
-
-
+                    <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                        <div class="row tabbed">
+                            <div class="col-2">
+                                <h4>Reviews:</h4>
+                            </div>
+                            <div class="col-10">
+                                <div id="disqus_thread"></div>
+                                <script>
             var disqus_config = function () {
                 //page's unique identifier variable
                 this.page.identifier = 'post-{{ post.id }}'
@@ -107,7 +98,99 @@
             (d.head || d.body).appendChild(s);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                        <div class="row tabbed">
+                            <div class="col-2">
+                                <h4>Booking Info:</h4>
+                            </div>
+                            <div class="col-10">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-set-list-tab" data-toggle="pill" href="#pills-set-list" role="tab" aria-controls="pills-set-list" aria-selected="true">Set List</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-influences-tab" data-toggle="pill" href="#pills-influences" role="tab" aria-controls="pills-influences" aria-selected="true">Influences</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-setup-tab" data-toggle="pill" href="#pills-setup" role="tab" aria-controls="pills-setup" aria-selected="true">Setup Requirements</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                <div class="row top-line">
+                                                    <div class="col-6">
+                                                        <div class="row">
+                                                            <div class="col-12"><span class="grey-text">Price Range:</span><span class="orange-text">Contact For Rates</span></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12"><span class="grey-text">Languages:</span><span class="orange-text">English, Irish, Spanish</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="row">
+                                                            <div class="col-12"><span class="grey-text">Gig Length:</span><span class="orange-text">120 - 240 minutes</span></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12"><span class="grey-text">Services Offered:</span><span class="orange-text">Original Songs, Cover Songs</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-set-list" role="tabpanel" aria-labelledby="pills-set-list-tab">
+                                                <div class="row">
+                                                    <div class="col-12 ">
+                                                        <h4 class="grey-text">Set List</h4>
+                                                        <p class="orange-text">Song list available upon private request.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-influences" role="tabpanel" aria-labelledby="pills-influences-tab">
+                                                <div class="row">
+                                                    <div class="col-12 ">
+                                                        <h4 class="grey-text">Influences</h4>
+                                                        <p class="orange-text">From Classical to Death Metal and everything in between</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-setup" role="tabpanel" aria-labelledby="pills-setup-tab">
+                                                <div class="row">
+                                                    <div class="col-12 ">
+                                                        <h4 class="grey-text">Setup Requirements</h4>
+                                                        <p>
+                                                            <ul>
+                                                                <li><span class="orange-text">Power Source</span></li>
+                                                                <li><span class="orange-text">Stage Cover (if outside)</span></li>
+                                                            </ul>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                                <div class="col-12 ">
+                                                        <h4 class="grey-text">Setup Requirements</h4>
+                                                        <p class="orange-text">Form to go here</p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

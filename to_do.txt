@@ -4,3 +4,5 @@
 -	Add tabs to Entertainer Profile page
 -	Add links to video and music in carousel
 -	In Entertainer Profile put in icons for location, genre and category
+-	Keep the footer at the bottom
+-	Complete the MODEL for the Entertainer Profile
