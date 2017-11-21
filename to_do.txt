@@ -1,0 +1,4 @@
+-	Add a carousel to Ent profile page
+-	Build logo using SVG
+-	Add a count for number of reviews. See https://help.disqus.com/customer/portal/articles/565624
+-	Add tabs to Entertainer Profile page

@@ -1,4 +1,64 @@
-#entType,
-#countyName{
-    color:red;
+body{
+    color:#7c6659;
+    font-family: 'Righteous', cursive;
+}
+/*  NAVBAR */
+.navbar-grey{
+    background-color: #f3f3f3;
+    color: #ffffff;
+}
+.navbar_grey_a_href_orange{
+    color: #dd6622;
+}
+.nav-link{
+    color:#7c6659;
+}
+
+.ent_profile_image{
+    border:1px solid #dd6622;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+}
+
+.full_btn {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    background: #dd6622;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+.full_btn:hover {
+    background: #bab4b0;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+
+.outline_btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #dd6622;
+  font-size: 16px;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #dd6622 2px;
+  text-decoration: none;
+}
+
+.outline_btn:hover {
+
+  text-decoration: none;
+    background: #ffffff;
+    border: solid #bab4b0 2px;
+  padding: 10px 20px 10px 20px;
+color: #bab4b0;
 }
