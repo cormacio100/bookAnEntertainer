@@ -2,3 +2,5 @@
 -	Build logo using SVG
 -	Add a count for number of reviews. See https://help.disqus.com/customer/portal/articles/565624
 -	Add tabs to Entertainer Profile page
+-	Add links to video and music in carousel
+-	In Entertainer Profile put in icons for location, genre and category

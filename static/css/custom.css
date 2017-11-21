@@ -14,13 +14,21 @@ body{
     color:#7c6659;
 }
 
+
+/* ENTERTAINER PROFILE */
 .ent_profile_image{
     border:1px solid #dd6622;
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;
     border-radius: 28px;
 }
+.highlight{
+    color:#dd6622;
+    margin-right:1em;
+}
 
+
+/* BUTTONS */
 .full_btn {
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
