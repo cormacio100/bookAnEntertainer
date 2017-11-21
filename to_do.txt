@@ -5,4 +5,5 @@
 -	Add links to video and music in carousel
 -	In Entertainer Profile put in icons for location, genre and category
 -	Keep the footer at the bottom
--	Complete the MODEL for the Entertainer Profile
+-	Complete the MODEL for the Entertainer Profile]
+-	Add links under the carousel in the Entertainer Profile
