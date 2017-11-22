@@ -1,9 +1,48 @@
--	Add a carousel to Ent profile page
+IN PROGRESS:
+-	Complete the MODEL for the Entertainer Profile
+-	Only 5 images allowed per entertainer
+	-	must be a certain size
+-	Only 2 Youtube Links
+-	Only 2 Sound cloud Links 
+
+-	FINISH SET UP REQUIREMENTS MODEL
+
+	
+TO DO:
+
+-	ENTERTAINER PROFILE PAGE:
+	-	Add a carousel to Ent profile page
+	-	Add links to video and music in carousel
+	-	Add a count for number of reviews. See https://help.disqus.com/customer/portal/articles/565624
+	-	put in pretty icons for location, genre and category
+	-	CONTACT section should be the same as the Book Us Section
+		-	Ask:
+			-	what type of event
+			-	How long a set
+			-	Indoor or Outdoor
+			-	What Equipment needs to be provided by the entertainer 
+			-	List of expenses that can be covered
+			-	Age range of audience
+			-	Set up time
+			-	Song Requests
+			-	Estimated audience size 
+			-	County Address of venue
+			-	Date of event
+			-	Start Time
+			-	Set Length
+			-	Optional extra details
+			-	Customer First and Last Name
+			-	Contact Number
+			-	Email Address
+			-	Login password
+			-	Register
+			
+			
+	
+	
 -	Build logo using SVG
--	Add a count for number of reviews. See https://help.disqus.com/customer/portal/articles/565624
--	Add tabs to Entertainer Profile page
--	Add links to video and music in carousel
--	In Entertainer Profile put in icons for location, genre and category
 -	Keep the footer at the bottom
--	Complete the MODEL for the Entertainer Profile]
--	Add links under the carousel in the Entertainer Profile
+
+-	ENTERTAINER SEARCH PAGE:
+	-	ADD DYNAMIC SEARCH AT THE TOP
+

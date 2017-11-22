@@ -86,18 +86,18 @@
                             <div class="col-10">
                                 <div id="disqus_thread"></div>
                                 <script>
-            var disqus_config = function () {
-                //page's unique identifier variable
-                this.page.identifier = 'post-{{ post.id }}'
-            };
+                                    var disqus_config = function () {
+                                        // Make the list of DISQUS comments relevant to the current profile
+                                        this.page.identifier = 'entertainer-{{ entertainer.id }}'
+                                    };
 
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://bookanentertainer.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
+                                    (function() { // DON'T EDIT BELOW THIS LINE
+                                    var d = document, s = d.createElement('script');
+                                    s.src = 'https://bookanentertainer.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                    })();
+                                </script>
                                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                             </div>
                         </div>
@@ -135,15 +135,15 @@
                                                             <div class="col-12"><span class="grey-text">Price Range:</span><span class="orange-text">Contact For Rates</span></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-12"><span class="grey-text">Languages:</span><span class="orange-text">English, Irish, Spanish</span></div>
+                                                            <div class="col-12"><span class="grey-text">Languages:</span><span class="orange-text">{{ entertainer.language_list_as_str }}</span></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="row">
-                                                            <div class="col-12"><span class="grey-text">Gig Length:</span><span class="orange-text">120 - 240 minutes</span></div>
+                                                            <div class="col-12"><span class="grey-text">Gig Length:</span><span class="orange-text">{{ entertainer.gig_length_as_str }}</span></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-12"><span class="grey-text">Services Offered:</span><span class="orange-text">Original Songs, Cover Songs</span></div>
+                                                            <div class="col-12"><span class="grey-text">Music Classification:</span><span class="orange-text">{{ entertainer.music_type_as_str }}</span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,18 +168,15 @@
                                                 <div class="row">
                                                     <div class="col-12 ">
                                                         <h4 class="grey-text">Setup Requirements</h4>
-                                                        <p>
-                                                            <ul>
-                                                                <li><span class="orange-text">Power Source</span></li>
-                                                                <li><span class="orange-text">Stage Cover (if outside)</span></li>
-                                                            </ul>
+                                                        <p class="orange-text">
+                                                            {{ entertainer.set_up_requirements }}
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                                                 <div class="col-12 ">
-                                                        <h4 class="grey-text">Setup Requirements</h4>
+                                                        <h4 class="grey-text">Contact Us</h4>
                                                         <p class="orange-text">Form to go here</p>
                                                     </div>
                                             </div>
