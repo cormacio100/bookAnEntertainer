@@ -2,6 +2,7 @@ IN PROGRESS:
 -	Complete the MODEL for the Entertainer Profile
 
 -	Get links working under the carousel
+	-	go back to sliding to the correct slide and remove slide when you get to youtube or soundcloud	
 
 -	FINISH SET UP REQUIREMENTS MODEL
 

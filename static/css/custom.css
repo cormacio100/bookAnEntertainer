@@ -66,8 +66,8 @@ body,
 }
 /* BUTTONS */
 .full_btn {
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
     border-radius: 28px;
     font-family: Arial;
     color: #ffffff;
@@ -84,8 +84,8 @@ body,
     margin-bottom: 1em;
 }
 .outline_btn {
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
     border-radius: 28px;
     font-family: Arial;
     color: #dd6622;
@@ -111,7 +111,7 @@ body,
 #pills-contact-tab.active{
     background-color: #dd6622;
 }
-/* IMAGES */
+/* CAROUSEL */
 .carouselled{
     height: 400px;
     width: 100%;
@@ -127,6 +127,10 @@ body,
 .carousel-container{
     margin-bottom:1em;
 }
+.carousel-control-next-icon {
+    background-image : url('/media/icons/next-icon.png');
+}
+
 .right-side{
    padding-bottom:0;
     padding-top:0;
@@ -137,4 +141,5 @@ body,
 footer{
     text-align:center;
     color: #dd6622;
+}
 }
