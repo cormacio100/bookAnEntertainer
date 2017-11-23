@@ -6,10 +6,19 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100 img-centered" src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="First slide">
+                            <img class="d-block w-100 img-centered carouselled" src="{{ entertainer.image1.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100 img-centered" src="{{ entertainer.image.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="Second slide">
+                            <img class="d-block w-100 img-centered carouselled" src="{{ entertainer.image2.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-centered carouselled" src="{{ entertainer.image3.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-centered carouselled" src="{{ entertainer.image4.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="Fourth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100 img-centered carouselled" src="{{ entertainer.image5.url }}" class="img-fluid ent_profile_image" style="max-width:600px;" alt="Fifth slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -31,6 +40,27 @@
                 <div class="row">
                     <div class="col text-centered">
                         <h2>{{ entertainer.title }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="orange-text text-centered"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i> 3 Reviews</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p><span class="orange-text text-centered"><i class="fa fa-home" aria-hidden="true"></i></span>{{ entertainer.location }}</p>
+                    </div>
+                    <div class="col-6">
+                        <p><span class="orange-text text-centered"><i class="fa fa-tags" aria-hidden="true"></i></span>{{ entertainer.description }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p><span class="orange-text text-centered"><i class="fa fa-map-marker" aria-hidden="true"></i></span>{{ entertainer.travel_distance }}</p>
+                    </div>
+                    <div class="col-6">
+                        <p><span class="orange-text text-centered"><i class="fa fa-eur" aria-hidden="true"></i></span>{{ entertainer.price_per_hour_str }}</p>
                     </div>
                 </div>
                 <div class="row">

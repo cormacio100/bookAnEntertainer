@@ -24,6 +24,10 @@ class Entertainer(models.Model):
         ('Ska', 'Ska'),
         ('Dance', 'Dance'),
         ('Funk', 'Funk'),
+        ('Trad', 'Trad'),
+        ('Country', 'Country'),
+        ('Soul', 'Soul'),
+        ('Other', 'Other'),
     )
     COUNTIES = (
         ('Antrim', 'Antrim'),
@@ -79,6 +83,33 @@ class Entertainer(models.Model):
         ('180', '180'),
         ('240', '240'),
     )
+    PRICE_PER_HOUR = (
+        ('100','100'),
+        ('200','200'),
+        ('300','300'),
+        ('400','400'),
+        ('500','500'),
+        ('600','600'),
+        ('700','700'),
+        ('800','800'),
+        ('900','900'),
+        ('1000','1000'),
+        ('1100','1100'),
+        ('1200','1200'),
+        ('1300','1300'),
+        ('1400','1400'),
+        ('1500','1500'),
+        ('1600','1600'),
+        ('1700','1700'),
+        ('1800','1800'),
+        ('1900','1900'),
+        ('2000','2000'),
+        ('2100','2100'),
+        ('2200','2200'),
+        ('2300','2300'),
+        ('2400','2400'),
+        ('2500','2500'),
+    )
     SET_UP_REQUIREMENTS = (
         ('Power Source','Power Source'),
         ('Stage Cover - If Outside', 'Stage Cover - If Outside'),
@@ -86,6 +117,11 @@ class Entertainer(models.Model):
         ('Food', 'Food'),
         ('Beverages', 'Beverages')
     )
+    TRAVEL_OPTIONS = {
+        ('nationwide','nationwide'),
+        ('same province','same province'),
+        ('same county','same county')
+    }
     #   FIELDS
     title = models.CharField(
         max_length = 255
@@ -105,8 +141,25 @@ class Entertainer(models.Model):
         choices = COUNTIES,
         default = 'Antrim'
     )
-    image = models.ImageField(
-        upload_to = 'media/'
+    image1 = models.ImageField(
+        upload_to = 'media/img1/',
+        default = 'media/no_image.png'
+    )
+    image2 = models.ImageField(
+        upload_to = 'media/img2/',
+        default='media/no_image.png'
+    )
+    image3 = models.ImageField(
+        upload_to = 'media/img3/',
+        default='media/no_image.png'
+    )
+    image4 = models.ImageField(
+        upload_to = 'media/img4/',
+        default='media/no_image.png'
+    )
+    image5 = models.ImageField(
+        upload_to = 'media/img5/',
+        default='media/no_image.png'
     )
     language = MultiSelectField(
         choices = LANGUAGE_TYPES,
@@ -129,12 +182,27 @@ class Entertainer(models.Model):
     bio = models.TextField()
     set_list = models.TextField(default='All genres and decades.')
     influences = models.TextField(default='All Genres and decades.')
-
     #   returns a CHARFIELD OF COMMA SEPARATED VALUES
     set_up_requirements = MultiSelectField(
         choices = SET_UP_REQUIREMENTS,
         default = 'Power Source'
     )
+    travel_distance = models.CharField(
+        max_length = 13,
+        choices = TRAVEL_OPTIONS,
+        default = 'nationwide'
+    )
+    min_price = models.CharField(
+        max_length = 4,
+        choices = PRICE_PER_HOUR,
+        default = '100'
+    )
+    max_price = models.CharField(
+        max_length = 4,
+        choices = PRICE_PER_HOUR,
+        default = '500'
+    )
+
 
     #   SPECIAL FUNCTIONS
     #   display title in admin instead of "Entertainer object"
@@ -175,4 +243,5 @@ class Entertainer(models.Model):
     def set_up_requirements_str_split(self):
         return  self.set_up_requirements.split(',')
 
-
+    def price_per_hour_str(self):
+        return '€' + self.min_price + ' - €' + self.max_price

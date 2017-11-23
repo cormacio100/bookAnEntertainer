@@ -109,6 +109,18 @@ body,
 #pills-contact-tab.active{
     background-color: #dd6622;
 }
+/* IMAGES */
+.carouselled{
+    height: 400px;
+    width: 100%;
+    object-fit: cover; // here
+    -o-object-fit: cover;
+}
+.carousel{
+    margin-bottom: 1em;
+}
+
+
 /* FOOTER */
 footer{
     text-align:center;
