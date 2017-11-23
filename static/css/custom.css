@@ -1,4 +1,7 @@
+/************************************************************************/
+/* GLOBAL STYLING */
 /* FONTS */
+/************************************************************************/
 body,
 .community-name,
 .publisher-nav-color{
@@ -28,6 +31,9 @@ body,
     color:#dd6622;
     margin-right:1em;
 }
+/************************************************************************/
+/* LINKS */
+/************************************************************************/
 /*  NAVBAR */
 .navbar-grey{
     background-color: #f3f3f3;
@@ -42,29 +48,10 @@ body,
 .nav-link:hover{
     color: #dd6622;
 }
-/* ENTERTAINER PROFILE */
-.ent_profile_image{
-    xborder: 4px solid #bab4b0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    width:200px;
-    height:200px;
-}
 
-#profile_body{
-    margin-top:2em;
-}
-.row{
-    margin-bottom:1em;
-}
-.tabbed{
-    margin-top:1em;
-}
-.top-line{
-    padding-top:1em;
-}
+/************************************************************************/
 /* BUTTONS */
+/************************************************************************/
 .full_btn {
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;
@@ -78,7 +65,6 @@ body,
     margin-bottom: 1em;
 }
 .full_btn:hover {
-    xbackground: #bab4b0;
     box-shadow: 5px 5px 5px #bab4b0;
     text-decoration: none;
     margin-bottom: 1em;
@@ -111,7 +97,9 @@ body,
 #pills-contact-tab.active{
     background-color: #dd6622;
 }
+/************************************************************************/
 /* CAROUSEL */
+/************************************************************************/
 .carouselled{
     height: 400px;
     width: 100%;
@@ -127,19 +115,63 @@ body,
 .carousel-container{
     margin-bottom:1em;
 }
-.carousel-control-next-icon {
-    background-image : url('/media/icons/next-icon.png');
-}
+a.carousel-control-prev,
+a.carousel-control-next{
+    /*work around 1*/
+    xheight: 26%;
+    xtop: 43%;
+    xwidth: 86px;
+    xbackground: #bab4b0;
 
+    /*work around 2*/
+    /*change the margin to make the width and height more longer or shorter*/
+    margin: 100px 0;
+    /*change the radius to make the point of the squared-hover looks rounded*/
+    border-radius: 60px;
+}
 .right-side{
    padding-bottom:0;
     padding-top:0;
     margin-bottom:0;
     margin-top:0;
 }
+ol#carousel-links{
+    list-style: none; overflow: hidden; position: relative;
+}
+ol#carousel-links li{
+    float: left; margin: 0 20px 0 0;
+}
+.jump-to-links{
+    margin-right:2px;
+}
+/************************************************************************/
 /* FOOTER */
+/************************************************************************/
 footer{
     text-align:center;
     color: #dd6622;
 }
+/************************************************************************/
+/* INDIVIDUAL PAGE */
+/* ENTERTAINER PROFILE */
+/************************************************************************/
+.ent_profile_image{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width:200px;
+    height:200px;
+}
+
+#profile_body{
+    margin-top:2em;
+}
+.row{
+    margin-bottom:1em;
+}
+.tabbed{
+    margin-top:1em;
+}
+.top-line{
+    padding-top:1em;
 }
