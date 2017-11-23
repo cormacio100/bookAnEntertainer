@@ -1,7 +1,7 @@
 IN PROGRESS:
 -	Complete the MODEL for the Entertainer Profile
 
--	Only 2 Youtube Links
+-	Get links working under the carousel
 
 -	FINISH SET UP REQUIREMENTS MODEL
 
