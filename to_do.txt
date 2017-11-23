@@ -1,14 +1,19 @@
 IN PROGRESS:
 -	Complete the MODEL for the Entertainer Profile
--	Only 5 images allowed per entertainer
-	-	must be a certain size
+
 -	Only 2 Youtube Links
--	Only 2 Sound cloud Links 
 
 -	FINISH SET UP REQUIREMENTS MODEL
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oEgI0W21prw" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FlNRibyg84E" frameborder="0" allowfullscreen></iframe>
+
 	
 TO DO:
+
+-	Can carousel control on left amd right be made smaller so that tracks can be played from soundcloud?
+-	YOUTUBE AND SOUNDCLOUD NEED TO HAVE DEFAULTS THAT OCCUPY THE SPACE IF NO LINK PROVIDED. IF/ ELSE NEEDED IN THE TEMPLATE
+-	Make Templates more response at smaller sizes
 
 -	ENTERTAINER PROFILE PAGE:
 	-	Add a carousel to Ent profile page

@@ -48,6 +48,8 @@ body,
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+    width:200px;
+    height:200px;
 }
 
 #profile_body{
@@ -117,10 +119,20 @@ body,
     -o-object-fit: cover;
 }
 .carousel{
-    margin-bottom: 1em;
+    -webkit-box-shadow: 2px 16px 151px -46px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 16px 151px -46px rgba(0,0,0,0.75);
+    box-shadow: 2px 16px 151px -46px rgba(0,0,0,0.75);
+    interval:false;
 }
-
-
+.carousel-container{
+    margin-bottom:1em;
+}
+.right-side{
+   padding-bottom:0;
+    padding-top:0;
+    margin-bottom:0;
+    margin-top:0;
+}
 /* FOOTER */
 footer{
     text-align:center;

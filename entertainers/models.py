@@ -23,6 +23,7 @@ class Entertainer(models.Model):
         ('Reggae', 'Reggae'),
         ('Ska', 'Ska'),
         ('Dance', 'Dance'),
+        ('Electronic', 'Electronic'),
         ('Funk', 'Funk'),
         ('Trad', 'Trad'),
         ('Country', 'Country'),
@@ -141,6 +142,11 @@ class Entertainer(models.Model):
         choices = COUNTIES,
         default = 'Antrim'
     )
+    profile_image = models.ImageField(
+        upload_to = 'media/profile/',
+        default = 'media/no_image.png'
+    )
+
     image1 = models.ImageField(
         upload_to = 'media/img1/',
         default = 'media/no_image.png'
@@ -180,8 +186,8 @@ class Entertainer(models.Model):
         default = 90
     )
     bio = models.TextField()
-    set_list = models.TextField(default='All genres and decades.')
-    influences = models.TextField(default='All Genres and decades.')
+    set_list = models.TextField(default = 'All genres and decades.')
+    influences = models.TextField(default = 'All Genres and decades.')
     #   returns a CHARFIELD OF COMMA SEPARATED VALUES
     set_up_requirements = MultiSelectField(
         choices = SET_UP_REQUIREMENTS,
@@ -202,6 +208,8 @@ class Entertainer(models.Model):
         choices = PRICE_PER_HOUR,
         default = '500'
     )
+    soundcloud_audio = models.TextField(default = 'https://soundcloud.com/')
+    youtube_video = models.TextField(default = 'https://www.youtube.com')
 
 
     #   SPECIAL FUNCTIONS
@@ -245,3 +253,26 @@ class Entertainer(models.Model):
 
     def price_per_hour_str(self):
         return '€' + self.min_price + ' - €' + self.max_price
+
+    #   need to fit soundcloud link in the carousel
+    def soundcloud_audio_re_class(self):
+        #   2 sized of iframe available with soundcloud
+        substr1 = 'width="100%" height="300"'
+        substr2 = 'width="100%" height="166"'
+        #   new class for the iframe so that it fits in the carousel
+        re_class = 'class="d-block w-100 img-centered carouselled"'
+
+        if self.soundcloud_audio.find(substr1):
+            return self.soundcloud_audio.replace(substr1,re_class)
+
+        if self.soundcloud_audio.find(substr2):
+            return self.soundcloud_audio.replace(substr2,re_class)
+
+    #   need to fit the youtube link in the carousel
+    def youtube_video_re_class(self):
+        substr1 = 'width="560" height="315"'
+        re_class = 'class="d-block w-100 img-centered carouselled"'
+
+        if self.youtube_video.find(substr1):
+            return self.youtube_video.replace(substr1,re_class)
+
