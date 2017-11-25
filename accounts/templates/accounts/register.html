@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="registration_form_container">
+        {% if choose_account_type %}
+            <div class="row">
+                <div class="col-6">
+                     <div class="card">
+                        <img class="card-img-top" src="{{ MEDIA_URL }}/icons/user-type.PNG" class="img-fluid center-block img-thumbnail" style="max-height:150p" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Are you a Performer?</h4>
+                            <p class="card-text">
+                                BIO SUMMARY
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><a href="#">...Read More</a></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <img class="card-img-top" src="" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Are you a planning an Event?</h4>
+                            <p class="card-text">
+                                BIO SUMMARY
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><a href="#">...Read More</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col-12">
+                    <h1>REGISTRATION PAGE</h1>
+                    <form>
+                        form
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
