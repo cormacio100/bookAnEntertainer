@@ -1,4 +1,7 @@
 IN PROGRESS:
+- ON ACCOUNT LOG IN.
+    -   FOLLOW UDEMY EXAMPLE
+    -   Need to be able to pass a PARAM from the  <a href="{% url '' %}">Create a Listing</a> so that the register view can pass it to the correct template
 
 
 	
