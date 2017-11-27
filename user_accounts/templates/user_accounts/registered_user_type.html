@@ -1,14 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="row registered">
-        <div class="col-4">
-            &nbsp;
+        <div class="col-2">
+            account id is...
         </div>
-        <div class="col-4">
-            <p>Entertainer?</p>
-            <p>Event Organiser?</p>
+        <div class="col-8">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" src="#" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">TITLE</h4>
+                        <p class="card-text">
+                            Are you an Entertainer?
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><a href="{% url 'entertainer_profile' entertainer.id %}">...Read More</a></small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="#" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">TITLE</h4>
+                        <p class="card-text">
+                            Are you arranging an Event?
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><a href="{% url 'entertainer_profile' entertainer.id %}">...Read More</a></small>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-4">
+        <div class="col-2">
             &nbsp;
         </div>
     </div>

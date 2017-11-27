@@ -1,9 +1,11 @@
 IN PROGRESS:
 
-
+registration re-direct not yet working correctly. need to forward to registration_type
+-	watch UDEMY
 	
 TO DO:
 
+-	Add a TRY catch on th USER Registration. Not currently working propertly
 -	YOUTUBE AND SOUNDCLOUD NEED TO HAVE DEFAULTS THAT OCCUPY THE SPACE IF NO LINK PROVIDED. IF/ ELSE NEEDED IN THE TEMPLATE
 -	Make Templates more response at smaller sizes
 
