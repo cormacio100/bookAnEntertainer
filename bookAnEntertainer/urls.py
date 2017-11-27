@@ -19,6 +19,8 @@ from home import views as home_views
 from entertainers import views as entertainer_views
 from django.conf.urls.static import static
 from django.conf import settings
+from user_accounts import views as user_account_views
+
 
 
 urlpatterns = [
@@ -26,5 +28,5 @@ urlpatterns = [
     url(r'^$',home_views.get_index, name="home"),
     url(r'^entertainers/', entertainer_views.list_entertainers_all, name="entertainers"),
     url(r'^entertainer_profile/(?P<entertainer_id>[0-9]+)/$', entertainer_views.display_entertainer_profile, name="entertainer_profile"),
-
+    url(r'^register/',user_account_views.register, name="register")
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

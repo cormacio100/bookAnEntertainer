@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'entertainers',
-    'multiselectfield'
+    'multiselectfield',
+    'user_accounts'
 ]
 
 MIDDLEWARE = [
