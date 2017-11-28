@@ -30,8 +30,8 @@
                             Menu
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'entertainers' %}" class="navbar_grey_a_href_orange">Bands</a>
-                            <a class="dropdown-item" href="{% url 'entertainers' %}" class="navbar_grey_a_href_orange">Solo Performer</a>
+                            <a class="dropdown-item" href="{% url 'entertainers:listings' %}" class="navbar_grey_a_href_orange">Bands</a>
+                            <a class="dropdown-item" href="{% url 'entertainers:listings' %}" class="navbar_grey_a_href_orange">Solo Performer</a>
                             <div class="dropdown-divider" class="navbar_grey_a_href_orange"></div>
                             <a class="dropdown-item" href="#" class="navbar_grey_a_href_orange">Comedian</a>
                         </div>
@@ -54,7 +54,7 @@
                         <a class="nav-link" href="{% url 'user_accounts:login' %}" class="navbar_grey_a_href_brown">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link disabled" href="#">Log Out</a>
                     </li>
                 </ul>
             </div>

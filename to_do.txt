@@ -4,8 +4,8 @@ registration re-direct not yet working correctly. need to forward to registratio
 -	watch UDEMY
 	
 TO DO:
+-   FIX images on the listings page
 
--	Add a TRY catch on th USER Registration. Not currently working propertly
 -	YOUTUBE AND SOUNDCLOUD NEED TO HAVE DEFAULTS THAT OCCUPY THE SPACE IF NO LINK PROVIDED. IF/ ELSE NEEDED IN THE TEMPLATE
 -	Make Templates more response at smaller sizes
 

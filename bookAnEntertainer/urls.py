@@ -16,16 +16,16 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from home import views as home_views
-from entertainers import views as entertainer_views
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',home_views.get_index, name="home"),
-    url(r'^entertainers/', entertainer_views.list_entertainers_all, name="entertainers"),
-    url(r'^entertainer_profile/(?P<entertainer_id>[0-9]+)/$', entertainer_views.display_entertainer_profile, name="entertainer_profile"),
 
-    # Auth URLs - USER_ACCOUNTS APP
+    # ENTERTAINERS APP URLS
+    url(r'^entertainers/',include('entertainers.url')),
+
+    # USER_ACCOUNTS APP URLS
     url(r'^user_accounts/',include('user_accounts.urls')),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
