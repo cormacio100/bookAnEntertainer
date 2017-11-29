@@ -29,3 +29,14 @@ urlpatterns = [
     # USER_ACCOUNTS APP URLS
     url(r'^user_accounts/',include('user_accounts.urls')),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
+#   CODE FOR DJANGO DEBUG TOOLBAR
+from django.conf import settings
+from django.conf.urls import include, url
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

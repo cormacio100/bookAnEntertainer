@@ -45,10 +45,24 @@
                     <div class="col">
                         <!-- Indicators -->
                             <ol id="carousel-links">
-                              <li data-target="#carouselProfileMedia" data-slide-to="0" class="active"><span class="orange-text  jump-to-links"><i class="fa fa-camera" aria-hidden="true"></i></span>Photos</li>
-                              <li data-target="#carouselProfileMedia" data-slide-to="5"><span class="orange-text jump-to-links"><i class="fa fa-volume-up" aria-hidden="true"></i></span>Audio</li>
+                                <li data-target="#carouselProfileMedia" data-slide-to="0" class="active"><span class="orange-text  jump-to-links"><i class="fa fa-camera" aria-hidden="true"></i></span>Photos</li>
+                                <li data-target="#carouselProfileMedia" data-slide-to="5"><span class="orange-text jump-to-links"><i class="fa fa-volume-up" aria-hidden="true"></i></span>Audio</li>
                                 <li data-target="#carouselProfileMedia" data-slide-to="6"><span class="orange-text jump-to-links"><i class="fa fa-video-camera" aria-hidden="true"></i></span>Video</li>
                             </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% if get %}
+                            Method id GET
+                        {% else %}
+                            Method is POST
+                        {% endif %}
+                        {% if logged_in %}
+                            User is logged in
+                        {% else %}
+                            User is NOT logged in
+                        {% endif %}
                     </div>
                 </div>
             </div>

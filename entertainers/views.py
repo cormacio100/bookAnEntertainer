@@ -13,8 +13,16 @@ def listings(request):
 
 #   display the detail of individual entertainers
 def display_entertainer_profile(request,entertainer_id):
+    get = False
+    if request.method == 'GET':
+        get = True
+    logged_in = False
+    if request.user is not None:
+        print('request.user is:')
+        print(request.user)
+        logged_in = True
     entertainer = get_object_or_404(Entertainer, pk=entertainer_id)
-    args = {'entertainer': entertainer}
+    args = {'entertainer': entertainer,'get':get, 'logged_in':logged_in}
     return render(request,'entertainers/entertainer_profile.html',args)
 
 

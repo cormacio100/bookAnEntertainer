@@ -19,45 +19,42 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-grey">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">Book an Entertainer</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" class="navbar_grey_a_href_orange" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Menu
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'entertainers:listings' %}" class="navbar_grey_a_href_orange">Bands</a>
-                            <a class="dropdown-item" href="{% url 'entertainers:listings' %}" class="navbar_grey_a_href_orange">Solo Performer</a>
-                            <div class="dropdown-divider" class="navbar_grey_a_href_orange"></div>
-                            <a class="dropdown-item" href="#" class="navbar_grey_a_href_orange">Comedian</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" class="navbar_grey_a_href_orange" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
-                            <a class="dropdown-item nav-link" href="{% url 'user_accounts:register' %}" class="navbar_grey_a_href_orange">Register</a>
-                            <a class="dropdown-item nav-link" href="{% url 'user_accounts:login' %}" class="navbar_grey_a_href_orange">Login</a>
-                            <div class="dropdown-divider" class="navbar_grey_a_href_orange"></div>
-                            <a class="dropdown-item disabled nav-link" href="#" class="navbar_grey_a_href_orange">Log Out</a>
-                        </div>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'user_accounts:register' %}" class="navbar_grey_a_href_brown">Register <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_accounts:login' %}" class="navbar_grey_a_href_brown">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Log Out</a>
-                    </li>
-                </ul>
-            </div>
+
+                <a class="navbar-brand" href="{% url 'home' %}">Book an Entertainer</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" class="navbar_grey_a_href_orange text-right" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Search
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item nav-link" href="{% url 'entertainers:listings' %}" class="navbar_grey_a_href_orange">Bands</a>
+                                <a class="dropdown-item nav-link" href="{% url 'entertainers:listings' %}" class="navbar_grey_a_href_orange">Solo Performer</a>
+                                <div class="dropdown-divider" class="navbar_grey_a_href_orange"></div>
+                                <a class="dropdown-item nav-link" href="#" class="navbar_grey_a_href_orange">Comedians</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" class="navbar_grey_a_href_orange float-right" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
+                                <a class="dropdown-item nav-link" href="{% url 'user_accounts:register' %}" class="navbar_grey_a_href_orange">Register</a>
+                                <a class="dropdown-item nav-link" href="{% url 'user_accounts:login' %}" class="navbar_grey_a_href_orange">Login</a>
+                                <div class="dropdown-divider" class="navbar_grey_a_href_orange"></div>
+                                <a class="dropdown-item disabled nav-link" href="#" class="navbar_grey_a_href_orange">Log Out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
         </div>
     </nav>
     <div>

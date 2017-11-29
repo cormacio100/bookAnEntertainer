@@ -4,6 +4,11 @@ registration re-direct not yet working correctly. need to forward to registratio
 -	watch UDEMY
 	
 TO DO:
+
+-   USER MUST BE LOGGED IN TO LEAVE A REVIEW ON AN ENTERTAINER PROFILE
+    -   Need to do an IF/ELSE statement on the template for the reviews section that tells the user they must be logged in to leave a review
+    -   See how it's done on redditClone
+
 -   FIX images on the listings page
 
 -	YOUTUBE AND SOUNDCLOUD NEED TO HAVE DEFAULTS THAT OCCUPY THE SPACE IF NO LINK PROVIDED. IF/ ELSE NEEDED IN THE TEMPLATE
