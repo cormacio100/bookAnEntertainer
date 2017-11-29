@@ -48,9 +48,9 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -124,8 +124,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
@@ -134,7 +135,7 @@ MEDIA_URL = '/pics/'
 MEDIA_ROOT = BASE_DIR
 
 def show_toolbar(request):
-    if not request.is_ajax() and request.user: # and request.user.username == "cormacio":
+    if not request.is_ajax(): # and request.user: # and request.user.username == "cormacio":
         return True
     return False
 

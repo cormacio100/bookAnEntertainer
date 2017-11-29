@@ -32,8 +32,8 @@ urlpatterns = [
 
 
 #   CODE FOR DJANGO DEBUG TOOLBAR
-from django.conf import settings
-from django.conf.urls import include, url
+#from django.conf import settings
+#from django.conf.urls import include, url
 
 if settings.DEBUG:
     import debug_toolbar
