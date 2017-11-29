@@ -25,7 +25,7 @@ SECRET_KEY = 'md517-*6s^q(z1$c@ik&*c)veq_s^q%luwar7b6*&g)k*ay7!r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -134,12 +134,16 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/pics/'
 MEDIA_ROOT = BASE_DIR
 
-def show_toolbar(request):
-    if not request.is_ajax(): # and request.user: # and request.user.username == "cormacio":
-        return True
-    return False
-
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': 'bookAnEntertainer.settings.show_toolbar',
 }
+
+INTERNAL_IPS = ('127.0.0.1',)
+
+
+def show_toolbar(request):
+    if not request.is_ajax(): # and request.user: # and request.user.username == "cormacio":
+        return True
+    return True
+
 

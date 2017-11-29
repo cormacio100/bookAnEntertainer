@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login
 
 def register(request):
     if request.method == 'POST':
+        #   IF THE PASSWORDS MATCH
         if request.POST['password1'] == request.POST['password2']:
             username = request.POST['username']
             password = request.POST['password1']
