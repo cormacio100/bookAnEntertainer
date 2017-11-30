@@ -46,10 +46,10 @@
                                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
-                                <a class="dropdown-item nav-link" href="{% url 'user_accounts:register' %}" class="navbar_grey_a_href_orange">Register</a>
-                                <a class="dropdown-item nav-link" href="{% url 'user_accounts:login' %}" class="navbar_grey_a_href_orange">Login</a>
+                                <a class="dropdown-item nav-link" href="{% url 'accounts:register' %}" class="navbar_grey_a_href_orange">Register</a>
+                                <a class="dropdown-item nav-link" href="{% url 'accounts:login' %}" class="navbar_grey_a_href_orange">Login</a>
                                 <div class="dropdown-divider" class="navbar_grey_a_href_orange"></div>
-                                <a class="dropdown-item disabled nav-link" href="#" class="navbar_grey_a_href_orange">Log Out</a>
+                                <a class="dropdown-item disabled nav-link" href="{% url 'accounts:login' %}" class="navbar_grey_a_href_orange">Log Out</a>
                             </div>
                         </li>
                     </ul>
