@@ -27,7 +27,7 @@ def auth_register(request):
             if user:
                 login(request,user)
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('profile'))
+                return redirect(reverse('accounts:profile'))
             else:
                 messages.error(request, "unable to log you in at this time!")
 
@@ -54,7 +54,7 @@ def auth_login(request):
                 auth.login(request, user)
                 request.user.last_login = user.last_login
                 messages.error(request,"You have successfully logged in")
-                return redirect(reverse('profile'))
+                return redirect(reverse('accounts:profile'))
             else:
                 form.add_error(None,"Your email or password was not recognised")
     else:
@@ -63,7 +63,7 @@ def auth_login(request):
 
     args = {'form': form}
     args.update(csrf(request))
-    return render(request,'accounts/login.html',args)
+    return render(request, 'accounts/login.html', args)
 
 
 def auth_logout(request):
