@@ -56,6 +56,8 @@ class UserRegistrationForm(UserCreationForm):
         label = 'Password Confirmation',
         widget = forms.PasswordInput
     )
+
+    '''
     location = forms.CharField(
         label = 'location',
         widget = forms.Select(choices=COUNTIES)
@@ -64,13 +66,14 @@ class UserRegistrationForm(UserCreationForm):
         label = 'User Type',
         widget = forms.Select(choices=USER_TYPE)
     )
+    '''
 
     #   THE FIELDS WE WANT TO DISPLAY
     #   EMAIL and USERNAME are default USER attributes - also first_name and last_name
     #   In this case PASSWORD1 and PASSWORD2 have been customised
     class Meta:
         model = User
-        fields = ['email', 'password1', 'password2', 'first_name', 'last_name','location','is_entertainer']
+        fields = ['first_name', 'last_name','email', 'password1', 'password2'] #,'location','is_entertainer']
         exclude = ['username']
 
     #   clean the passwords and ensure they are valid
