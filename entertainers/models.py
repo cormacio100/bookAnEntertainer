@@ -227,7 +227,7 @@ class Entertainer(models.Model):
         return self.location[0].upper()+self.location[1:].lower()
 
     def bio_summary(self):
-        return self.bio[:100]
+        return self.bio[:60]+'...'
 
     def language_list_as_str(self):
         i=0

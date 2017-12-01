@@ -41,8 +41,31 @@ INSTALLED_APPS = [
     'entertainers',
     'multiselectfield',
     'user_accounts',
-    'debug_toolbar'
+    'debug_toolbar',
+    'django_forms_bootstrap',
+    'accounts',
 ]
+
+########################################################################################
+#   CUSTOM USER AUTHENTICATION
+#   Accounts app Files involved:
+#   -   settings.py,
+#   -   backends.py,
+#   -   forms.py,
+#   -   models.py,
+#   -   views.py,
+#   -   urls.py
+#   -   templates
+
+#   TELL DJANGO TO USE accounts.User instead of the default User class for authentication
+AUTH_USER_MODEL = 'accounts.User'
+
+#   TELL DJANGO TO OVERRIDE THE DEFAULT get_user AND authenticate METHODS
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.EmailAuth',
+)
+########################################################################################
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
