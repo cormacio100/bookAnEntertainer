@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'user_accounts',
     'debug_toolbar',
     'django_forms_bootstrap',
-    'accounts'
+    'accounts',
 ]
 
 ########################################################################################

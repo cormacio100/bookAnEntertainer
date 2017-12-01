@@ -9,7 +9,8 @@ from django.utils import timezone
 # Create your CUSTOM USER models here.
 class AccountUserManager(UserManager):
     #   OVERRIDE THE DEFAULT create_user METHOD
-    def _create_user(self, username, email, password, first_name, last_name, location, is_entertainer, is_superuser, **extra_fields):
+    #def _create_user(self, username, email, password, first_name, last_name, location, is_entertainer, is_superuser, **extra_fields):
+    def _create_user(self, username, email, password, is_superuser, **extra_fields):
         #   At this point the user is saved to the DB
         #   The code below allows you to change it's attributes
 
@@ -29,8 +30,7 @@ class AccountUserManager(UserManager):
 
         email = self.normalize_email(email)
         #   Send to Parent class model
-        user = self.model(username=email, email=email, first_name=first_name,
-                          last_name=last_name, location=location, is_entertainer=is_entertainer, is_active=True,
+        user = self.model(username=email, email=email, is_active=True,
                           is_superuser=is_superuser,
                           date_joined=now, **extra_fields)
         user.set_password(password)

@@ -165,7 +165,9 @@ footer{
     width:200px;
     height:200px;
 }
-
+.ent_listing{
+    margin-top:1em;
+}
 #profile_body{
     margin-top:2em;
 }
