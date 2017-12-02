@@ -1,12 +1,24 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-    <form role="form" method="post" action="{% url 'accounts:login' %}">
-        <legend>Login</legend>
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Login</button>
+    <div class="row">
+        <div class="col-4">
+            &nbsp;
         </div>
-    </form>
+        <div class="col-4">
+            <form role="form" method="post" action="{% url 'accounts:login' %}" class="account-form">
+                <legend>Login</legend>
+                <hr>
+                {% csrf_token %}
+                {{ form | as_bootstrap }}
+                <div class="form-group">
+                    <button type="submit" class="btn btn-orange btn-block">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            &nbsp;
+        </div>
+    </div>
+
 {% endblock %}

@@ -37,6 +37,24 @@ body,
 .btn-primary{
     color:#dd6622;
 }
+.btn-orange{
+    font-size: 16px;
+    background: #dd6622;
+    color: #ffffff;
+    border:0;
+}
+.btn-orange:hover{
+    background: #bab4b0;
+    box-shadow: 5px 5px 5px #bb6622;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+.account-form{
+    margin-top:2em;
+}
+.legend-centre{
+    text-align: center;
+}
 /************************************************************************/
 /* LINKS */
 /************************************************************************/
@@ -70,18 +88,7 @@ body,
     text-decoration: none;
     margin-bottom: 1em;
 }
-.btn-primary{
-    font-size: 16px;
-    background: #dd6622;
-    color: #ffffff;
-    border:0;
-}
-.btn-primary:hover{
-    background: #bab4b0;
-    box-shadow: 5px 5px 5px #bb6622;
-    text-decoration: none;
-    margin-bottom: 1em;
-}
+
 .full_btn:hover{
     box-shadow: 5px 5px 5px #bab4b0;
     text-decoration: none;

@@ -24,10 +24,13 @@ class Entertainer(models.Model):
         ('Ska', 'Ska'),
         ('Dance', 'Dance'),
         ('Electronic', 'Electronic'),
+        ('Folk', 'Folk'),
+        ('Pop', 'Pop'),
         ('Funk', 'Funk'),
         ('Trad', 'Trad'),
         ('Country', 'Country'),
         ('Soul', 'Soul'),
+        ('RnB','RnB'),
         ('Other', 'Other'),
     )
     COUNTIES = (
@@ -125,7 +128,7 @@ class Entertainer(models.Model):
     }
     #   FIELDS
     title = models.CharField(
-        max_length = 255
+        max_length = 15
     )
     description = models.CharField(
         max_length = 14,
@@ -133,7 +136,7 @@ class Entertainer(models.Model):
         default = 'Band'
     )
     genre = models.CharField(
-        max_length = 9,
+        max_length = 11,
         choices = GENRE_TYPES,
         default = 'Rock'
     )

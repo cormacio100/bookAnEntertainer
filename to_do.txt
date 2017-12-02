@@ -11,8 +11,6 @@ TO DO:
     -   Need to do an IF/ELSE statement on the template for the reviews section that tells the user they must be logged in to leave a review
     -   See how it's done on redditClone
 
--   FIX images on the listings page
-
 -	YOUTUBE AND SOUNDCLOUD NEED TO HAVE DEFAULTS THAT OCCUPY THE SPACE IF NO LINK PROVIDED. IF/ ELSE NEEDED IN THE TEMPLATE
 -	Make Templates more response at smaller sizes
 
