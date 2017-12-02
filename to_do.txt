@@ -4,6 +4,8 @@ registration re-direct not yet working correctly. need to forward to registratio
 -	watch UDEMY
 	
 TO DO:
+-   Pagination on the listings page
+-   Search Filters on the listings page
 -   Change number of chars for genre in entertainer model to more than 9
 -   USER MUST BE LOGGED IN TO LEAVE A REVIEW ON AN ENTERTAINER PROFILE
     -   Need to do an IF/ELSE statement on the template for the reviews section that tells the user they must be logged in to leave a review
