@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from .models import Entertainer
 from django.contrib.auth.decorators import login_required
+from .forms import EntertainerRegistrationForm
+from django.contrib import messages
 
 # Create your views here.
 def listings(request):
@@ -29,6 +31,20 @@ def display_entertainer_profile(request,entertainer_id):
 
 @login_required()
 def create_profile(request):
-    return render(request, 'entertainers/create_profile.html')
+
+    if request.method == 'POST':
+        #   If the form was submitted the contents of the form are passed in
+        form = EntertainerRegistrationForm(request.POST)
+        #   save the form if it is valid
+        if form.is_valid():
+            form.save()
+            messages.success(request, "You have successfully registered")
+        else:
+            messages.error(request, "There was an issue and the Profile did not save")
+    else:
+        #   If page was just loaded then an empty form is displayed
+        form = EntertainerRegistrationForm()
+    return render(request, 'entertainers/create_profile.html',{'form': form})
+
 
 

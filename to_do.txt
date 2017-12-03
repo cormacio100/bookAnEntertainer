@@ -2,7 +2,10 @@ IN PROGRESS:
 
 -   Create an Entertainer from Registering a User
     -   Entertainer needs to extend from User
-    -   from 
+    -   from accounts import User
+        class Entertainer(models.Model)
+            user = models.OneToOneField(User)
+            soundcloud_audio = models.TextField(default = 'https://soundcloud.com/')
 
 
 registration re-direct not yet working correctly. need to forward to registration_type

@@ -3,10 +3,15 @@ from __future__ import unicode_literals
 
 from django.db import models
 from multiselectfield import MultiSelectField
-
+from accounts.models import User
 
 # Create your models here.
 class Entertainer(models.Model):
+
+    #   An Entertainer is a User - One To One Relationship
+    user = models.OneToOneField(User,
+                                related_name='user',
+                                default='')
 
     #   DEFINE CHOICES LISTS WITH CONSTANTS
     ENT_TYPES = (
