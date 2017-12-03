@@ -7,5 +7,6 @@ app_name = 'entertainers'
 urlpatterns = [
     url(r'^listings/', views.listings, name="listings"),
     url(r'^profile/(?P<entertainer_id>[0-9]+)/$', views.display_entertainer_profile, name="profile"),
+    url(r'^create_profile', views.create_profile, name="create_profile"),
 ]
 

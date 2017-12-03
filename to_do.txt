@@ -1,5 +1,10 @@
 IN PROGRESS:
 
+-   Create an Entertainer from Registering a User
+    -   Entertainer needs to extend from User
+    -   from 
+
+
 registration re-direct not yet working correctly. need to forward to registration_type
 -	watch UDEMY
 	

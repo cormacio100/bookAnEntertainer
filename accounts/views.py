@@ -27,6 +27,12 @@ def auth_register(request):
             if user:
                 login(request,user)
                 messages.success(request, "You have successfully registered")
+
+                entertainer = True
+
+                if entertainer:
+                    return redirect(reverse('entertainers:create_profile'))
+
                 return redirect(reverse('accounts:profile'))
             else:
                 messages.error(request, "unable to log you in at this time!")
