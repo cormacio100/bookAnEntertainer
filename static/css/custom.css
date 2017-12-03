@@ -55,6 +55,12 @@ body,
 .legend-centre{
     text-align: center;
 }
+a{
+    color: #dd6622;
+}
+a:hover{
+    color: #bab4b0;
+}
 /************************************************************************/
 /* LINKS */
 /************************************************************************/
@@ -65,6 +71,9 @@ body,
 }
 .navbar_grey_a_href_orange{
     color: #dd6622;
+}
+.navbar_grey_a_href_orange:hover{
+    color: #bab4b0;
 }
 .nav-link{
     color:#7c6659;
