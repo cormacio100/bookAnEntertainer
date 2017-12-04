@@ -2,16 +2,23 @@ IN PROGRESS:
 
 -   Create an Entertainer from Registering a User
     -   Entertainer needs to extend from User
-    -   from accounts import User
-        class Entertainer(models.Model)
-            user = models.OneToOneField(User)
-            soundcloud_audio = models.TextField(default = 'https://soundcloud.com/')
+        -   When user selects "Register"
+        -   Need to be able to select if user is an ENTERTAINER OR NOT - IN PROGRESS - USING **kwargs
+            -   Create normal User
+            -   Log the user in
+            -   if is_entertainer == True
+                -   register as Entertainer in entertainers app
+                -   form = EntertainerRegistrationForm(request.POST)
+                -   form.user = User (Currently logged in user)
+                -   form.save()
+        -   Instead of using One to One Relationship the model could use   entertainer.user = models.ForeignKey(user)
 
 
 registration re-direct not yet working correctly. need to forward to registration_type
 -	watch UDEMY
 	
 TO DO:
+-   See RedditClone project for how to do upvoting and downvoting
 -   Pagination on the listings page
 -   Search Filters on the listings page
 -   Change number of chars for genre in entertainer model to more than 9

@@ -6,6 +6,7 @@ from .models import Entertainer
 from django.contrib.auth.decorators import login_required
 from .forms import EntertainerRegistrationForm
 from django.contrib import messages
+from accounts.models import User
 
 # Create your views here.
 def listings(request):
@@ -37,6 +38,8 @@ def create_profile(request):
         form = EntertainerRegistrationForm(request.POST)
         #   save the form if it is valid
         if form.is_valid():
+            # save the currently logged in user as related to the Enterttainer profile
+            form.user = User
             form.save()
             messages.success(request, "You have successfully registered")
         else:
