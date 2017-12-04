@@ -14,6 +14,7 @@ from django.contrib.auth import login
 def auth_register(request):
     #   ONCE THE REGISTRATION FORM IS SUBMITTED
     if request.method == 'POST':
+        print('**********registration form SUBMITTED***************')
         #   retrieve values from CUSTOM FORM
         form = UserRegistrationForm(request.POST)
         #   save the form if it is valid
@@ -27,18 +28,16 @@ def auth_register(request):
             if user:
                 login(request,user)
                 messages.success(request, "You have successfully registered")
-
-                entertainer = True
-
-                if entertainer:
+                if request.POST.get('user_type') == 'Entertainer':
                     return redirect(reverse('entertainers:create_profile'))
-
-                return redirect(reverse('accounts:profile'))
+                else:
+                    return redirect(reverse('accounts:profile'))
             else:
                 messages.error(request, "unable to log you in at this time!")
 
     #   INITIALLY THE METHOD WILL NOT BE EQUAL TO POST SO WILL DISPLAY THE EMPTY FORM
     else:
+        print('**********display the registration form***************')
         form = UserRegistrationForm()
 
     args = {'form': form}

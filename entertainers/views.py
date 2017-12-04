@@ -32,7 +32,6 @@ def display_entertainer_profile(request,entertainer_id):
 
 @login_required()
 def create_profile(request):
-
     if request.method == 'POST':
         #   If the form was submitted the contents of the form are passed in
         form = EntertainerRegistrationForm(request.POST)

@@ -133,7 +133,7 @@ class Entertainer(models.Model):
     }
     #   FIELDS
     title = models.CharField(
-        max_length = 15
+        max_length=15
     )
     description = models.CharField(
         max_length = 14,
