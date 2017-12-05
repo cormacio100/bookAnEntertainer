@@ -6,5 +6,5 @@ media/img3/
 media/img4/
 media/img5/
 media/profile
-db.backup
 db.sqlite3
+db.backup
