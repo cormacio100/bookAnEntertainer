@@ -9,9 +9,8 @@ from accounts.models import User
 class Entertainer(models.Model):
 
     #   An Entertainer is a User - One To One Relationship
-    user = models.OneToOneField(User,
-                                related_name='user',
-                                default='')
+    user1 = User.objects.get(id=1)
+    user = models.OneToOneField(User,on_delete=models.CASCADE,default=user1)
 
     #   DEFINE CHOICES LISTS WITH CONSTANTS
     ENT_TYPES = (

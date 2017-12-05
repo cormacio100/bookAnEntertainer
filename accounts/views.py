@@ -20,19 +20,20 @@ def auth_register(request):
         #   save the form if it is valid
         if form.is_valid():
             form.save()
-            #   send flo to AUTHENTICATE function in backends.py file
+            #   send flow to AUTHENTICATE function in backends.py file
             user = auth.authenticate(email=request.POST.get('email'),
                                      password=request.POST.get('password1'))
-
             #   Log the user in and show their profile
             if user:
-                login(request,user)
+                login(request, user)
+                request.user = user
                 messages.success(request, "You have successfully registered")
                 if request.POST.get('user_type') == 'Entertainer':
                     return redirect(reverse('entertainers:create_profile'))
                 else:
                     return redirect(reverse('accounts:profile'))
             else:
+                print('User is not found')
                 messages.error(request, "unable to log you in at this time!")
 
     #   INITIALLY THE METHOD WILL NOT BE EQUAL TO POST SO WILL DISPLAY THE EMPTY FORM
