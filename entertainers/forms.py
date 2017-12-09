@@ -3,6 +3,23 @@ from entertainers.models import Entertainer
 
 class EntertainerRegistrationForm(forms.ModelForm):
 
+    #   constructor
+    def __init__(self,user,*args,**kwargs):
+        self.user = user
+        super(EntertainerRegistrationForm,self).__init__(*args,**kwargs)
+
+    def save(self,commit=True):
+        #   save(commit=False) prevents the form from auto saving
+        #   The instance of the form is what gets saved
+        instance = super(EntertainerRegistrationForm,self).save(commit=False)
+
+        #   auto set the user instance to that provided by the view
+        instance.user = self.user
+
+        if commit:
+            instance.save()
+        return instance
+
     #   Tell Django which model to used to create the form
     class Meta:
         model = Entertainer

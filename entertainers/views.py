@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, get_object_or_404
+from django.core.urlresolvers import reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Entertainer
 from django.contrib.auth.decorators import login_required
 from .forms import EntertainerRegistrationForm
@@ -35,18 +36,19 @@ def create_profile(request):
 
     if request.method == 'POST':
         #   If the form was submitted the contents of the form are passed in
-        form = EntertainerRegistrationForm(request.POST)
+        form = EntertainerRegistrationForm(request.user,request.POST)
         #   save the form if it is valid
         if form.is_valid():
             # save the currently logged in user as related to the Enterttainer profile
-            form.user = User
+            #form.user = User
             form.save()
-            messages.success(request, "You have successfully registered")
+            messages.success(request, "You have successfully registered as an Entertainer")
+            return redirect(reverse('entertainers:listings'))
         else:
             messages.error(request, "There was an issue and the Profile did not save")
     else:
         #   If page was just loaded then an empty form is displayed
-        form = EntertainerRegistrationForm()
+        form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form})
 
 

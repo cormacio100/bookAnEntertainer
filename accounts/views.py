@@ -19,20 +19,19 @@ def auth_register(request):
         #   save the form if it is valid
         if form.is_valid():
             form.save()
-            #   send flo to AUTHENTICATE function in backends.py file
+            #   AUTHENTICATE THE USER BASED ON EMAIL AND PASSWORD PASSED IN
+            #   using authentication defined in function in backends.py file
             user = auth.authenticate(email=request.POST.get('email'),
                                      password=request.POST.get('password1'))
-
             #   Log the user in and show their profile
             if user:
                 login(request,user)
-                messages.success(request, "You have successfully registered")
-
-                entertainer = True
-
-                if entertainer:
+                #   Check user_type the new user is
+                if request.POST.get('account_type') == 'Entertainer':
+                    #messages.success(request, "You have successfully registered as an Entertainer")
                     return redirect(reverse('entertainers:create_profile'))
-
+                else:
+                    messages.success(request, "You have successfully registered as a General User")
                 return redirect(reverse('accounts:profile'))
             else:
                 messages.error(request, "unable to log you in at this time!")
