@@ -32,14 +32,13 @@ def display_entertainer_profile(request,entertainer_id):
 
 @login_required()
 def create_profile(request):
-
     if request.method == 'POST':
         #   If the form was submitted the contents of the form are passed in
         form = EntertainerRegistrationForm(request.POST)
         #   save the form if it is valid
         if form.is_valid():
-            # save the currently logged in user as related to the Enterttainer profile
-            form.user = User
+            # save the currently logged in user as related to the Entertainer profile
+            form.user = request.user
             form.save()
             messages.success(request, "You have successfully registered")
         else:
