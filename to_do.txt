@@ -18,6 +18,10 @@ registration re-direct not yet working correctly. need to forward to registratio
 -	watch UDEMY
 	
 TO DO:
+
+-   To see how to send params via GET. See the auth_demo project
+    -   API for GET uses the param pk=None
+
 -   See RedditClone project for how to do upvoting and downvoting
 -   Pagination on the listings page
 -   Search Filters on the listings page
