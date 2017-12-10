@@ -34,6 +34,10 @@ body,
     color:#dd6622;
     margin-right:1em;
 }
+.white-text{
+    color:#ffffff;
+    margin-right:1em;
+}
 .btn-primary{
     color:#dd6622;
 }
@@ -229,4 +233,45 @@ footer{
     background-color: #dd6622;
     border-color: #acacac;
     margin-top: 1em;
+}
+/**************************************************************************/
+/*  HEADINGS */
+/**************************************************************************/
+.page-header{
+    margin-top:1em;
+}
+#listing-menu{
+    background-color:#acacac;
+    border:1px solid #dd6622;
+    padding:1em;
+    margin:1em;
+}
+#listing-row{
+    margin:0;
+    padding:0;
+}
+
+/**************************************************************************/
+/*  FILTER MENUS */
+/**************************************************************************/
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+.brown { background-color: #7c6659; color: #fff; }
+
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
 }

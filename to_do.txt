@@ -1,28 +1,20 @@
 IN PROGRESS:
 
--   Create an Entertainer from Registering a User
-    -   Entertainer needs to extend from User
-        -   When user selects "Register"
-        -   Need to be able to select if user is an ENTERTAINER OR NOT - IN PROGRESS - USING **kwargs
-            -   Create normal User
-            -   Log the user in
-            -   if is_entertainer == True
-                -   register as Entertainer in entertainers app
-                -   form = EntertainerRegistrationForm(request.POST)
-                -   form.user = User (Currently logged in user)
-                -   form.save()
-        -   Instead of using One to One Relationship the model could use   entertainer.user = models.ForeignKey(user)
 
 
-registration re-direct not yet working correctly. need to forward to registration_type
--	watch UDEMY
 	
 TO DO:
 
+-   select menu styling
+    -   https://codepen.io/ericrasch/pen/zjDBx
+-   registration re-direct on listing profile not yet working correctly. need to forward to registration_type -	watch UDEMY
+
 -   To see how to send params via GET. See the auth_demo project
     -   API for GET uses the param pk=None
-
+-   Allow logged in User to edit their entertainer profile
 -   See RedditClone project for how to do upvoting and downvoting
+-   Look into populting the listings page from JQUERY API request
+-   Get paypal to Work
 -   Pagination on the listings page
 -   Search Filters on the listings page
 -   Change number of chars for genre in entertainer model to more than 9

@@ -193,7 +193,7 @@ class Entertainer(models.Model):
         default = 90
     )
     bio = models.TextField()
-    set_list = models.TextField(default = 'All genres and decades.')
+    set_list = models.TextField(default = 'Set list on demand.')
     influences = models.TextField(default = 'All Genres and decades.')
     #   returns a CHARFIELD OF COMMA SEPARATED VALUES
     set_up_requirements = MultiSelectField(

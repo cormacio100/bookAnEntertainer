@@ -1,7 +1,23 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
-    <h2>Listed Entertainers</h2>
+    <div id="entertainer-header" class="page-header">
+        <h2>Listed Entertainers</h2>
     <hr>
+    </div>
+    <div id="listing-menu" class="filtered">
+        <div id="listing-row" class="row">
+            <div class="col-2 text-center">
+                <span class="orange-text">Search For:</span>
+            </div>
+            <div id="filter-by-entertainer" class="col-4 text-center">
+                <select id="entertainer-select" class="styled-select brown semi-square"></select>
+            </div>
+            <div id="filter-by-location" class="col-4 text-center">
+                <select id="location-select" class="styled-select brown semi-square"></select>
+            </div>
+        </div>
+    </div>
     <div class="card-deck row">
         {% for entertainer in entertainers %}
             <div class="col-3 ent-listing">
@@ -20,4 +36,8 @@
             </div>
         {% endfor %}
     </div>
+{% endblock %}
+{% block script %}
+    <script src="{% static "js/globals.js" %}"></script>
+    <script src="{% static "js/listing.js" %}"></script>
 {% endblock %}
