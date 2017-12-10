@@ -14,31 +14,30 @@ from django.contrib.auth import login
 def auth_register(request):
     #   ONCE THE REGISTRATION FORM IS SUBMITTED
     if request.method == 'POST':
-        print('**********registration form SUBMITTED***************')
         #   retrieve values from CUSTOM FORM
         form = UserRegistrationForm(request.POST)
         #   save the form if it is valid
         if form.is_valid():
             form.save()
-            #   send flow to AUTHENTICATE function in backends.py file
+            #   AUTHENTICATE THE USER BASED ON EMAIL AND PASSWORD PASSED IN
+            #   using authentication defined in function in backends.py file
             user = auth.authenticate(email=request.POST.get('email'),
                                      password=request.POST.get('password1'))
             #   Log the user in and show their profile
             if user:
-                login(request, user)
-                request.user = user
-                messages.success(request, "You have successfully registered")
-                if request.POST.get('user_type') == 'Entertainer':
+                login(request,user)
+                #   Check user_type the new user is
+                if request.POST.get('account_type') == 'Entertainer':
+                    #messages.success(request, "You have successfully registered as an Entertainer")
                     return redirect(reverse('entertainers:create_profile'))
                 else:
-                    return redirect(reverse('accounts:profile'))
+                    messages.success(request, "You have successfully registered as a General User")
+                return redirect(reverse('accounts:profile'))
             else:
-                print('User is not found')
                 messages.error(request, "unable to log you in at this time!")
 
     #   INITIALLY THE METHOD WILL NOT BE EQUAL TO POST SO WILL DISPLAY THE EMPTY FORM
     else:
-        print('**********display the registration form***************')
         form = UserRegistrationForm()
 
     args = {'form': form}
@@ -84,4 +83,3 @@ def auth_profile(request):
 
     args = {'message': 'Profile loaded', 'last_login': request.user.last_login}
     return render(request, 'accounts/profile.html', args)
-

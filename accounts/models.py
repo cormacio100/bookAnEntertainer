@@ -9,7 +9,8 @@ from django.utils import timezone
 # Create your CUSTOM USER models here.
 class AccountUserManager(UserManager):
     #   OVERRIDE THE DEFAULT create_user METHOD
-    def _create_user(self, username, email, password, first_name='', last_name='', is_staff=0, is_superuser=1, **extra_fields):
+    #def _create_user(self, username, email, password, first_name, last_name, location, is_entertainer, is_superuser, **extra_fields):
+    def _create_user(self, username, email, password, first_name='generic',last_name='user',is_staff=0,is_superuser=0, **extra_fields):
         #   At this point the user is saved to the DB
         #   The code below allows you to change it's attributes
 
@@ -29,9 +30,8 @@ class AccountUserManager(UserManager):
 
         email = self.normalize_email(email)
         #   Send to Parent class model
-        user = self.model(username=email, email=email, is_active=True,
-                          is_superuser=is_superuser,
-                          date_joined=now, **extra_fields)
+        user = self.model(username=email, email=email, first_name=first_name, last_name=last_name, is_staff=is_staff, is_active=True,
+                          is_superuser=is_superuser, date_joined=now, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
 
@@ -40,15 +40,14 @@ class AccountUserManager(UserManager):
 
 #   CUSTOM USER CLASS
 class User(AbstractUser):
-    #   Abstracting this class allows us to add any number of custom attributes to our user class
+    #   Now that we have abstracted this class we can add any number of custom attributes to our user class
 
     #   Replace the normal USER OBJECTS property with the custom AccountUserManager
-    #   Overrides the _create_user method
-    #   Default version checks for username but we will check for email
-    #   Need to update settings.py to tell Django we want to use this class as our User class
-    #   AUTH_USER_MODEL = 'accounts.User'
+    #   Overrides the default _create_user_method which normally checks for username. Instead we will check for email address
+    #   Need to update settings.py to tell Django we want to use this class as our User Class
+    #   E.G. AUTH_USER_MODEL = 'accounts.User'
 
-    #   DEFAULT USER ATTRIBUTES:
+    #   THE DEFAULT USER ATTRIBUTES ARE:
         #   USERNAME
         #   PASSWORD
         #   FIRST_NAME
@@ -57,8 +56,6 @@ class User(AbstractUser):
         #   IS_SUPERUSER
         #   IS_ACTIVE
     #   Now that we've abstracted this class WE CAN ADD ANY NUMBER OF CUSTOM ATTRIBUTES TO OUR USER CLASS
-    #   FIRST define the form element in forms.py and then ADD THEM TO THE MODEL HERE
-    #location = models.CharField(max_length=10, default='Antrim')
-    #user_type = models.CharField(max_length=15, default='Entertainer')
-    is_entertainer = models.CharField(max_length=5,default='No')
+    #   FIRST define the relevant form element in forms.py and then ADD THEM TO THE MODEL HERE
+    account_type = models.CharField(max_length=11,default='General')
     objects = AccountUserManager()

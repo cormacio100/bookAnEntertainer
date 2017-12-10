@@ -221,3 +221,12 @@ footer{
 #register-submit{
     margin-top:2em;
 }
+/**************************************************************************/
+/*  MESSAGE ALERTS */
+/**************************************************************************/
+.alert-success {
+    color: #ffffff;
+    background-color: #dd6622;
+    border-color: #acacac;
+    margin-top: 1em;
+}

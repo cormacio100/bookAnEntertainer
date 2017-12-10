@@ -10,9 +10,9 @@ class UserRegistrationForm(UserCreationForm):
         ('Yes', 'Yes'),
         ('No', 'No'),
     )
-    USER_TYPE = (
-        'Entertainer', 'Entertainer',
-        'Event_Organiser', 'Event_Organiser',
+    ACCOUNT_TYPE = (
+        ('General', 'General'),
+        ('Entertainer', 'Entertainer'),
     )
     COUNTIES = (
         ('Antrim', 'Antrim'),
@@ -49,29 +49,23 @@ class UserRegistrationForm(UserCreationForm):
         ('Wicklow', 'Wicklow'),
     )
     password1 = forms.CharField(
-        label='Password',
-        widget=forms.PasswordInput
+        label = 'Password',
+        widget = forms.PasswordInput
     )
     password2 = forms.CharField(
-        label='Password Confirmation',
-        widget=forms.PasswordInput
+        label = 'Password Confirmation',
+        widget = forms.PasswordInput
     )
 
     '''
     location = forms.CharField(
-        label='location',
-        widget=forms.Select(choices=COUNTIES)
-    )
-    
-
-    user_type = forms.CharField(
-        label='User Type',
-        widget=forms.Select(choices=USER_TYPE)
+        label = 'location',
+        widget = forms.Select(choices=COUNTIES)
     )
     '''
-    is_entertainer = forms.CharField(
-        label='Is an Entertainer?',
-        widget=forms.Select(choices=YES_NO)
+    account_type = forms.CharField(
+        label = 'Are you an Entertainer?',
+        widget = forms.Select(choices=ACCOUNT_TYPE)
     )
 
 
@@ -80,7 +74,7 @@ class UserRegistrationForm(UserCreationForm):
     #   In this case PASSWORD1 and PASSWORD2 have been customised
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = ['email', 'password1', 'password2','first_name', 'last_name','account_type'] #,'location','is_entertainer']
         exclude = ['username']
 
     #   clean the passwords and ensure they are valid

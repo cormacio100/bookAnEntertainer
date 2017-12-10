@@ -282,4 +282,3 @@ class Entertainer(models.Model):
 
         if self.youtube_video.find(substr1):
             return self.youtube_video.replace(substr1,re_class)
-

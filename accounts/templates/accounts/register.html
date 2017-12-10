@@ -2,24 +2,24 @@
 {% load bootstrap_tags %}
 {% block content %}
 
-            <form role="form" method="post" action="{% url 'accounts:register' %}" class="account-form">
-                <legend class="legend-centre">Register as an Entertainer or Event Organiser</legend>
-                <hr>
-                <div class="row">
-                    <div class="col-4">
-                        &nbsp;
-                    </div>
-                    <div class="col-4">
-                            {% csrf_token %}
-                            {{ form | as_bootstrap }}
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-orange btn-block">Register</button>
-                            </div>
-                        </div>
-                    <div class="col-4">
-                        &nbsp;
+    <form role="form" method="post" action="{% url 'accounts:register' %}" class="account-form">
+        <legend class="legend-centre">Register as an Entertainer or Event Organiser</legend>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                &nbsp;
+            </div>
+            <div class="col-4">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-orange btn-block">Register</button>
                     </div>
                 </div>
-            </form>
+            <div class="col-4">
+                &nbsp;
+            </div>
+        </div>
+    </form>
 
 {% endblock %}
