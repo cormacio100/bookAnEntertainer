@@ -21,6 +21,12 @@ var loadMenus = function(menus){
 $(document).ready(function(){
     console.log('page loaded');
     var menus = ['entertainer','location'];
+
     loadMenus(menus);
+
+    /*
+    *   Need to put in OnChange event for the menus that detects what was selected
+    *
+    * */
 });
 

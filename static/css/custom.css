@@ -268,10 +268,10 @@ footer{
    overflow: hidden;
    width: 240px;
 }
-.brown { background-color: #7c6659; color: #fff; }
-
 .semi-square {
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
 }
+.brown { background-color: #7c6659; color: #fff; }
+

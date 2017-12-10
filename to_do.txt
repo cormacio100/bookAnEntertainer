@@ -1,10 +1,12 @@
 IN PROGRESS:
 
-
+    API FOR LISTINGS PAGE
+        -   BUILD API - SEE AUTH_DEMO
+        -   BUILD JQUERY REQUEST TO POPULATE LISTINGS PAGE
 
 	
 TO DO:
-
+-   EDIT PROFILE PAGE FOR ENTERTAINERS
 -   select menu styling
     -   https://codepen.io/ericrasch/pen/zjDBx
 -   registration re-direct on listing profile not yet working correctly. need to forward to registration_type -	watch UDEMY
