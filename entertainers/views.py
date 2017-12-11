@@ -9,6 +9,15 @@ from .forms import EntertainerRegistrationForm
 from django.contrib import messages
 from accounts.models import User
 
+################
+#   API Stuff
+################
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from entertainers.serializers import EntertainerSerializer
+from entertainers.models import Entertainer
+
+
 # Create your views here.
 def listings(request):
     entertainers = Entertainer.objects.all()
@@ -51,4 +60,20 @@ def create_profile(request):
         form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form})
 
-
+#   class based view for handling request coming in for REST API
+class EntertainerView(APIView):
+    def get(self,request):
+        """
+        -   (STEP 1) Retrieve a full list of entertainers items from the Entertainer model
+        -   (STEP 2) Serialize them to JSON and retrieve from .data property
+        -   (STEP 3) Return the serialized data
+        :param request:
+        :return: serialized entertainers items
+        """
+        #   (STEP 1)
+        entertainers = Entertainer.objects.all()
+        #   (STEP 2)
+        serializer = EntertainerSerializer(entertainers,many=True)
+        serialized_data = serializer.data
+        #   (STEP 3)
+        return Response(serialized_data)

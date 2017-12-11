@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_forms_bootstrap',
     'accounts',
+    'rest_framework',
 ]
 
 ########################################################################################
