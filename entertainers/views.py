@@ -17,6 +17,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from entertainers.serializers import EntertainerSerializer
 from entertainers.models import Entertainer
+from django.db.models import Q
 
 
 # Create your views here.
@@ -66,20 +67,37 @@ def create_profile(request):
 class EntertainerView(APIView):
     def get(self,request,pk=None):
         """
-        -   (STEP 1) Retrieve a full list OR a filtered list of entertainers items from the Entertainer model
+        -   (STEP 1) Query the ORM for a list of entertainers items from the Entertainer model
         -   (STEP 2) Serialize them to JSON and retrieve from .data property
         -   (STEP 3) Return the serialized data
         :param request:
         :return: serialized entertainers items
         """
         if pk is None:
-            #   (STEP 1) - ALL
-            entertainers = Entertainer.objects.all()
+            #   'self' is necessary when using a classed based view
+            description = 'all'
+            location = 'all'
+
+            if self.request.GET['description'] != 'all':
+                description = self.request.GET['description']
+            if self.request.GET['location'] != 'all':
+                location = self.request.GET['location']
+
+            #   (STEP 1)
+            if description != 'all' and location == 'all':
+                entertainers = Entertainer.objects.filter(Q(description=description))
+            elif description == 'all' and location != 'all':
+                entertainers = Entertainer.objects.filter(Q(location=location))
+            elif description != 'all' and location != 'all':
+                entertainers = Entertainer.objects.filter(Q(description=description),Q(location=location))
+            else:
+                entertainers = Entertainer.objects.all()
+
             #   (STEP 2)
             serializer = EntertainerSerializer(entertainers,many=True)
             serialized_data = serializer.data
         else:
-            #   (STEP 1) - FILTERED
+            #   (STEP 1)
             entertainers = Entertainer.objects.get(id=pk)
             #   (STEP 2)
             serializer = EntertainerSerializer(entertainers)
