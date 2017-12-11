@@ -11,6 +11,7 @@ class Entertainer(models.Model):
     #   An Entertainer is a User - One To One Relationship
     user = models.OneToOneField(User,related_name='user')
 
+
     #   DEFINE CHOICES LISTS WITH CONSTANTS
     ENT_TYPES = (
         ('Band', 'Band'),
