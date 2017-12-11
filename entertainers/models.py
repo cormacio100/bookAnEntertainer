@@ -12,6 +12,7 @@ class Entertainer(models.Model):
     user1 = User.objects.get(id=1)
     user = models.OneToOneField(User,on_delete=models.CASCADE,default=user1)
 
+
     #   DEFINE CHOICES LISTS WITH CONSTANTS
     ENT_TYPES = (
         ('Band', 'Band'),
