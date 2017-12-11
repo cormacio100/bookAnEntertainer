@@ -50,3 +50,5 @@ def create_profile(request):
         #   If page was just loaded then an empty form is displayed
         form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form})
+
+

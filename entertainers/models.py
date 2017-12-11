@@ -9,8 +9,7 @@ from accounts.models import User
 class Entertainer(models.Model):
 
     #   An Entertainer is a User - One To One Relationship
-    user1 = User.objects.get(id=1)
-    user = models.OneToOneField(User,on_delete=models.CASCADE,default=user1)
+    user = models.OneToOneField(User,related_name='user')
 
 
     #   DEFINE CHOICES LISTS WITH CONSTANTS
@@ -133,7 +132,7 @@ class Entertainer(models.Model):
     }
     #   FIELDS
     title = models.CharField(
-        max_length=15
+        max_length = 15
     )
     description = models.CharField(
         max_length = 14,
@@ -194,7 +193,7 @@ class Entertainer(models.Model):
         default = 90
     )
     bio = models.TextField()
-    set_list = models.TextField(default = 'Set list on demand.')
+    set_list = models.TextField(default = 'Available on Request.')
     influences = models.TextField(default = 'All Genres and decades.')
     #   returns a CHARFIELD OF COMMA SEPARATED VALUES
     set_up_requirements = MultiSelectField(
