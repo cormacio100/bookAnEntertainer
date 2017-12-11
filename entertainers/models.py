@@ -14,8 +14,10 @@ class Entertainer(models.Model):
 
     #   DEFINE CHOICES LISTS WITH CONSTANTS
     ENT_TYPES = (
-        ('Band', 'Band'),
-        ('Solo', 'Solo')
+        ("Band", "Band"),
+        ("Solo", "Solo"),
+        ("Comedian","Commedian"),
+        ("Children's Entertainer","Children's Entertainer")
     )
     GENRE_TYPES = (
         ('Rock', 'Rock'),

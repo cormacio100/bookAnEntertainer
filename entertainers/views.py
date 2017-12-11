@@ -61,21 +61,31 @@ def create_profile(request):
         form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form})
 
+
 #   class based view for handling request coming in for REST API
 class EntertainerView(APIView):
-    def get(self,request):
+    def get(self,request,description=None):
         """
-        -   (STEP 1) Retrieve a full list of entertainers items from the Entertainer model
+        -   (STEP 1) Retrieve a full list OR a filtered list of entertainers items from the Entertainer model
         -   (STEP 2) Serialize them to JSON and retrieve from .data property
         -   (STEP 3) Return the serialized data
         :param request:
         :return: serialized entertainers items
         """
-        #   (STEP 1)
-        entertainers = Entertainer.objects.all()
-        #   (STEP 2)
-        serializer = EntertainerSerializer(entertainers,many=True)
-        serialized_data = serializer.data
+        if description is None:
+            #   (STEP 1) - ALL
+            entertainers = Entertainer.objects.all()
+            #   (STEP 2)
+            serializer = EntertainerSerializer(entertainers,many=True)
+            serialized_data = serializer.data
+
+        else:
+            #   (STEP 1) - FILTERED
+            entertainers = Entertainer.objects.get(description=description)
+            #   (STEP 2)
+            serializer = EntertainerSerializer(entertainers)
+            serialized_data = serializer.data
+
         #   (STEP 3)
         return Response(serialized_data)
 
