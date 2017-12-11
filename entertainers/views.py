@@ -64,7 +64,7 @@ def create_profile(request):
 
 #   class based view for handling request coming in for REST API
 class EntertainerView(APIView):
-    def get(self,request,description=None, location=None):
+    def get(self,request,pk=None):
         """
         -   (STEP 1) Retrieve a full list OR a filtered list of entertainers items from the Entertainer model
         -   (STEP 2) Serialize them to JSON and retrieve from .data property
@@ -72,27 +72,15 @@ class EntertainerView(APIView):
         :param request:
         :return: serialized entertainers items
         """
-        if (description is None and location is None):
+        if pk is None:
             #   (STEP 1) - ALL
             entertainers = Entertainer.objects.all()
             #   (STEP 2)
             serializer = EntertainerSerializer(entertainers,many=True)
             serialized_data = serializer.data
-        elif(description is not None and location is None):
-            #   (STEP 1) - FILTERED
-            entertainers = Entertainer.objects.get(description=description, many=True)
-            #   (STEP 2)
-            serializer = EntertainerSerializer(entertainers)
-            serialized_data = serializer.data
-        elif(description is None and location is not None):
-            #   (STEP 1) - FILTERED
-            entertainers = Entertainer.objects.get(location=description, many=True)
-            #   (STEP 2)
-            serializer = EntertainerSerializer(entertainers)
-            serialized_data = serializer.data
         else:
             #   (STEP 1) - FILTERED
-            entertainers = Entertainer.objects.get(description=description,location=description, many=True)
+            entertainers = Entertainer.objects.get(id=pk)
             #   (STEP 2)
             serializer = EntertainerSerializer(entertainers)
             serialized_data = serializer.data
@@ -161,3 +149,4 @@ class EntertainerView(APIView):
         entertainer.delete()
         #   (STEP 3)
         return Response(status=status.HTTP_204_NO_CONTENT)
+

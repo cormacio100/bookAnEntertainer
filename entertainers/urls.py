@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^api/listings/$', EntertainerView.as_view(), name="list_entertainers_api"),
     url(r'^api/listings/(?P<pk>[0-9]+)/$', EntertainerView.as_view(), name="update_entertainers_api"),
     #url(r'^api/listings/(?P<description>[a-z]+)/(?P<location>[a-z]+)/$', EntertainerView.as_view(), name="filter_entertainers_api" ),
-    url(r'^api/listings(?P<description>[a-z]+)&(?P<location>[a-z]+)$', EntertainerView.as_view(), name="filter_entertainers_api" ),
+    #url(r'^api/listings(?P<description>[a-z]+)&(?P<location>[a-z]+)$', EntertainerView.as_view(), name="filter_entertainers_api" ),
 ]
