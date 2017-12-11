@@ -14,6 +14,7 @@ from accounts.models import User
 ################
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import status
 from entertainers.serializers import EntertainerSerializer
 from entertainers.models import Entertainer
 
@@ -77,3 +78,45 @@ class EntertainerView(APIView):
         serialized_data = serializer.data
         #   (STEP 3)
         return Response(serialized_data)
+
+    def post(self,request):
+        """
+        This view will:
+        -   (STEP 1) take the .data property from 'request' obj and deserialize it into an ENTERTAINER object
+        -   (STEP 2) Check to see if valid
+            -   If YES then save in the DB and return 201 Response
+            -   If NO then display an error and return a 400 Response
+        :param request:
+        :return:
+        """
+        #   (STEP 1)
+        serializer = EntertainerSerializer(data=request.data)
+        #   (STEP 2)
+        if not serializer.is_valid():
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        else:
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
+
+    def put(self,request,pk):
+        """
+        UPDATES AN ENTERTAINER:
+
+        -   (STEP 1) Retrieves an Entertainer instance based on primary key in the URL
+        -   (STEP 2) Takes the data property from the 'Request' object and updates the relevant Entertainer instance
+        -   (STEP 3) Checks if valid and whether it can be deserialialized
+        -   (STER 4) Returns the updated object if the update was successful
+            -   if not, then returns 400(bad request)
+        :param request:
+        :return: updated object or rsponse 404
+        """
+        #   (STEP 1)
+        entertainer = Entertainer.objects.get(id=pk)
+        #   (STEP 2)
+        serializer = EntertainerSerializer(entertainer,data=request.data)
+        #   (STEP 3)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            serializer.save()
+            return Response(serializer.data)
