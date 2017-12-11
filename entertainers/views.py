@@ -64,7 +64,7 @@ def create_profile(request):
 
 #   class based view for handling request coming in for REST API
 class EntertainerView(APIView):
-    def get(self,request,description=None):
+    def get(self,request,description=None, location=None):
         """
         -   (STEP 1) Retrieve a full list OR a filtered list of entertainers items from the Entertainer model
         -   (STEP 2) Serialize them to JSON and retrieve from .data property
@@ -72,22 +72,34 @@ class EntertainerView(APIView):
         :param request:
         :return: serialized entertainers items
         """
-        if description is None:
+        if (description is None and location is None):
             #   (STEP 1) - ALL
             entertainers = Entertainer.objects.all()
             #   (STEP 2)
             serializer = EntertainerSerializer(entertainers,many=True)
             serialized_data = serializer.data
-
+        elif(description is not None and location is None):
+            #   (STEP 1) - FILTERED
+            entertainers = Entertainer.objects.get(description=description, many=True)
+            #   (STEP 2)
+            serializer = EntertainerSerializer(entertainers)
+            serialized_data = serializer.data
+        elif(description is None and location is not None):
+            #   (STEP 1) - FILTERED
+            entertainers = Entertainer.objects.get(location=description, many=True)
+            #   (STEP 2)
+            serializer = EntertainerSerializer(entertainers)
+            serialized_data = serializer.data
         else:
             #   (STEP 1) - FILTERED
-            entertainers = Entertainer.objects.get(description=description)
+            entertainers = Entertainer.objects.get(description=description,location=description, many=True)
             #   (STEP 2)
             serializer = EntertainerSerializer(entertainers)
             serialized_data = serializer.data
 
         #   (STEP 3)
         return Response(serialized_data)
+
 
     def post(self,request):
         """
@@ -107,6 +119,7 @@ class EntertainerView(APIView):
         else:
             serializer.save()
             return Response(serializer.data,status=status.HTTP_201_CREATED)
+
 
     def put(self,request,pk):
         """
@@ -130,3 +143,21 @@ class EntertainerView(APIView):
         else:
             serializer.save()
             return Response(serializer.data)
+
+
+    def delete(self,request,pk):
+        """
+        Handles DELETE request for 'Entertainer' endpoint
+        -   (STEP 1) Retrieves an entertainer instance based on the primary key contained in the URL
+        -   (STEP 2) Deletes the relevant instance
+        -   (STEP 3) Returns a 204 (no content) status to indicate item was deleted
+        :param request:
+        :param pk:
+        :return: status 204
+        """
+        #   (STEP 1)
+        entertainer = Entertainer.objects.get(id=pk)
+        #   (STEP 2)
+        entertainer.delete()
+        #   (STEP 3)
+        return Response(status=status.HTTP_204_NO_CONTENT)
