@@ -263,6 +263,9 @@ class Entertainer(models.Model):
     def price_per_hour_str(self):
         return '€' + self.min_price + ' - €' + self.max_price
 
+    def profile_image_url(self):
+        return self.profile_image.url
+
     #   need to fit soundcloud link in the carousel
     def soundcloud_audio_re_class(self):
         #   2 sized of iframe available with soundcloud
@@ -284,3 +287,5 @@ class Entertainer(models.Model):
 
         if self.youtube_video.find(substr1):
             return self.youtube_video.replace(substr1,re_class)
+
+

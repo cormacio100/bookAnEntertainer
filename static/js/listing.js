@@ -14,32 +14,23 @@ var populateTemplate = function(){
 
     //  Parent div
     var restDataDiv = $('#REST-data');
+    //var cardArr = [];
 
     for(i=0;i<apiResponseArr.length;i++){
+        console.log('id:'+apiResponseArr[i].id);
         console.log('title:'+apiResponseArr[i].title);
         console.log('description:'+apiResponseArr[i].description);
         console.log('genre:'+apiResponseArr[i].genre);
         console.log('location:'+apiResponseArr[i].location);
-        var card = $('<div class="col-3 ent-listing">'+apiResponseArr[i].title+'</div>');
+        console.log('profile_image_url:'+apiResponseArr[i].profile_image_url);
+        console.log('bio_summary:'+apiResponseArr[i].bio_summary);
+        var card = $('<div class="col-3 ent-listing"><div class="card"><img class="card-img-top" src="'+apiResponseArr[i].profile_image_url+'" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap" /><div class="card-body"><h4 class="card-title">'+apiResponseArr[i].title+'</h4><p class="card-text">'+apiResponseArr[i].bio_summary+'</p></div><div class="card-footer"><small class="text-muted"><a href="/entertainers/profile/'+apiResponseArr[i].id+'">...Read More</a></small></div></div></div>');
 
         restDataDiv.append(card);
     }
 
     /*
-                <div class="card">
-                    <img class="card-img-top" src="{{ entertainer.profile_image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">{{ entertainer.title }}</h4>
-                        <p class="card-text">
-                            {{ entertainer.bio_summary }}
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted"><a href="{% url 'entertainers:profile' entertainer.id %}">...Read More</a></small>
-                    </div>
-                </div>
-            </div>
-*/
+<div class="col-3 ent-listing"><div class="card"><img class="card-img-top" src="{{ entertainer.profile_image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap"><div class="card-body"><h4 class="card-title">{{ entertainer.title }}</h4><p class="card-text">{{ entertainer.bio_summary }}</p></div><div class="card-footer"><small class="text-muted"><a href="{% url 'entertainers:profile' entertainer.id %}">...Read More</a></small></div></div></div>*/
 
 
 };

@@ -5,7 +5,6 @@ var requestForJsonData = function(description,location,callingFunction){
     var host = window.location.hostname;
     var entertainerAPI = 'http://' + host + ':8000/entertainers/api/listings/?';
     console.log('entertainerAPI is '+entertainerAPI);
-    var dataArr = [];
 
     $.getJSON(entertainerAPI,{
         description: description,
