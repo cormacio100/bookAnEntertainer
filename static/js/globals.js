@@ -1,9 +1,9 @@
-var entertainerArr = [
+var descriptionArr = [
     "All Entertainers",
-    "band",
-    "solo",
-    "comedian",
-    "childrens's entertainer"
+    "Band",
+    "Solo",
+    "Comedian",
+    "Childrens's Entertainer"
 ];
 var locationArr = [
     "All Locations",
@@ -40,3 +40,7 @@ var locationArr = [
     'Wexford', 
     'Wicklow'
 ];
+
+//  Global array for transferring JSON into from API
+//  It will contain an ARRAY OF OBJECTS
+var apiResponseArr = [];

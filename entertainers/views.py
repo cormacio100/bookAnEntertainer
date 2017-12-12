@@ -78,10 +78,13 @@ class EntertainerView(APIView):
             description = 'all'
             location = 'all'
 
-            if self.request.GET['description'] != 'all':
-                description = self.request.GET['description']
-            if self.request.GET['location'] != 'all':
-                location = self.request.GET['location']
+            if self.request.GET['description'] is not None:
+                if self.request.GET['description'] != 'all':
+                    description = self.request.GET['description']
+
+            if self.request.GET['location'] is not None:
+                if self.request.GET['location'] != 'all':
+                    location = self.request.GET['location']
 
             #   (STEP 1)
             if description != 'all' and location == 'all':
@@ -90,6 +93,8 @@ class EntertainerView(APIView):
                 entertainers = Entertainer.objects.filter(Q(location=location))
             elif description != 'all' and location != 'all':
                 entertainers = Entertainer.objects.filter(Q(description=description),Q(location=location))
+            elif description == 'all' and location == 'all':
+                entertainers = Entertainer.objects.all()
             else:
                 entertainers = Entertainer.objects.all()
 

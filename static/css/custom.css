@@ -41,6 +41,13 @@ body,
 .btn-primary{
     color:#dd6622;
 }
+.btn-orange-no-hover{
+    font-size: 16px;
+    background: #dd6622;
+    color: #ffffff;
+    border:1px solid #bb6622;
+
+}
 .btn-orange{
     font-size: 16px;
     background: #dd6622;
