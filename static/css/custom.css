@@ -83,10 +83,10 @@ a:hover{
     background-color: #f3f3f3;
     color: #ffffff;
 }
-.navbar_grey_a_href_orange{
+.navbar-grey-a-href-orange{
     color: #dd6622;
 }
-.navbar_grey_a_href_orange:hover{
+.navbar-grey-a-href-orange:hover{
     color: #bab4b0;
 }
 .nav-link{
@@ -228,8 +228,12 @@ footer{
 /************************************************************************/
 /* ENTERTAINER LISTINGS*/
 /************************************************************************/
+p#spinner{
+    width:100%;
+    text-align:center;
+    font-size: 5em;
+}
 .orange-spin{
-    font-size:48px;
     color:#dd6622;
 }
 #listings-container{

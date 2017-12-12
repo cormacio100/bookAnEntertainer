@@ -36,7 +36,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMembers">
                             {% if user.is_active %}
-                                <a class="dropdown-item nav-link" href="#" class="navbar_grey_a_href_orange">Cormac Liston</a>
+                                <a class="dropdown-item nav-link navbar_grey_a_href_orange" href="#" id="logged-in-">User: {{request.user.first_name}} {{request.user.last_name}}</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item nav-link" href="{% url 'accounts:logout' %}" class="navbar_grey_a_href_orange">Log Out</a>
                             {% else %}
