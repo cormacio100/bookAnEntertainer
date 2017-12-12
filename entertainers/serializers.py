@@ -12,4 +12,4 @@ class EntertainerSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Entertainer
-        fields = ('id','title','description','genre','location')
+        fields = ('id','title','description','genre','location','bio_summary')

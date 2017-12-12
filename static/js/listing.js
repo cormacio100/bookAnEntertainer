@@ -9,13 +9,39 @@ var populateTemplate = function(){
                 console.log(arrayItem[j].title);
             }
         } */
-    console.log('first title:'+apiResponseArr[0].title);
+    //  Placeholder
+    //$('#REST-data').html("Loading...");
+
+    //  Parent div
+    var restDataDiv = $('#REST-data');
+
     for(i=0;i<apiResponseArr.length;i++){
         console.log('title:'+apiResponseArr[i].title);
         console.log('description:'+apiResponseArr[i].description);
         console.log('genre:'+apiResponseArr[i].genre);
         console.log('location:'+apiResponseArr[i].location);
+        var card = $('<div class="col-3 ent-listing">'+apiResponseArr[i].title+'</div>');
+
+        restDataDiv.append(card);
     }
+
+    /*
+                <div class="card">
+                    <img class="card-img-top" src="{{ entertainer.profile_image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ entertainer.title }}</h4>
+                        <p class="card-text">
+                            {{ entertainer.bio_summary }}
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><a href="{% url 'entertainers:profile' entertainer.id %}">...Read More</a></small>
+                    </div>
+                </div>
+            </div>
+*/
+
+
 };
 
 /* RETRIEVE SEARCH FILTER VALUES AND REQUEST JSON */

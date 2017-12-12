@@ -6,6 +6,7 @@ IN PROGRESS:
 
 	
 TO DO:
+-   bootstrap loading placeholder on entertainers page
 -   EDIT PROFILE PAGE FOR ENTERTAINERS
 -   select menu styling
     -   https://codepen.io/ericrasch/pen/zjDBx
