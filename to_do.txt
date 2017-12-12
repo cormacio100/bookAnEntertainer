@@ -1,13 +1,11 @@
 IN PROGRESS:
 
-    API FOR LISTINGS PAGE
-        -   BUILD API - SEE AUTH_DEMO
-        -   BUILD JQUERY REQUEST TO POPULATE LISTINGS PAGE
-
-        -   initially load all
-        -   BACKGROUND IMAGES
-	
+    -   BACKGROUND IMAGES and fix images
+    -   STYLE THE FORMS BETTER
+    -   FIX NAVBAR
+	-   SPINNER NOT CENTERED
 TO DO:
+-   SWITCH TO USING BOOTSTRAP 3.3
 -   bootstrap loading placeholder on entertainers page
 -   CREATE AN EDIT PROFILE PAGE FOR ENTERTAINERS
 -   select menu styling
@@ -17,6 +15,7 @@ TO DO:
 -   Logged in as....
 -   Allow logged in User to edit their entertainer profile
 -   See RedditClone project for how to do upvoting and downvoting
+    -   favourites could work in a similar way
 
 -   Get PAYPAL to Work
 -   Pagination on the listings page - Cna be done by sending a page limit or page number to the API to return. See google maps project
@@ -60,6 +59,16 @@ TO DO:
 -	Build logo using SVG
 -	Keep the footer at the bottom
 
+
+DONE:
+
 -	ENTERTAINER SEARCH PAGE:
-	-	ADD DYNAMIC SEARCH AT THE TOP
+	-	ADD DYNAMIC SEARCH AT THE TOP using REST API
+
+    API FOR LISTINGS PAGE
+        -   BUILD API - SEE AUTH_DEMO
+        -   BUILD JQUERY REQUEST TO POPULATE LISTINGS PAGE
+
+        -   initially load all
+
 

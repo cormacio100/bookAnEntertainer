@@ -76,6 +76,9 @@ a:hover{
 /* LINKS */
 /************************************************************************/
 /*  NAVBAR */
+#navbarDropdown{
+    margin-right:1.5em;
+}
 .navbar-grey{
     background-color: #f3f3f3;
     color: #ffffff;
@@ -225,9 +228,13 @@ footer{
 /************************************************************************/
 /* ENTERTAINER LISTINGS*/
 /************************************************************************/
+.orange-spin{
+    font-size:48px;
+    color:#dd6622;
+}
 #listings-container{
     margin:0;
-    padding:0 2em 0 0;
+    padding:0;
     background-image:url(../../media/backgrounds/6.png);
 	position:relative;
 	width:100%;
@@ -238,7 +245,6 @@ footer{
 	background-position:center;
 	min-height:100%;
 	xfont-size:14px;
-
 }
 
 

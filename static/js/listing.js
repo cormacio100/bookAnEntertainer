@@ -66,7 +66,7 @@ $(document).ready(function(){
     loadMenus(menus);
     refineSearch(menus);
 
-    $('#REST-data').html('<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>');
+    $('#REST-data').html('<i class="fa fa-spinner fa-spin orange-spin" style="font-size:24px"></i>');
 
     //  initially load all entertainers
     requestForJsonData('all','all','initLoad');

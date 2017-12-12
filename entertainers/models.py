@@ -217,8 +217,8 @@ class Entertainer(models.Model):
         choices = PRICE_PER_HOUR,
         default = '500'
     )
-    soundcloud_audio = models.TextField(default = 'https://soundcloud.com/')
-    youtube_video = models.TextField(default = 'https://www.youtube.com')
+    soundcloud_audio = models.TextField(default = '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209382959&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>')
+    youtube_video = models.TextField(default = '<iframe width="560" height="315" src="https://www.youtube.com/embed/xaE2wV-HMxs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>')
 
 
     #   SPECIAL FUNCTIONS
