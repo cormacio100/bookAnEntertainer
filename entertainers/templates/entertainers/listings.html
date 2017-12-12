@@ -1,44 +1,46 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-    <div id="entertainer-header" class="page-header">
-        <h2>Listed Entertainers</h2>
-    <hr>
-    </div>
-    <div id="listing-menu" class="filtered">
-        <div id="listing-row" class="row">
-
-            <div id="filter-by-description" class="col-5 text-center">
-                <select id="description-select" class="styled-select brown semi-square"></select>
-            </div>
-            <div id="filter-by-location" class="col-5 text-center">
-                <select id="location-select" class="styled-select brown semi-square"></select>
-            </div>
-            <div class="col-2 text-center">
-                <button id="refine-button" class="btn-orange-no-hover">Refine Search</button>
-            </div>
+    <div id="listings-container">
+        <div id="entertainer-header" class="page-header">
+            <h2>Listed Entertainers</h2>
+        <hr>
         </div>
-    </div>
-    <div class="card-deck row">
-        {% for entertainer in entertainers %}
-            <div class="col-3 ent-listing">
-                <div class="card">
-                    <img class="card-img-top" src="{{ entertainer.profile_image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">{{ entertainer.title }}</h4>
-                        <p class="card-text">
-                            {{ entertainer.bio_summary }}
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted"><a href="{% url 'entertainers:profile' entertainer.id %}">...Read More</a></small>
-                    </div>
+        <div id="listing-menu" class="filtered">
+            <div id="listing-row" class="row">
+
+                <div id="filter-by-description" class="col-5 text-center">
+                    <select id="description-select" class="styled-select brown semi-square"></select>
+                </div>
+                <div id="filter-by-location" class="col-5 text-center">
+                    <select id="location-select" class="styled-select brown semi-square"></select>
+                </div>
+                <div class="col-2 text-center">
+                    <button id="refine-button" class="btn-orange-no-hover">Refine Search</button>
                 </div>
             </div>
-        {% endfor %}
+        </div>
+        <div id="REST-data" class="card-deck row"></div>
+        <div id="REST_test" style="border-bottom:1px solid blue;"><h4>REST DATA</h4></div>
+        <div class="card-deck row">
+            {% for entertainer in entertainers %}
+                <div class="col-3 ent-listing">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ entertainer.profile_image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ entertainer.title }}</h4>
+                            <p class="card-text">
+                                {{ entertainer.bio_summary }}
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><a href="{% url 'entertainers:profile' entertainer.id %}">...Read More</a></small>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-    <div id="REST_test" style="border-top:1px solid blue;"><h4>REST DATA</h4></div>
-    <div id="REST-data" class="card-deck row"></div>
 
 {% endblock %}
 {% block script %}

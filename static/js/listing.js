@@ -1,21 +1,10 @@
 var populateTemplate = function(){
-    console.log('in populateTemplate');
-    console.log('length of apiResponseArr is '+apiResponseArr.length);
-            /*
-        var i,j,arrayItem;
-        for (i = 0; i < entertainerArr.length; ++i) {
-            arrayItem = entertainerArr[i];
-            for (j = 0; j < arrayItem.length; ++j) {
-                console.log(arrayItem[j].title);
-            }
-        } */
-    //  Placeholder
-    //$('#REST-data').html("Loading...");
+
+    // clear the SPINNER or previous searches
+    $('#REST-data').html('');
 
     //  Parent div
     var restDataDiv = $('#REST-data');
-    //var cardArr = [];
-
     for(i=0;i<apiResponseArr.length;i++){
         console.log('id:'+apiResponseArr[i].id);
         console.log('title:'+apiResponseArr[i].title);
@@ -28,11 +17,6 @@ var populateTemplate = function(){
 
         restDataDiv.append(card);
     }
-
-    /*
-<div class="col-3 ent-listing"><div class="card"><img class="card-img-top" src="{{ entertainer.profile_image.url }}" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap"><div class="card-body"><h4 class="card-title">{{ entertainer.title }}</h4><p class="card-text">{{ entertainer.bio_summary }}</p></div><div class="card-footer"><small class="text-muted"><a href="{% url 'entertainers:profile' entertainer.id %}">...Read More</a></small></div></div></div>*/
-
-
 };
 
 /* RETRIEVE SEARCH FILTER VALUES AND REQUEST JSON */
@@ -41,7 +25,6 @@ var refineSearch = function(menus){
     var location = 'all';
     /*  Build click event for the refine button */
     $('#refine-button').click(function(){
-
         description = $('#description-select').val();
         location = $('#location-select').val();
         requestForJsonData(description,location,'refineSearch');
@@ -52,7 +35,6 @@ var refineSearch = function(menus){
 var loadMenus = function(menus){
     $.each(menus,function(index, value){
         if('description'==value){
-            console.log('load the entertainer menu');
             var option = '';
             for(var i=0;i<descriptionArr.length;i++){
                 if('All Entertainers' == descriptionArr[i]){
@@ -63,7 +45,6 @@ var loadMenus = function(menus){
             }
             $('#description-select').append(option);
         }else if('location'==value){
-            console.log('load the location menu');
             var option = '';
             for(var i=0;i<locationArr.length;i++){
                 if('All Locations' == locationArr[i]){
@@ -84,5 +65,10 @@ $(document).ready(function(){
 
     loadMenus(menus);
     refineSearch(menus);
+
+    $('#REST-data').html('<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>');
+
+    //  initially load all entertainers
+    requestForJsonData('all','all','initLoad');
 });
 

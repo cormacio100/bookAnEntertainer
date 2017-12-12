@@ -222,6 +222,25 @@ footer{
 .top-line{
     padding-top:1em;
 }
+/************************************************************************/
+/* ENTERTAINER LISTINGS*/
+/************************************************************************/
+#listings-container{
+    margin:0;
+    padding:0 2em 0 0;
+    background-image:url(../../media/backgrounds/6.png);
+	position:relative;
+	width:100%;
+	xtext-align:center;
+	xcolor:white;
+	xbackground-color:white;
+	background-size: cover;
+	background-position:center;
+	min-height:100%;
+	xfont-size:14px;
+
+}
+
 
 /**************************************************************************/
 /*  REGISTRATION */
