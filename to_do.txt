@@ -1,11 +1,15 @@
 IN PROGRESS:
-
-    -   BACKGROUND IMAGES and fix images
-
+    -   fix images
     -   STYLE THE FORMS BETTER
-
+    -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer
+    -   Put in link to diqus.com to allow users leave a review - put the link on the login screen
 
 TO DO:
+-   Allow GENERAL USER TO HAVE FAVOURITES. ON LOGIN THEY WILL BE PRESENTED WITH A LIST OF FAVOURITES
+-   IF NAVBAR DOES NOT BECOME RESPONSIVE CAN USE A <DIV CLASS="HIDDEN-MD"> ON A DIV THAT WILL NOT APPEAR UNTIL WINDOW IS A CERTAIN SIZE
+    -   See EXAMPLE here
+        -   https://www.codeply.com/go/bRlHp8MxtJ
+        -   https://stackoverflow.com/questions/40476201/bootstrap-4-hidden-classes-only-hide-on-small-screens
 -   CONTACT PAGE
 -   SWITCH TO USING BOOTSTRAP 3.3??
 -   bootstrap loading placeholder on entertainers page
@@ -75,3 +79,4 @@ DONE:
 
 -   FIX NAVBAR
 -   SPINNER NOT CENTERED
+-   BACKGROUND IMAGES and

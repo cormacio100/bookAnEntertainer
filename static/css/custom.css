@@ -5,7 +5,7 @@
 body,
 .community-name,
 .publisher-nav-color{
-    color:#7c6659;
+    color:#ffffff;
     font-family: 'Righteous', cursive;
 }
 .orange-links{
@@ -234,11 +234,52 @@ footer{
 .row{
     margin-bottom:1em;
 }
+div#profile-highlight h2 {
+    color: #7c6659;
+}
 .tabbed{
-    margin-top:1em;
+    padding-top:1em;
+    border-radius:5px;
+}
+.tab-pane{
+    background-color:#ffffff;
+    color: #7c6659;
+}
+.tab-contents {
+    border-radius: 0 5px 5px 5px;
+}
+.col-2.ent-info {
+    text-align: left;
+    padding: 2em;
+}
+#home-tab,
+#reviews-tab,
+#info-tab{
+    background-color:#bab4b0;
+    color:#7c6659;
+}
+#home-tab.active,
+#reviews-tab.active,
+#info-tab.active{
+    background-color:#ffffff;
+    color:#dd6622;
+}
+ul#pills-tab {
+    border-bottom: 1px solid #bab4b0;
+    padding-bottom: 0.5em;
 }
 .top-line{
     padding-top:1em;
+}
+div#info-tabs {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+div#profile-highlight {
+    background-color: #ffffff;
+    color: #7c6659;
+    padding: 1em;
+    border-radius: 10px;
 }
 /************************************************************************/
 /* ENTERTAINER LISTINGS*/
@@ -278,9 +319,7 @@ section#section1{
 	font-size:14px;
 	padding-top:30px;
 }
-section#section1 h2{
-    color:white;
-}
+
 /**************************************************************************/
 /*  HOME  */
 /**************************************************************************/
@@ -321,6 +360,9 @@ section#section1 h2{
 .page-header{
     margin-top:1em;
     color:#FFFFFF;
+}
+.page-header h2{
+    color:white;
 }
 #listing-menu{
     xbackground-color:#bab4b0;
