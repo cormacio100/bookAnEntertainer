@@ -1,31 +1,34 @@
 IN PROGRESS:
     -   fix images
-    -   STYLE THE FORMS BETTER
+    -   STYLE THE FORMS BETTER. Examples here
+        -   https://stackoverflow.com/questions/5827590/css-styling-in-django-forms
     -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer
-    -   Put in link to diqus.com to allow users leave a review - put the link on the login screen
+
 
 TO DO:
 -   log out message on home screen is ugly
 -   Allow GENERAL USER TO HAVE FAVOURITES. ON LOGIN THEY WILL BE PRESENTED WITH A LIST OF FAVOURITES
+------------------------------------------------------------------------------------
 -   IF NAVBAR DOES NOT BECOME RESPONSIVE CAN USE A <DIV CLASS="HIDDEN-MD"> ON A DIV THAT WILL NOT APPEAR UNTIL WINDOW IS A CERTAIN SIZE
     -   See EXAMPLE here
         -   https://www.codeply.com/go/bRlHp8MxtJ
         -   https://stackoverflow.com/questions/40476201/bootstrap-4-hidden-classes-only-hide-on-small-screens
--   CONTACT PAGE
+------------------------------------------------------------------------------------
+-   FIX HOME PAGE
+-   ADD A FOOTER    
+-   CONTACT PAGE - may just put in contact form for each entertainer
 -   SWITCH TO USING BOOTSTRAP 3.3??
 -   bootstrap loading placeholder on entertainers page
 -   CREATE AN EDIT PROFILE PAGE FOR ENTERTAINERS
 -   select menu styling
     -   https://codepen.io/ericrasch/pen/zjDBx
 -   registration re-direct on listing profile not yet working correctly. need to forward to registration_type -	watch UDEMY
-
--   Logged in as....
 -   Allow logged in User to edit their entertainer profile
 -   See RedditClone project for how to do upvoting and downvoting
     -   favourites could work in a similar way
 
 -   Get PAYPAL to Work
--   Pagination on the listings page - Cna be done by sending a page limit or page number to the API to return. See google maps project
+-   PAGINATION on the listings page - Cna be done by sending a page limit or page number to the API to return. See google maps project
 
 -   Change number of chars for genre in entertainer model to more than 9
 -   USER MUST BE LOGGED IN TO LEAVE A REVIEW ON AN ENTERTAINER PROFILE
@@ -65,7 +68,7 @@ TO DO:
 	
 -	Build logo using SVG
 -	Keep the footer at the bottom
-
+--------------------------------------------------------------------------------------------------------------------------
 
 DONE:
 
@@ -81,3 +84,4 @@ DONE:
 -   FIX NAVBAR
 -   SPINNER NOT CENTERED
 -   BACKGROUND IMAGES and
+-   Put in link to diqus.com to allow users leave a review - put the link on the login screen

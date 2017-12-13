@@ -46,3 +46,5 @@ class EntertainerRegistrationForm(forms.ModelForm):
                     'max_price',
                     'soundcloud_audio',
                     'youtube_video')
+
+
