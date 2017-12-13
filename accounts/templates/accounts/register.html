@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-
+    {% if message %}
+        {{ message }}
+    {% endif %}
     <form role="form" method="post" action="{% url 'accounts:register' %}" class="account-form">
         <legend class="legend-centre">Register as an Entertainer or Event Organiser</legend>
         <hr>

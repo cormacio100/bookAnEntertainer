@@ -69,26 +69,22 @@
                     <div class="col-6 text-center like-dislike">
                         <table id="tbl-like-dislike">
                             <tr>
-                                <td>
-
-                                    <form method="POST" action="{% url 'entertainers:like' entertainer.id %}">
-                                        {% csrf_token %}
-                                        <input type="submit" value="like"><span class="x1-3"> {{ entertainer.likes_total }}</span>
-                                    </form>
-                                    <br>
-                                    <span class="orange-text text-right"><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i></span><span class="x1-3"> {{ entertainer.likes_total }}</span>
+                                <td class="tbl-like-dislike-td">
+                                    <span class="orange-text text-right"><a href="#" onClick="document.getElementById('like{{ entertainer.id }}').submit();"><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i></a></span><span class="x1-3"> {{ entertainer.likes_total }}</span>
                                 </td>
-                                <td>
-                                    <form method="POST" action="{% url 'entertainers:dislike' entertainer.id %}">
-                                        {% csrf_token %}
-                                        <input type="submit" value="dislike"><span class="x1-3"> {{ entertainer.dislikes_total }}</span>
-                                    </form>
-                                    <br>
-                                    <span class="orange-text text-right"><i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i></span><span class="x1-3"> {{ entertainer.dislikes_total }}</span>
-                                    </span>
+                                <td class="tbl-like-dislike-td">
+                                    <span class="orange-text text-right"><a href="#" onClick="document.getElementById('dislike{{ entertainer.id }}').submit();"><i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i></a></span><span class="x1-3"> {{ entertainer.dislikes_total }}</span>
                                 </td>
                             </tr>
                         </table>
+                        <form id="like{{ entertainer.id }}" method="POST" action="{% url 'entertainers:like' entertainer.id %}">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                        <form id="dislike{{ entertainer.id }}" method="POST" action="{% url 'entertainers:dislike' entertainer.id %}">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
                     </div>
                     <div class="col-3">&nbsp;</div>
                 </div>

@@ -265,6 +265,9 @@ div#profile-highlight h2 {
     margin-left: auto;
     margin-right: auto;
 }
+td.tbl-like-dislike-td {
+    padding: 0.5em;
+}
 .tab-pane{
 
     xbackground-color:#ffffff;
@@ -369,10 +372,12 @@ section#section1{
 /**************************************************************************/
 /*  MESSAGE ALERTS */
 /**************************************************************************/
-.alert-success {
+.alert-success,
+.alert-danger{
     color: #ffffff;
-    background-color: #dd6622;
-    border-color: #acacac;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #dd6622;
+    color: #dd6622;
     margin-top: 1em;
 }
 /**************************************************************************/
