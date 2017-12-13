@@ -53,7 +53,7 @@
 
             </div>
             <div class="col-lg-1">&nbsp;</div>
-            <div class="col-lg-4" id="profile-highlight">
+            <div class="col-lg-4 profile-highlight brown-text white-transparent">
                 <div class="row">
                     <div class="col">
                         <img src="{{ entertainer.profile_image.url }}" class="img-fluid ent_profile_image img-centered" style="max-width:300px;">
@@ -71,18 +71,18 @@
                 </div>
                 <div class="row">
                     <div class="col-6 right-side">
-                        <p><span class="orange-text text-centered right-side"><i class="fa fa-home" aria-hidden="true"></i></span>{{ entertainer.location }}</p>
+                        <p><span class="orange-text text-centered right-side"><i class="fa fa-home fa-2x" aria-hidden="true"></i></span> <span class="x1-3">{{ entertainer.location }}</span></p>
                     </div>
                     <div class="col-6 right-side">
-                        <p><span class="orange-text text-centered right-side"><i class="fa fa-tags" aria-hidden="true"></i></span>{{ entertainer.description }}</p>
+                        <p><span class="orange-text text-centered right-side"><i class="fa fa-tags fa-2x" aria-hidden="true"></i></span> <span class="x1-3">{{ entertainer.description }}</span></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6 right-side">
-                        <p><span class="orange-text text-centered right-side"><i class="fa fa-map-marker" aria-hidden="true"></i></span>{{ entertainer.travel_distance }}</p>
+                        <p><span class="orange-text text-centered right-side"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></span><span class="x1-3"> {{ entertainer.travel_distance }}</span></p>
                     </div>
                     <div class="col-6 right-side">
-                        <p><span class="orange-text text-centered right-side"><i class="fa fa-eur" aria-hidden="true"></i></span>{{ entertainer.price_per_hour_str }}</p>
+                        <p><span class="orange-text text-centered right-side"><i class="fa fa-eur fa-2x" aria-hidden="true"></i></span><span class="x1-3"> {{ entertainer.price_per_hour_str }}</span></p>
                     </div>
                 </div>
                 <div class="row">
@@ -111,7 +111,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade tab-contents show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-pane white-transparent fade tab-contents show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row tabbed">
                             <div class="col-2 ent-info">
                                 <h4>Bio:</h4>
@@ -124,13 +124,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 profile-elem">
-                                        <span class="grey-text">{{ entertainer.bio }}</span>
+                                        <span class="orange-text">{{ entertainer.bio }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                    <div class="tab-pane fade white-transparent" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                         <div class="row tabbed">
 
                             <div class="col-2 ent-info">
@@ -160,7 +160,7 @@
                             {% endif %}
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                    <div class="tab-pane fade white-transparent" id="info" role="tabpanel" aria-labelledby="info-tab">
                         <div class="row tabbed">
                             <div class="col-2 ent-info">
                                 <h4>Booking <br>Info:</h4>
@@ -190,18 +190,18 @@
                                                 <div class="row top-line">
                                                     <div class="col-6">
                                                         <div class="row">
-                                                            <div class="col-12"><span class="grey-text">Price Range:</span><span class="orange-text">Contact For Rates</span></div>
+                                                            <div class="col-12"><span class="white-text">Price Range: </span><span class="orange-text">Contact For Rates</span></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-12"><span class="grey-text">Languages:</span><span class="orange-text">{{ entertainer.language_list_as_str }}</span></div>
+                                                            <div class="col-12"><span class="white-text">Languages: </span><span class="orange-text">{{ entertainer.language_list_as_str }}</span></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="row">
-                                                            <div class="col-12"><span class="grey-text">Gig Length:</span><span class="orange-text">{{ entertainer.gig_length_as_str }}</span></div>
+                                                            <div class="col-12"><span class="white-text">Gig Length: </span><span class="orange-text">{{ entertainer.gig_length_as_str }}</span></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-12"><span class="grey-text">Music Classification:</span><span class="orange-text">{{ entertainer.music_type_as_str }}</span></div>
+                                                            <div class="col-12"><span class="white-text">Music Classification: </span><span class="orange-text">{{ entertainer.music_type_as_str }}</span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -210,7 +210,7 @@
                                                 <div class="row">
                                                     <div class="col-12 ">
                                                         <h4 class="grey-text">Set List</h4>
-                                                        <p class="orange-text">Song list available upon private request.</p>
+                                                        <p class="orange-text">{{ entertainer.set_list }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,7 +218,7 @@
                                                 <div class="row">
                                                     <div class="col-12 ">
                                                         <h4 class="grey-text">Influences</h4>
-                                                        <p class="orange-text">From Classical to Death Metal and everything in between</p>
+                                                        <p class="orange-text">{{ entertainer.influences }}</p>
                                                     </div>
                                                 </div>
                                             </div>

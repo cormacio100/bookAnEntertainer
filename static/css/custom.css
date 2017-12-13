@@ -8,6 +8,13 @@ body,
     color:#ffffff;
     font-family: 'Righteous', cursive;
 }
+.centered{
+    margin-left:auto;
+    margin-right:auto;
+}
+.transparent{
+
+}
 .orange-links{
     color:#dd6622;
     font-family: 'Righteous', cursive;
@@ -29,18 +36,7 @@ body,
 nav.navbar-white {
     border-bottom: 1px solid #bab4b0;
 }
-.grey-text{
-    color:#bab4b0;
-    margin-right:1em;
-}
-.orange-text{
-    color:#dd6622;
-    margin-right:1em;
-}
-.white-text{
-    color:#ffffff;
-    margin-right:1em;
-}
+
 .btn-primary{
     color:#dd6622;
 }
@@ -82,6 +78,27 @@ div#navbarSupportedContent {
     margin-bottom: 1em;
     background-color:#ffffff;
 }
+
+/************************************************************************/
+/* TEXT */
+/************************************************************************/
+.grey-text{
+    color:#bab4b0;
+    xmargin-right:1em;
+}
+.orange-text{
+    color:#dd6622;
+    xmargin-right:1em;
+}
+.white-text{
+    color:#ffffff;
+    xmargin-right:1em;
+}
+.brown-text{
+    color:#7c6659;
+}
+.x1-3{
+    font-size: 1.3em;}
 
 /************************************************************************/
 /* LINKS */
@@ -241,8 +258,14 @@ div#profile-highlight h2 {
     padding-top:1em;
     border-radius:5px;
 }
+.white-transparent{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
 .tab-pane{
-    background-color:#ffffff;
+
+    xbackground-color:#ffffff;
     color: #7c6659;
 }
 .tab-contents {
@@ -275,9 +298,11 @@ div#info-tabs {
     background-color: #ffffff;
     border-radius: 5px;
 }
-div#profile-highlight {
-    background-color: #ffffff;
-    color: #7c6659;
+.profile-highlight {
+    xbackground-color: #ffffff;
+    xbackground-color: rgba(255, 255, 255, 0.7);
+    xcolor: #7c6659;
+    xcolor: #ffffff;
     padding: 1em;
     border-radius: 10px;
 }
