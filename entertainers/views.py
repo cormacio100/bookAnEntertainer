@@ -75,7 +75,7 @@ def like(request,pk):
         entertainer.likes_total += 1
         #   save the entertainer record
         entertainer.save()
-        #   forward back to the same page with the like_total incremented
+        #   redirect back to the same page with the like_total incremented
         return redirect('entertainers:profile',pk)
 
 
@@ -89,7 +89,7 @@ def dislike(request,pk):
         entertainer.dislikes_total += 1
         #   save the entertainer record
         entertainer.save()
-        #   forward back to the same page with the dislike_total incremented
+        #   redirect back to the same page with the dislike_total incremented
         return redirect('entertainers:profile',pk)
 
 

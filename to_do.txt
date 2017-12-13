@@ -1,5 +1,7 @@
 IN PROGRESS:
-    -   fix images
+    -   See RedditClone project for how to do upvoting and downvoting
+        -   favourites could work in a similar way
+    -   FIX IMAGES!!!
     -   STYLE THE FORMS BETTER. Examples here
         -   https://stackoverflow.com/questions/5827590/css-styling-in-django-forms
     -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer
@@ -25,8 +27,7 @@ TO DO:
     -   https://codepen.io/ericrasch/pen/zjDBx
 -   registration re-direct on listing profile not yet working correctly. need to forward to registration_type -	watch UDEMY
 -   Allow logged in User to edit their entertainer profile
--   See RedditClone project for how to do upvoting and downvoting
-    -   favourites could work in a similar way
+
 
 -   Get PAYPAL to Work
 -   PAGINATION on the listings page - Cna be done by sending a page limit or page number to the API to return. See google maps project
