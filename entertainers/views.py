@@ -63,6 +63,37 @@ def create_profile(request):
     return render(request, 'entertainers/create_profile.html',{'form': form})
 
 
+#   increment the number of likes for an entertainer
+def like(request,pk):
+    """
+        WILL NEED TO RETRIEVE THE USER ID TO SAVE THE ENTERTAINER AS LIKED BAND
+        MAYBE TRANSFER THIS TO A FAVOURITE
+    :param request:
+    :param pk:
+    :return:
+    """
+
+
+    #   retrieve the relevant entertainer
+    entertainer = Entertainer.objects.get(pk=pk)
+    #   increment the number of likes
+    entertainer.likes_total += 1
+    #   save the entertainer record
+    entertainer.save()
+    return redirect('home')
+
+
+#   increment the number of likes for an entertainer
+def dislike(request,pk):
+    #   retrieve the relevant entertainer
+    entertainer = Entertainer.objects.get(pk=pk)
+    #   increment the number of likes
+    entertainer.dislikes_total += 1
+    #   save the entertainer record
+    entertainer.save()
+    return redirect('home')
+
+
 #   class based view for handling request coming in for REST API
 class EntertainerView(APIView):
     def get(self,request,pk=None):

@@ -6,6 +6,7 @@ IN PROGRESS:
 
 
 TO DO:
+-   Use RedditClone to build blog in reviews section
 -   log out message on home screen is ugly
 -   Allow GENERAL USER TO HAVE FAVOURITES. ON LOGIN THEY WILL BE PRESENTED WITH A LIST OF FAVOURITES
 ------------------------------------------------------------------------------------
