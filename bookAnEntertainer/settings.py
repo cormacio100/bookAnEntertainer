@@ -155,7 +155,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-MEDIA_URL = '/pics/'
+MEDIA_URL = '/pics/'    #   Can access images directly by <host>:<port>/pics/media/<folder>/<image>
 MEDIA_ROOT = BASE_DIR
 
 DEBUG_TOOLBAR_CONFIG = {

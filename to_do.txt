@@ -1,12 +1,13 @@
 IN PROGRESS:
 
     -   BACKGROUND IMAGES and fix images
+
     -   STYLE THE FORMS BETTER
 
-	-   SPINNER NOT CENTERED
 
 TO DO:
--   SWITCH TO USING BOOTSTRAP 3.3
+-   CONTACT PAGE
+-   SWITCH TO USING BOOTSTRAP 3.3??
 -   bootstrap loading placeholder on entertainers page
 -   CREATE AN EDIT PROFILE PAGE FOR ENTERTAINERS
 -   select menu styling
@@ -73,3 +74,4 @@ DONE:
         -   initially load all
 
 -   FIX NAVBAR
+-   SPINNER NOT CENTERED

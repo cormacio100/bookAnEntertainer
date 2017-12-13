@@ -8,9 +8,6 @@ from accounts.models import User
 # Create your models here.
 class Entertainer(models.Model):
 
-    #   An Entertainer is a User - One To One Relationship
-    user = models.OneToOneField(User,related_name='user')
-
 
     #   DEFINE CHOICES LISTS WITH CONSTANTS
     ENT_TYPES = (
@@ -133,6 +130,8 @@ class Entertainer(models.Model):
         ('same county','same county')
     }
     #   FIELDS
+    #   An Entertainer is a User - One To One Relationship
+    user = models.OneToOneField(User, related_name='user')
     title = models.CharField(
         max_length = 15
     )

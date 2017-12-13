@@ -26,6 +26,9 @@ body,
 .navbar-brand:hover{
     color:#bab4b0;
 }
+nav.navbar-white {
+    border-bottom: 1px solid #bab4b0;
+}
 .grey-text{
     color:#bab4b0;
     margin-right:1em;
@@ -43,10 +46,12 @@ body,
 }
 .btn-orange-no-hover{
     font-size: 16px;
-    background: #dd6622;
+    background: #bab4b0;
     color: #ffffff;
     border:1px solid #bb6622;
-
+}
+.btn-orange-no-hover:hover{
+    color: #dd6622;
 }
 .btn-orange{
     font-size: 16px;
@@ -72,6 +77,12 @@ a{
 a:hover{
     color: #bab4b0;
 }
+div#navbarSupportedContent {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color:#ffffff;
+}
+
 /************************************************************************/
 /* LINKS */
 /************************************************************************/
@@ -82,6 +93,10 @@ a:hover{
 .navbar-grey{
     background-color: #f3f3f3;
     color: #ffffff;
+}
+.navbar-white{
+    background-color: #ffffff;
+
 }
 .navbar-grey-a-href-orange{
     color: #dd6622;
@@ -250,8 +265,38 @@ p#spinner{
 	min-height:100%;
 	xfont-size:14px;
 }
-
-
+section#section1{
+    background-image:url(../../pics/media/backgrounds/5.jpg);
+	position:relative;
+	width:100%;
+	text-align:center;
+	xcolor:white;
+	background-color:white;
+	background-size: cover;
+	background-position:center;
+	min-height:100%;
+	font-size:14px;
+	padding-top:30px;
+}
+section#section1 h2{
+    color:white;
+}
+/**************************************************************************/
+/*  HOME  */
+/**************************************************************************/
+#home-imagery{
+    background-image:url(../../pics/media/backgrounds/6.jpg);
+	position:relative;
+	width:100%;
+	text-align:center;
+	color:white;
+	background-color:white;
+	background-size: cover;
+	background-position:center;
+	min-height:100%;
+	font-size:14px;
+	padding-top:50px;
+}
 /**************************************************************************/
 /*  REGISTRATION */
 /**************************************************************************/
@@ -275,12 +320,13 @@ p#spinner{
 /**************************************************************************/
 .page-header{
     margin-top:1em;
+    color:#FFFFFF;
 }
 #listing-menu{
-    background-color:#acacac;
+    xbackground-color:#bab4b0;
     border:1px solid #dd6622;
     padding:1em;
-    margin:1em;
+    margin:2em;
 }
 #listing-row{
     margin:0;
@@ -296,7 +342,7 @@ p#spinner{
     xfont-size: 14px;
     height: 29px;
     padding: 5px; /* If you add too much padding here, the options won't show in IE */
-    width: 268px;
+    width: 80%;
     overflow: hidden;
 }
 .semi-square {
@@ -305,4 +351,5 @@ p#spinner{
    border-radius: 5px;
 }
 .brown { background-color: #7c6659; color: #fff; }
+.orange{ background-color: #dd6622; color: #fff; }
 
