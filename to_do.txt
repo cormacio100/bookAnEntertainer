@@ -5,6 +5,7 @@ IN PROGRESS:
     -   Put in link to diqus.com to allow users leave a review - put the link on the login screen
 
 TO DO:
+-   log out message on home screen is ugly
 -   Allow GENERAL USER TO HAVE FAVOURITES. ON LOGIN THEY WILL BE PRESENTED WITH A LIST OF FAVOURITES
 -   IF NAVBAR DOES NOT BECOME RESPONSIVE CAN USE A <DIV CLASS="HIDDEN-MD"> ON A DIV THAT WILL NOT APPEAR UNTIL WINDOW IS A CERTAIN SIZE
     -   See EXAMPLE here

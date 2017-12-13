@@ -292,20 +292,6 @@ p#spinner{
 .orange-spin{
     color:#dd6622;
 }
-#listings-container{
-    margin:0;
-    padding:0;
-    background-image:url(../../media/backgrounds/6.png);
-	position:relative;
-	width:100%;
-	xtext-align:center;
-	xcolor:white;
-	xbackground-color:white;
-	background-size: cover;
-	background-position:center;
-	min-height:100%;
-	xfont-size:14px;
-}
 section#section1{
     background-image:url(../../pics/media/backgrounds/5.jpg);
 	position:relative;
@@ -319,7 +305,15 @@ section#section1{
 	font-size:14px;
 	padding-top:30px;
 }
-
+.card{
+    margin-top:1em;
+}
+.card-body{
+    color:#766659;
+}
+.card-img-top{
+    height:140px;
+}
 /**************************************************************************/
 /*  HOME  */
 /**************************************************************************/
