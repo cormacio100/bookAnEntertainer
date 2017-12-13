@@ -34,8 +34,6 @@ def display_entertainer_profile(request,entertainer_id):
         get = True
     logged_in = False
     if request.user is not None:
-        print('request.user is:')
-        print(request.user)
         logged_in = True
     entertainer = get_object_or_404(Entertainer, pk=entertainer_id)
     args = {'entertainer': entertainer,'get':get, 'logged_in':logged_in}
@@ -68,30 +66,31 @@ def like(request,pk):
     """
         WILL NEED TO RETRIEVE THE USER ID TO SAVE THE ENTERTAINER AS LIKED BAND
         MAYBE TRANSFER THIS TO A FAVOURITE
-    :param request:
-    :param pk:
-    :return:
     """
-
-
-    #   retrieve the relevant entertainer
-    entertainer = Entertainer.objects.get(pk=pk)
-    #   increment the number of likes
-    entertainer.likes_total += 1
-    #   save the entertainer record
-    entertainer.save()
-    return redirect('home')
+    #   USING POST INSTEAD OF GET AS SOME BROWSERS WILL SUBMIT THE REQUEST JUST BY TYPING INTO THE URL WITH NO PRESS OF ENTER
+    if request.method == 'POST':
+        #   retrieve the relevant entertainer
+        entertainer = Entertainer.objects.get(pk=pk)
+        #   increment the number of likes
+        entertainer.likes_total += 1
+        #   save the entertainer record
+        entertainer.save()
+        #   forward back to the same page with the like_total incremented
+        return redirect('entertainers:profile',pk)
 
 
 #   increment the number of likes for an entertainer
 def dislike(request,pk):
-    #   retrieve the relevant entertainer
-    entertainer = Entertainer.objects.get(pk=pk)
-    #   increment the number of likes
-    entertainer.dislikes_total += 1
-    #   save the entertainer record
-    entertainer.save()
-    return redirect('home')
+    #   USING POST INSTEAD OF GET AS SOME BROWSERS WILL SUBMIT THE REQUEST JUST BY TYPING INTO THE URL WITH NO PRESS OF ENTER
+    if request.method == 'POST':
+        #   retrieve the relevant entertainer
+        entertainer = Entertainer.objects.get(pk=pk)
+        #   increment the number of likes
+        entertainer.dislikes_total += 1
+        #   save the entertainer record
+        entertainer.save()
+        #   forward back to the same page with the dislike_total incremented
+        return redirect('entertainers:profile',pk)
 
 
 #   class based view for handling request coming in for REST API

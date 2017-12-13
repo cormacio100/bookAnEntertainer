@@ -65,8 +65,21 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <p class="orange-text text-centered"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i> 3 Reviews</p>
+                    <div class="col-6">
+                        <p class="orange-text text-right">
+                            <form method="POST" action="{% url 'entertainers:like' entertainer.id %}">
+                                {% csrf_token %}
+                                <input type="submit" value="like">
+                            </form>{{ entertainer.likes_total }}
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <p class="orange-text text-left">
+                            <form method="POST" action="{% url 'entertainers:dislike' entertainer.id %}">
+                                {% csrf_token %}
+                                <input type="submit" value="dislike">
+                            </form>{{ entertainer.dislikes_total }}
+                        </p>
                     </div>
                 </div>
                 <div class="row">
