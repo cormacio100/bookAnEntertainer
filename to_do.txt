@@ -1,8 +1,9 @@
 IN PROGRESS:
 
     -   PAYPAL INSTALLATION
-        -   NEED TO INSTALL NGROK AND HAVE A HEROKU LOCATION
-        -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL
+        -   NEED TO INSTALL NGROK AND HAVE A HEROKU LOCATION    -   DONE
+        -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL -   NEED TO CONFIRM
+        -   NEED TO SEE IF THE PAYPAL BUTTON CAN BE STYLED AND TEXT CHANGED ??
 
     -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
 
@@ -10,7 +11,7 @@ IN PROGRESS:
         -   https://stackoverflow.com/questions/5827590/css-styling-in-django-forms
     -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer
 
-    -   CHANGE TEXT ON PAYPAL BUTTON
+    -   CHECK RESPONSIVENESS
 
 TO DO:
 -   Use RedditClone to build blog in reviews section
@@ -22,25 +23,22 @@ TO DO:
         -   https://www.codeply.com/go/bRlHp8MxtJ
         -   https://stackoverflow.com/questions/40476201/bootstrap-4-hidden-classes-only-hide-on-small-screens
 ------------------------------------------------------------------------------------
--   FIX HOME PAGE
+-   FIX HOME PAGE AND ADD FOOTER
+-   NEED A LANDING PAGE AFTER LOGGING IN AND ALSO CREATE AN EDIT PROFILE OPTION FOR ENTERTAINERS
 -   ADD A FOOTER    
 -   CONTACT PAGE - may just put in contact form for each entertainer
 -   SWITCH TO USING BOOTSTRAP 3.3??
 -   bootstrap loading placeholder on entertainers page
--   CREATE AN EDIT PROFILE PAGE FOR ENTERTAINERS
 -   select menu styling
     -   https://codepen.io/ericrasch/pen/zjDBx
 -   registration re-direct on listing profile not yet working correctly. need to forward to registration_type -	watch UDEMY
 -   Allow logged in User to edit their entertainer profile
-
-
--   Get PAYPAL to Work
+-   ADD DATA SO CAN TEST PAGINATION
 -   PAGINATION on the listings page - Cna be done by sending a page limit or page number to the API to return. See google maps project
+-   MAKE
 
 -   Change number of chars for genre in entertainer model to more than 9
--   USER MUST BE LOGGED IN TO LEAVE A REVIEW ON AN ENTERTAINER PROFILE
-    -   Need to do an IF/ELSE statement on the template for the reviews section that tells the user they must be logged in to leave a review
-    -   See how it's done on redditClone
+
 
 -	YOUTUBE AND SOUNDCLOUD NEED TO HAVE DEFAULTS THAT OCCUPY THE SPACE IF NO LINK PROVIDED. IF/ ELSE NEEDED IN THE TEMPLATE
 -	Make Templates more response at smaller sizes
@@ -93,3 +91,6 @@ DONE:
 -   BACKGROUND IMAGES and
 -   Put in link to diqus.com to allow users leave a review - put the link on the login screen
     -   FIX IMAGES!!!
+-   USER MUST BE LOGGED IN TO LEAVE A REVIEW ON AN ENTERTAINER PROFILE
+    -   Need to do an IF/ELSE statement on the template for the reviews section that tells the user they must be logged in to leave a review
+    -   See how it's done on redditClone

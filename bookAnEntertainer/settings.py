@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'rest_framework',
-    'paypal.standard.ipn'
+    'paypal.standard.ipn',
+    'paypal_store'
 ]
 
 ########################################################################################
@@ -166,7 +167,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 
 #   PAYPAL SETTINGS
 SITE_URL = 'http://127.0.0.1:8000'
-PAYPAY_NOTIFY_URL = 'https://9f37a350.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
+PAYPAL_NOTIFY_URL = 'https://9f37a350.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
                                                                             #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
                                                                             #    HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'

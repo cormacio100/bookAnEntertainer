@@ -33,7 +33,7 @@ class Entertainer(models.Model):
             "return_url": "%s/paypal-return" % settings.SITE_URL,
             "cancel-return": "%s/paypal-cancel" % settings.SITE_URL
         }
-        return PayPalPaymentsForm(intitial=paypal_dict)
+        return PayPalPaymentsForm(initial=paypal_dict)
 
     def __unicode__(self):
         return self.name
