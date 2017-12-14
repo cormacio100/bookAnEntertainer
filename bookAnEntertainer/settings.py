@@ -25,7 +25,7 @@ SECRET_KEY = 'md517-*6s^q(z1$c@ik&*c)veq_s^q%luwar7b6*&g)k*ay7!r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','https://5a417353.ngrok.io']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK
+ALLOWED_HOSTS = ['localhost','127.0.0.1','https://9f37a350.ngrok.io']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK
 
 
 # Application definition
@@ -166,7 +166,9 @@ INTERNAL_IPS = ('127.0.0.1',)
 
 #   PAYPAL SETTINGS
 SITE_URL = 'http://127.0.0.1:8000'
-PAYPAY_NOTIFY_URL = 'https://5a417353.ngrok.io/a-very-hard-to-guess-url/'    #   NEED ngrok URL HERE
+PAYPAY_NOTIFY_URL = 'https://9f37a350.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
+                                                                            #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
+                                                                            #    HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
 
 
