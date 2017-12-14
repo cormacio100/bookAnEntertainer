@@ -11,8 +11,8 @@ class UserRegistrationForm(UserCreationForm):
         ('No', 'No'),
     )
     ACCOUNT_TYPE = (
-        ('General', 'General'),
-        ('Entertainer', 'Entertainer'),
+        ('General', 'No'),
+        ('Entertainer', 'Yes'),
     )
     COUNTIES = (
         ('Antrim', 'Antrim'),

@@ -2,15 +2,15 @@ IN PROGRESS:
 
     -   PAYPAL INSTALLATION
         -   NEED TO INSTALL NGROK AND HAVE A HEROKU LOCATION    -   DONE
-        -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL -   NEED TO CONFIRM
-        -   NEED TO SEE IF THE PAYPAL BUTTON CAN BE STYLED AND TEXT CHANGED ??
-        -   MUST BE LOGGED IN TO BOOK AN ENTERTAINER
+        -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL -   DONE
+        -   NEED TO SEE IF THE PAYPAL BUTTON CAN BE STYLED AND TEXT CHANGED ??  - IN PROGRESS
+        -   MUST BE LOGGED IN TO BOOK AN ENTERTAINER    -   DONE
         -   NEED TO PUT IN A DATE SELECTOR WHICH APPEARS ONCE THE USER IS LOGGED IN
+        -   Log in to book button needs to do something
 
     -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
 
-    -   STYLE THE FORMS BETTER. Examples here
-        -   https://stackoverflow.com/questions/5827590/css-styling-in-django-forms
+
     -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer
 
     -   CHECK RESPONSIVENESS
@@ -96,3 +96,6 @@ DONE:
 -   USER MUST BE LOGGED IN TO LEAVE A REVIEW ON AN ENTERTAINER PROFILE
     -   Need to do an IF/ELSE statement on the template for the reviews section that tells the user they must be logged in to leave a review
     -   See how it's done on redditClone
+
+-   STYLE THE FORMS BETTER. Examples here
+    -   https://stackoverflow.com/questions/5827590/css-styling-in-django-forms

@@ -26,13 +26,14 @@ class Entertainer(models.Model):
         paypal_dict = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,
             "amount": self.min_price,
-            "currency": "USD",
+            "currency": "EUR",
             "item_name": self.title+' Booking Fee',
             "invoice": "%s-%s-%s" % (self.title,self.pk, uuid.uuid4()),
             "notify_url": settings.PAYPAL_NOTIFY_URL,
             "return_url": "%s/paypal-return" % settings.SITE_URL,
             "cancel-return": "%s/paypal-cancel" % settings.SITE_URL
         }
+        
         return PayPalPaymentsForm(initial=paypal_dict)
 
     def __unicode__(self):
