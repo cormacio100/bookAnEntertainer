@@ -167,7 +167,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 
 #   PAYPAL SETTINGS
 SITE_URL = 'http://127.0.0.1:8000'
-PAYPAY_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAY_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'    #   NEED ngrok URL HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
 
 

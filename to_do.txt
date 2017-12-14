@@ -1,6 +1,8 @@
 IN PROGRESS:
 
     -   PAYPAL INSTALLATION
+        -   NEED TO INSTALL NGROK AND HAVE A HEROKU LOCATION
+        -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL
 
     -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
 
