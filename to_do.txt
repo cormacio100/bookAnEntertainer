@@ -1,11 +1,14 @@
 IN PROGRESS:
-    -   See RedditClone project for how to do upvoting and downvoting
-        -   favourites could work in a similar way
-    -   FIX IMAGES!!!
+
+    -   PAYPAL INSTALLATION
+
+    -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
+
     -   STYLE THE FORMS BETTER. Examples here
         -   https://stackoverflow.com/questions/5827590/css-styling-in-django-forms
     -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer
 
+    -   CHANGE TEXT ON PAYPAL BUTTON
 
 TO DO:
 -   Use RedditClone to build blog in reviews section
@@ -87,3 +90,4 @@ DONE:
 -   SPINNER NOT CENTERED
 -   BACKGROUND IMAGES and
 -   Put in link to diqus.com to allow users leave a review - put the link on the login screen
+    -   FIX IMAGES!!!
