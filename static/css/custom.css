@@ -15,6 +15,9 @@ body,
 .transparent{
 
 }
+.margin-top-1{
+    margin-top:1em;
+}
 .orange-links{
     color:#dd6622;
     font-family: 'Righteous', cursive;
@@ -63,6 +66,7 @@ nav.navbar-white {
 }
 .account-form{
     margin-top:2em;
+    color:#dd6622;
 }
 .legend-centre{
     text-align: center;
@@ -246,7 +250,7 @@ footer{
     margin-top:1em;
 }
 #profile_body{
-    margin-top:2em;
+    xmargin-top:2em;
 }
 .row{
     margin-bottom:1em;
@@ -322,8 +326,10 @@ p#spinner{
 .orange-spin{
     color:#dd6622;
 }
-section#section1{
-    background-image:url(../../pics/media/backgrounds/5.jpg);
+/*section#section1*/
+
+.with-background-image1{
+    xbackground-image:url(../../pics/media/backgrounds/5.jpg);
 	position:relative;
 	width:100%;
 	text-align:center;

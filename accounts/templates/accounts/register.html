@@ -1,27 +1,33 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
     {% if message %}
         {{ message }}
     {% endif %}
     <form role="form" method="post" action="{% url 'accounts:register' %}" class="account-form">
-        <legend class="legend-centre">Register as an Entertainer or Event Organiser</legend>
+        <legend class="legend-centre brown-text">Register as an Entertainer or Event Organiser</legend>
         <hr>
         <div class="row">
-            <div class="col-4">
+            <div class="col-1">
                 &nbsp;
             </div>
-            <div class="col-4">
+            <div class="col-10">
+                <div class="row">
                     {% csrf_token %}
                     {{ form | as_bootstrap }}
                     <div class="form-group">
                         <button type="submit" class="btn btn-orange btn-block">Register</button>
                     </div>
                 </div>
-            <div class="col-4">
+            </div>
+            <div class="col-1">
                 &nbsp;
             </div>
         </div>
     </form>
 
+{% endblock %}
+{% block script %}
+    <script src="{% static "js/register.js" %}"></script>
 {% endblock %}
