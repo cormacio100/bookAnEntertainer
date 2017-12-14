@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'rest_framework',
+    'paypal.standard.ipn'
 ]
 
 ########################################################################################
@@ -164,7 +165,13 @@ DEBUG_TOOLBAR_CONFIG = {
 
 INTERNAL_IPS = ('127.0.0.1',)
 
+#   PAYPAL SETTINGS
+SITE_URL = 'http://127.0.0.1:8000'
+PAYPAY_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
 
+
+#   DEBUG TOOLBAR
 def show_toolbar(request):
     if not request.is_ajax(): # and request.user: # and request.user.username == "cormacio":
         return True
