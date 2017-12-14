@@ -8,3 +8,4 @@ media/img5/
 media/profile
 db.sqlite3
 db.backup
+ngrok.exe
