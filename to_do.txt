@@ -6,7 +6,7 @@ IN PROGRESS:
         -   NEED TO SEE IF THE PAYPAL BUTTON CAN BE STYLED AND TEXT CHANGED ??  - IN PROGRESS
         -   MUST BE LOGGED IN TO BOOK AN ENTERTAINER    -   DONE
         -   NEED TO PUT IN A DATE SELECTOR WHICH APPEARS ONCE THE USER IS LOGGED IN
-        -   Log in to book button needs to do something
+        -   Log in to book button needs to do something - DONE
 
     -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
 

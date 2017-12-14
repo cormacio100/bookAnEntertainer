@@ -69,7 +69,8 @@ def auth_login(request):
             if user is not None:
                 auth.login(request, user)
                 request.user.last_login = user.last_login
-                messages.error(request,"You have successfully logged in")
+
+                messages.success(request,"Logged in as: "+user.email)
                 return redirect(reverse('accounts:profile'))
             else:
                 form.add_error(None,"Your email or password was not recognised")
@@ -90,7 +91,19 @@ def auth_logout(request):
 
 @login_required(login_url='/login/')
 def auth_profile(request):
-    #   retrieve the user
+    #args = {'last_login': request.user.last_login}
 
-    args = {'message': 'Profile loaded', 'last_login': request.user.last_login}
-    return render(request, 'accounts/profile.html', args)
+    ##################################################################################################################
+    #   -   Retrieve the relevant user
+    #   -   Extract the string containing list of booked entertainers
+    #   -   Convert the string into a list of objects
+    #   -   Display in view
+    ##################################################################################################################
+    user_id = request.session['_auth_user_id']
+    user = User.objects.get(pk=user_id)
+
+    booked_entertainers = user.booked_entertainers
+
+    booked_entertainers_list = booked_entertainers.split(",")
+
+    return render(request, 'accounts/profile.html')
