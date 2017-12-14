@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% if message %}
+        {{ message }}
+    {% endif %}
     <h1>Thanks for booking through <span class="orange-text">BookAnEntertainer</span></h1>
     
     <h2>POST</h2>
@@ -7,4 +10,13 @@
     
     <h2>GET</h2>
     {{ get }}
+
+    <h2>ENTERTAINER ID</h2>
+    {{ entertainer_id    }}
+
+    <h2>MESSAGE</h2>
+    {{ message }}
+
+    <h2>CURRENT USER</h2>
+    {{ user_id }}
 {% endblock %}

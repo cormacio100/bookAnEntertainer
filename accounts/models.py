@@ -58,4 +58,7 @@ class User(AbstractUser):
     #   Now that we've abstracted this class WE CAN ADD ANY NUMBER OF CUSTOM ATTRIBUTES TO OUR USER CLASS
     #   FIRST define the relevant form element in forms.py and then ADD THEM TO THE MODEL HERE
     account_type = models.CharField(max_length=11,default='General')
+
+    #   Entertainers booked by the user
+    booked_entertainers = models.CharField(max_length=255,default='None')
     objects = AccountUserManager()

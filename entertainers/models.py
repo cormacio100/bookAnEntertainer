@@ -27,8 +27,8 @@ class Entertainer(models.Model):
             "business": settings.PAYPAL_RECEIVER_EMAIL,
             "amount": self.min_price,
             "currency": "USD",
-            "item_name": self.title,
-            "invoice": "%s-%s" % (self.pk, uuid.uuid4()),
+            "item_name": self.title+' Booking Fee',
+            "invoice": "%s-%s-%s" % (self.title,self.pk, uuid.uuid4()),
             "notify_url": settings.PAYPAL_NOTIFY_URL,
             "return_url": "%s/paypal-return" % settings.SITE_URL,
             "cancel-return": "%s/paypal-cancel" % settings.SITE_URL

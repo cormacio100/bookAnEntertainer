@@ -4,6 +4,8 @@ IN PROGRESS:
         -   NEED TO INSTALL NGROK AND HAVE A HEROKU LOCATION    -   DONE
         -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL -   NEED TO CONFIRM
         -   NEED TO SEE IF THE PAYPAL BUTTON CAN BE STYLED AND TEXT CHANGED ??
+        -   MUST BE LOGGED IN TO BOOK AN ENTERTAINER
+        -   NEED TO PUT IN A DATE SELECTOR WHICH APPEARS ONCE THE USER IS LOGGED IN
 
     -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
 
