@@ -106,8 +106,11 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <!--<button type="button" class="btn btn-block full_btn" value="book_us">Book Us</button>-->
-                        {{ entertainer.paypal_form.sandbox }}
+                        {% if user.is_active %}
+                            {{ entertainer.paypal_form.sandbox }}
+                        {% else %}
+                            <button type="button" class="btn btn-block full_btn" id="log-in-to-book">Log In To Book</button>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row">
