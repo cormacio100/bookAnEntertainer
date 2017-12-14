@@ -5,11 +5,43 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from accounts.models import User
 
-# Create your models here.
+#   PAYPAL SETTINGS
+import uuid
+from django.db import models
+from django.conf import settings
+from paypal.standard.forms import PayPalPaymentsForm
+
+
 class Entertainer(models.Model):
+    #####################################################################################
+    #   PAYPAL SETTINGS
+    #
+    #   -   The @proprty decorator is used to define the function so that
+    #   -   it can be accessed from our template with the tag
+    #   -   {{ entertainer.paypal_form.sandbox }}
+    #   -   The paypal-dict contains the properties being passed to PayPalPaymentsForm
+    #####################################################################################
+    @property
+    def paypal_form(self):
+        paypal_dict = {
+            "business": settings.PAYPAL_RECEIVER_EMAIL,
+            "amount": self.min_price,
+            "currency": "EUR",
+            "item_name": self.title+' Booking Fee',
+            "invoice": "%s-%s-%s" % (self.title,self.pk, uuid.uuid4()),
+            "notify_url": settings.PAYPAL_NOTIFY_URL,
+            "return_url": "%s/paypal-return" % settings.SITE_URL,
+            "cancel-return": "%s/paypal-cancel" % settings.SITE_URL
+        }
+        
+        return PayPalPaymentsForm(initial=paypal_dict)
 
+    def __unicode__(self):
+        return self.name
 
-    #   DEFINE CHOICES LISTS WITH CONSTANTS
+    ############################################################################
+    #   DEFINE CONSTANTS THAT SUPPLY LISTS TO CLASS PROPERTIES
+    ############################################################################
     ENT_TYPES = (
         ("Band", "Band"),
         ("Solo", "Solo"),
@@ -129,7 +161,10 @@ class Entertainer(models.Model):
         ('same province','same province'),
         ('same county','same county')
     }
+
+    ############################################################################
     #   FIELDS
+    ############################################################################
     #   An Entertainer is a User - One To One Relationship
     user = models.OneToOneField(User, related_name='user')
     title = models.CharField(

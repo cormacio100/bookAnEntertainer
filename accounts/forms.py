@@ -11,8 +11,8 @@ class UserRegistrationForm(UserCreationForm):
         ('No', 'No'),
     )
     ACCOUNT_TYPE = (
-        ('General', 'General'),
-        ('Entertainer', 'Entertainer'),
+        ('General', 'No'),
+        ('Entertainer', 'Yes'),
     )
     COUNTIES = (
         ('Antrim', 'Antrim'),
@@ -74,7 +74,7 @@ class UserRegistrationForm(UserCreationForm):
     #   In this case PASSWORD1 and PASSWORD2 have been customised
     class Meta:
         model = User
-        fields = ['email', 'password1', 'password2','first_name', 'last_name','account_type'] #,'location','is_entertainer']
+        fields = ['first_name', 'last_name','email','account_type', 'password1', 'password2'] #,'location','is_entertainer']
         exclude = ['username']
 
     #   clean the passwords and ensure they are valid

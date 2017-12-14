@@ -35,6 +35,22 @@ def display_entertainer_profile(request,entertainer_id):
     logged_in = False
     if request.user is not None:
         logged_in = True
+
+    ######################################################################
+    #   WORKAROUND FOR PAYPAL NOT RETURNING POST OR GET TO paypal_return
+    #   -   WILL USE A SESSION VATIABLE TO RECORD THE ENTERTAINER THAT
+    #   -   WAS BOOKED
+    ######################################################################
+
+    request.session['entertainer_id'] = entertainer_id
+    #   retrieve and save the current user session
+    #current_user = request.user
+    #request.session['booking_user_id'] = current_user.id
+
+    ######################################################################
+    #   END WORKAROUND
+    ######################################################################
+
     entertainer = get_object_or_404(Entertainer, pk=entertainer_id)
     args = {'entertainer': entertainer,'get':get, 'logged_in':logged_in}
     return render(request,'entertainers/entertainer_profile.html',args)

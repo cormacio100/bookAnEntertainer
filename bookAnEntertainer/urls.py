@@ -19,19 +19,27 @@ from home import views as home_views
 from django.conf.urls.static import static
 from django.conf import settings
 
+#   PAYPAL SETTINGS
+from paypal.standard.ipn import urls as paypal_urls
+from paypal_store import views as paypal_views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',home_views.get_index, name="home"),
 
-    # ENTERTAINERS APP URLS
+    #   ENTERTAINERS APP URLS
     url(r'^entertainers/', include('entertainers.urls')),
 
-    # USER_ACCOUNTS APP URLS
+    #   USER_ACCOUNTS APP URLS
     url(r'^user_accounts/',include('user_accounts.urls')),
 
-    # ACCOUNTS APP URLS
+    #   ACCOUNTS APP URLS
     url(r'^accounts/',include('accounts.urls')),
 
+    #   PAYPAL APP URLS
+    url(r'^to-ngrok-or-not-to-ngrok/', include(paypal_urls)),
+    url(r'^paypal-return',paypal_views.paypal_return),          #   handles the return of a customer after payment
+    url(r'^paypal-cancel',paypal_views.paypal_cancel),          #   handles what happens when a customer cancels at the Paypal site
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 
