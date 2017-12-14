@@ -43,6 +43,9 @@ def display_entertainer_profile(request,entertainer_id):
     ######################################################################
 
     request.session['entertainer_id'] = entertainer_id
+    #   retrieve and save the current user session
+    #current_user = request.user
+    #request.session['booking_user_id'] = current_user.id
 
     ######################################################################
     #   END WORKAROUND

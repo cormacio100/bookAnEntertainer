@@ -20,29 +20,43 @@ def paypal_return(request):
 
     message = 'NO MESSAGE'
     entertainer_id = 0
-    current_user = None
+    booking_user_id = 0
+    auth_user_id = 0
 
-    if 'entertainer_id' in request.session:
+    #   If the booking was made
+    if 'entertainer_id' in request.session and '_auth_user_id' in request.session:
+        #   retrieve the ID of the entertainer that was just booked
+        #   and remove it from request.session
         entertainer_id = request.session['entertainer_id']
         del request.session['entertainer_id']
-        current_user = request.user
-        user_id = current_user.id
-        messages.success(request,'Entertainer Booked by user ID'+str(current_user.id))
-        message = 'Entertainer Booked by user ID'+str(current_user.id)
-    else:
-        message = 'Entertainer was NOT Booked by user'
 
-    '''
-    if 'entertainer_id' not in request.session:
-        message2 =  'entertainer_id has been removed:'
+        #   retrieve the id of the logged in user who just made the booking
+        booking_user_id = request.session['_auth_user_id']
+
+        #*************************************************************************************************
+        #   RETRIEVE THE USER OBJECT AND SAVE THE ENTERTAINER AS A BOOKED ENTERTAINER TO THE USER OBJECT
+        #   -   save the entertainer_id to the String saved in user.booked_entertainer
+        #   -   save the user
+        # ************************************************************************************************
+        user = User.objects.get(pk=booking_user_id)
+
+        booked_entertainer_str = "{'entertainer':'"+str(entertainer_id)+"','date':'2008-11-22'}"
+
+        if user.booked_entertainers == 'None':
+            user.booked_entertainers = booked_entertainer_str
+        else:
+            user.booked_entertainers += ','+booked_entertainer_str
+
+        user.save()
+        message = 'entertainer ID and booking_user_id retrieved from session'
     else:
-        message2 = 'entertainer_id still exists:'
-    '''
+        message = 'Booking Failed'
+
     ######################################################################
     #   END WORKAROUND
     ######################################################################
 
-    args = {'post':request.POST,'get':request.GET,'entertainer_id': entertainer_id,'message':message,'user_id':user_id}
+    args = {'post':request.POST,'get':request.GET,'entertainer_id': entertainer_id,'booking_user_id':booking_user_id,'message':message}
     return render(request,'paypal_store/paypal_return.html',args)
 
 def paypal_cancel(request):
