@@ -60,5 +60,5 @@ class User(AbstractUser):
     account_type = models.CharField(max_length=11,default='General')
 
     #   Entertainers booked by the user
-    booked_entertainers = models.CharField(max_length=255,default='None')
+    booked_entertainers = models.CharField(max_length=255,default='No Bookings')
     objects = AccountUserManager()

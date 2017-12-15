@@ -38,9 +38,8 @@
                             <input type="hidden" name="dislikes_total" value="{{ associated_entertainer.dislikes_total }}">
                             <input type="hidden" name="likes_total" value="{{ associated_entertainer.likes_total }}">
                             <input type="hidden" name="profile_image" value="{{ associated_entertainer.profile_image }}">
-                            <input type="submit" value="Edit Entertainer Profile">
+                            <input type="submit" value="Edit Entertainer Profile" class="btn-orange">
                         </form>
-                        <h4><a href="{% url 'entertainers:edit_profile' %}">Edit Entertainer Profile</a></h4>
                     {% else %}
                         <h4>General User Account</h4>
                     {% endif %}
@@ -52,12 +51,16 @@
                 <div class="col-sm-12 center-aligned">
                     <div class="jumbotron">
                         <div class="container ul-blank">
-                            <h4>You have booked the following Entertainers</h4>
-                            <ul>
-                                {% for entertainer in booked_entertainers %}
-                                    <li><a href="{% url 'entertainers:profile' entertainer.id %}">{{ entertainer.title}}</a></li>
-                                {% endfor %}
-                            </ul>
+                            {% if bookings_made %}
+                                <h4>You have booked the following Entertainers</h4>
+                                <ul>
+                                    {% for entertainer in booked_entertainers %}
+                                        <li><a href="{% url 'entertainers:profile' entertainer.id %}">{{ entertainer.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <h4>You have not booked any Entertainers</h4>
+                            {% endif %}
                         </div>
                     </div>
 

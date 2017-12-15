@@ -59,6 +59,7 @@ def display_entertainer_profile(request,entertainer_id):
 
 @login_required()
 def create_profile(request):
+    edit = False
     if request.method == 'POST':
         #   If the form was submitted the contents of the form are passed in
         form = EntertainerRegistrationForm(request.user,request.POST)
@@ -74,20 +75,26 @@ def create_profile(request):
     else:
         #   If page was just loaded then an empty form is displayed
         form = EntertainerRegistrationForm(request.user)
-    return render(request, 'entertainers/create_profile.html',{'form': form})
+    return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
 
 
 @login_required()
-def edit_profile(request, pk):
+def edit_profile(request):
+    edit = True
     if request.method == 'POST':
-        #   retrieve the entertainer
+        if request.POST['id']:
+            pk = request.POST['id']
+        #   retrieve the entertaineredit = True
         entertainer = Entertainer.objects.get(pk=pk)
         #   If page was just loaded then an empty form is displayed
         form = EntertainerRegistrationForm(request.user,request.POST,instance=entertainer)
-        form = EntertainerRegistrationForm(request.session['_auth_user_id'],request.POST, instance=entertainer)
-        form = EntertainerRegistrationForm(request.user,request.POST)
-        form.save()
-        return render(request, 'entertainers/create_profile.html',{'form': form})
+        #form = EntertainerRegistrationForm(request.session['_auth_user_id'],request.POST, instance=entertainer)
+        #form = EntertainerRegistrationForm(request.user,request.POST)
+        #form.save()
+
+    else:
+        return redirect(reverse('entertainers:listings'))
+    return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
 
 #   increment the number of likes for an entertainer
 def like(request,pk):

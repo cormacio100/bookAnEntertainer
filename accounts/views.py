@@ -38,6 +38,12 @@ def auth_register(request):
                         login(request,user)
                         #   Check user_type the new user is
                         if request.POST.get('account_type') == 'Entertainer':
+
+                            ######
+                            #   IF AN ENTERTAINER SET THE USER.IS_STAF VALUE TO 1
+                            #
+                            #######
+
                             #messages.success(request, "You have successfully registered as an Entertainer")
                             return redirect(reverse('entertainers:create_profile'))
                         else:
@@ -109,82 +115,89 @@ def auth_profile(request):
         account_type_entertainer = True
         associated_entertainer = Entertainer.objects.get(user_id=user_id)
 
-
     messages.success(request,'Logged in as: '+user.username)
     booked_entertainers = user.booked_entertainers
     #message = 'string is '+booked_entertainers
 
-    booked_entertainers_list = booked_entertainers.split("},{")
-    comma_list = []
-    entertainer_id_list =[]
-    date_list = []
+    bookings_made = False
 
-    """
-    INNER FUNCTION TO EXTRACT THE ENTERTAINER ID
-    """
+    if booked_entertainers == 'No Bookings':
+        #account_type_entertainer = False
+        args = { 'account_type_entertainer': account_type_entertainer,'bookings_made':bookings_made}
+        return render(request, 'accounts/profile.html', args)
+    else:
+        bookings_made = True
+        booked_entertainers_list = booked_entertainers.split("},{")
+        comma_list = []
+        entertainer_id_list =[]
+        date_list = []
 
-    def find_entertainer_id(booking_str, comma_idx):
-        substr = str(booked_entertainers_list[i][:comma_idx])
-        # substr1_list.append(substr)
-        num = filter(str.isdigit, substr)
-        return num
+        """
+        INNER FUNCTION TO EXTRACT THE ENTERTAINER ID
+        """
 
-    """
-    INNER FUNCTION TO EXTRACT THE BOOKING DATE
-    """
+        def find_entertainer_id(booking_str, comma_idx):
+            substr = str(booked_entertainers_list[i][:comma_idx])
+            # substr1_list.append(substr)
+            num = filter(str.isdigit, substr)
+            return num
 
-    def find_booking_date(booking_str, comma_idx):
-        substr = str(booked_entertainers_list[i][comma_idx:])
-        colon_idx = substr.find(':')
-        date = substr[colon_idx:].lstrip(':')
-        return date
+        """
+        INNER FUNCTION TO EXTRACT THE BOOKING DATE
+        """
 
-    """
-    INNER FUNCTION TO RETIREVE A LIST OF ENTERTAINER OBJECTS
-    """
+        def find_booking_date(booking_str, comma_idx):
+            substr = str(booked_entertainers_list[i][comma_idx:])
+            colon_idx = substr.find(':')
+            date = substr[colon_idx:].lstrip(':')
+            return date
 
-    def retrieve_entertainer_list(entertainer_id_list):
-        entertainer_list = []
-        x = 0
-        while x < len(entertainer_id_list):
-            entertainer = Entertainer.objects.get(pk=entertainer_id_list[x])
-            entertainer_list.append(entertainer)
-            x += 1
-        return entertainer_list
+        """
+        INNER FUNCTION TO RETIREVE A LIST OF ENTERTAINER OBJECTS
+        """
+
+        def retrieve_entertainer_list(entertainer_id_list):
+            entertainer_list = []
+            x = 0
+            while x < len(entertainer_id_list):
+                entertainer = Entertainer.objects.get(pk=entertainer_id_list[x])
+                entertainer_list.append(entertainer)
+                x += 1
+            return entertainer_list
 
 
-    ##################################################################################
-    #   Loop used to extract the IDs of entertainers booked by user
-    #   and also the date of the bookings
-    ##################################################################################
-    i = 0
-    while i < len(booked_entertainers_list):
-        #   defaults to length of string
-        comma_idx = len(booked_entertainers_list[i])
-        #   strip external brackets and quotes from each string in the list
-        #   LEFT WITH 3 STRINGS
-        booked_entertainers_list[i] = str(booked_entertainers_list[i]).replace("'","").lstrip('{').rstrip('}')
-        booking_str = booked_entertainers_list[i]
-        comma_idx = booking_str.find(',')  # 13
-        comma_list.append(comma_idx)
-        #   call to inner functions to extract entertainer ID and dates
-        num = find_entertainer_id(booking_str,comma_idx )          #   e.g. entertainer:2,date:2008-11-22
-        date = find_booking_date(booking_str,comma_idx)
-        entertainer_id_list.append(num)
-        date_list.append(date)
-        i+=1
+        ##################################################################################
+        #   Loop used to extract the IDs of entertainers booked by user
+        #   and also the date of the bookings
+        ##################################################################################
+        i = 0
+        while i < len(booked_entertainers_list):
+            #   defaults to length of string
+            comma_idx = len(booked_entertainers_list[i])
+            #   strip external brackets and quotes from each string in the list
+            #   LEFT WITH 3 STRINGS
+            booked_entertainers_list[i] = str(booked_entertainers_list[i]).replace("'","").lstrip('{').rstrip('}')
+            booking_str = booked_entertainers_list[i]
+            comma_idx = booking_str.find(',')  # 13
+            comma_list.append(comma_idx)
+            #   call to inner functions to extract entertainer ID and dates
+            num = find_entertainer_id(booking_str,comma_idx )          #   e.g. entertainer:2,date:2008-11-22
+            date = find_booking_date(booking_str,comma_idx)
+            entertainer_id_list.append(num)
+            date_list.append(date)
+            i+=1
 
-        #############################################
-        #   From the list of entertainer IDs
-        #   RETRIEVE a list of entertainers
-        #   using an inner function
-        #############################################
-        booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
+            #############################################
+            #   From the list of entertainer IDs
+            #   RETRIEVE a list of entertainers
+            #   using an inner function
+            #############################################
+            booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
 
-        ##########################################################################################
-        #   UNUSED:
-        #   -   date_list: CONTAINS STRINGS OF DATES
-        #   -   entertainer_id_list: CONTAINS STRING OF BOOKED ENTERTAINER IDS
-        ##########################################################################################
-    args = {'booked_entertainers':booked_entertainers,'account_type_entertainer':account_type_entertainer,'associated_entertainer':associated_entertainer}
-    return render(request, 'accounts/profile.html',args)
+            ##########################################################################################
+            #   UNUSED:
+            #   -   date_list: CONTAINS STRINGS OF DATES
+            #   -   entertainer_id_list: CONTAINS STRING OF BOOKED ENTERTAINER IDS
+            ##########################################################################################
+        args = {'booked_entertainers':booked_entertainers,'account_type_entertainer':account_type_entertainer,'associated_entertainer':associated_entertainer,'bookings_made':bookings_made}
+        return render(request, 'accounts/profile.html',args)
