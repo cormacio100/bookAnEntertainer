@@ -77,23 +77,53 @@ def create_profile(request):
         form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
 
+@login_required()
+def edit_profile(request,pk):
+    edit = True
+    entertainer = None
+    if request.method == 'POST':
+        entertainer = Entertainer.objects.get(pk=pk)
+        #   If the form was submitted the contents of the form are passed in with the entertainer instance
+        form = EntertainerRegistrationForm(request.user,request.POST,instance=entertainer)
+        #   save the form if it is valid
+        if form.is_valid():
+            # save the currently logged in user as related to the Enterttainer profile
+            # form.user = User
+            form.save()
+            messages.success(request, "You have successfully registered as an Entertainer")
+            return redirect(reverse('entertainers:listings'))
+        else:
+            messages.error(request, "There was an issue and the Profile did not save")
+    else:
+        entertainer=Entertainer.objects.get(pk=pk)
+        form = EntertainerRegistrationForm(request.user, instance=entertainer)
+
+    return render(request,'entertainers/edit_profile_test.html',{'pk':pk,'edit':edit,'title':entertainer.title,'form':form})
+
+
 
 @login_required()
-def edit_profile(request):
+def edit_profile_old(request,pk):
     edit = True
     if request.method == 'POST':
+        """
         if request.POST['id']:
             pk = request.POST['id']
         #   retrieve the entertaineredit = True
         entertainer = Entertainer.objects.get(pk=pk)
         #   If page was just loaded then an empty form is displayed
         form = EntertainerRegistrationForm(request.user,request.POST,instance=entertainer)
+        """
         #form = EntertainerRegistrationForm(request.session['_auth_user_id'],request.POST, instance=entertainer)
         #form = EntertainerRegistrationForm(request.user,request.POST)
         #form.save()
-
     else:
-        return redirect(reverse('entertainers:listings'))
+        """
+        #entertainer = Entertainer.objects.get(pk=pk)
+        #form = EntertainerRegistrationForm(request.user,instance=entertainer)
+        """
+        form = EntertainerRegistrationForm(request.user)
+        #return redirect(reverse('entertainers:listings'))
     return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
 
 #   increment the number of likes for an entertainer

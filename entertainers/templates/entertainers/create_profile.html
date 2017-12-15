@@ -7,7 +7,7 @@
         </div>
         <div class="col-4">
             {% if edit %}
-                <form role="form" method="post" action="{% url 'entertainers:edit_profile' %}" class="account-form">
+                <form role="form" method="post" action="{% url 'entertainers:create_profile' pk %}" class="account-form">
             {% else %}
                 <form role="form" method="post" action="{% url 'entertainers:create_profile' %}" class="account-form">
             {% endif %}
@@ -15,7 +15,9 @@
                 <legend>Entertainer Profile</legend>
                 <hr>
                 {% csrf_token %}
-                {{ form | as_bootstrap }}
+                {% if form %}
+                    {{ form | as_bootstrap }}
+                {% endif %}
                 <div class="form-group">
                     {% if edit %}
                         <button type="submit" class="btn btn-orange btn-block">Update</button>

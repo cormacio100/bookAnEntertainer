@@ -113,9 +113,12 @@ def auth_profile(request):
 
     if 'Entertainer' == user.account_type:
         account_type_entertainer = True
+        #   retrieve the entertainer associated with the user
         associated_entertainer = Entertainer.objects.get(user_id=user_id)
 
     messages.success(request,'Logged in as: '+user.username)
+
+    #   retrieve string of booked entertainers
     booked_entertainers = user.booked_entertainers
     #message = 'string is '+booked_entertainers
 
@@ -123,7 +126,7 @@ def auth_profile(request):
 
     if booked_entertainers == 'No Bookings':
         #account_type_entertainer = False
-        args = { 'account_type_entertainer': account_type_entertainer,'bookings_made':bookings_made}
+        args = {'account_type_entertainer': account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer}
         return render(request, 'accounts/profile.html', args)
     else:
         bookings_made = True
@@ -187,17 +190,17 @@ def auth_profile(request):
             date_list.append(date)
             i+=1
 
-            #############################################
-            #   From the list of entertainer IDs
-            #   RETRIEVE a list of entertainers
-            #   using an inner function
-            #############################################
-            booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
+        #############################################
+        #   From the list of entertainer IDs
+        #   RETRIEVE a list of entertainers
+        #   using an inner function
+        #############################################
+        booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
 
-            ##########################################################################################
-            #   UNUSED:
-            #   -   date_list: CONTAINS STRINGS OF DATES
-            #   -   entertainer_id_list: CONTAINS STRING OF BOOKED ENTERTAINER IDS
-            ##########################################################################################
-        args = {'booked_entertainers':booked_entertainers,'account_type_entertainer':account_type_entertainer,'associated_entertainer':associated_entertainer,'bookings_made':bookings_made}
+        ##########################################################################################
+        #   UNUSED:
+        #   -   date_list: CONTAINS STRINGS OF DATES
+        #   -   entertainer_id_list: CONTAINS STRING OF BOOKED ENTERTAINER IDS
+        ##########################################################################################
+        args = {'account_type_entertainer':account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer,'booked_entertainers':booked_entertainers,}
         return render(request, 'accounts/profile.html',args)

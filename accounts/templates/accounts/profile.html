@@ -9,7 +9,8 @@
             <div class="row">
                 <div class="col-sm-12 center-aligned " >
                     {% if account_type_entertainer %}
-                        <form role="form" method="POST" action="{% url 'entertainers:edit_profile' %}" class="">
+
+                        <form role="form" method="POST" action="" class="">
                             {% csrf_token %}
                             <input type="hidden" name="id" value="{{ associated_entertainer.id }}">
                             <input type="hidden" name="title" value="{{ associated_entertainer.title }}">
@@ -40,6 +41,7 @@
                             <input type="hidden" name="profile_image" value="{{ associated_entertainer.profile_image }}">
                             <input type="submit" value="Edit Entertainer Profile" class="btn-orange">
                         </form>
+                        <h4><a href="{% url 'entertainers:edit_profile' associated_entertainer.id %}">Edit Entertainer Profile</a></h4>
                     {% else %}
                         <h4>General User Account</h4>
                     {% endif %}
