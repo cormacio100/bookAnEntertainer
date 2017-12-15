@@ -83,8 +83,8 @@ def edit_profile(request, pk):
         #   retrieve the entertainer
         entertainer = Entertainer.objects.get(pk=pk)
         #   If page was just loaded then an empty form is displayed
-        #form = EntertainerRegistrationForm(request.user,request.POST,instance=entertainer)
-        #form = EntertainerRegistrationForm(request.session['_auth_user_id'],request.POST, instance=entertainer)
+        form = EntertainerRegistrationForm(request.user,request.POST,instance=entertainer)
+        form = EntertainerRegistrationForm(request.session['_auth_user_id'],request.POST, instance=entertainer)
         form = EntertainerRegistrationForm(request.user,request.POST)
         form.save()
         return render(request, 'entertainers/create_profile.html',{'form': form})
