@@ -103,7 +103,48 @@ def auth_profile(request):
     user = User.objects.get(pk=user_id)
 
     booked_entertainers = user.booked_entertainers
+    message = 'string is '+booked_entertainers
 
-    booked_entertainers_list = booked_entertainers.split(",")
+    booked_entertainers_list = booked_entertainers.split("},{")
+    comma_list = []
+    #substr1_list = []
+    num_list =[]
+    date_list = []
+    i = 0
+    while i < len(booked_entertainers_list):
+        #   defaults to length of string
+        comma_idx = len(booked_entertainers_list[i])
 
-    return render(request, 'accounts/profile.html')
+        """
+        INNER FUNCTION TO EXTRACT THE ENTERTAINER ID
+        """
+        def find_entertainer_id(booking_str,comma_idx ):
+            substr = str(booked_entertainers_list[i][:comma_idx])
+            #substr1_list.append(substr)
+            num = filter(str.isdigit, substr)
+            return num
+
+        """
+        INNER FUNCTION TO EXTRACT THE BOOKING DATE
+        """
+        def find_booking_date(booking_str,comma_idx ):
+            substr = str(booked_entertainers_list[i][comma_idx:])
+            colon_idx = substr.find(':')
+            date = substr[colon_idx:].lstrip(':')
+            return date
+
+        #   strip external brackets and quotes from each string in the list
+        #   LEFT WITH 3 STRINGS
+        booked_entertainers_list[i] = str(booked_entertainers_list[i]).replace("'","").lstrip('{').rstrip('}')
+        booking_str = booked_entertainers_list[i]
+        comma_idx = booking_str.find(',')  # 13
+        comma_list.append(comma_idx)
+        #   call to inner functions to extract entertainer ID and dates
+        num = find_entertainer_id(booking_str,comma_idx )          #   e.g. entertainer:2,date:2008-11-22
+        date = find_booking_date(booking_str,comma_idx)
+        num_list.append(num)
+        date_list.append(date)
+        i+=1
+
+    args = {'message': message,  'booked_entertainers_list': booked_entertainers_list,'comma_list':comma_list,'date_list':date_list,'num_list':num_list}
+    return render(request, 'accounts/profile.html',args)

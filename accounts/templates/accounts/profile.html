@@ -2,9 +2,31 @@
 {% load bootstrap_tags %}
 {% block content %}
     {% if message %}
+        <h4>String</h4>
         {{ message }}
     {% endif %}
-    {% if last_login %}
-        last login: {{ last_login }}
-    {% endif %}
+    <ul>
+        {% for entertainer in booked_entertainers_list %}
+            <li>{{ entertainer }}</li>
+        {% endfor %}
+    </ul>
+    <h4>comma idx</h4>
+    <ul>
+        {% for comma in comma_list %}
+            <li>{{ comma }}</li>
+        {% endfor %}
+    </ul>
+    <h4>Dates</h4>
+    <ul>
+        {% for date in date_list %}
+            <li>{{ date }}</li>
+        {% endfor %}
+    </ul>
+    <h4>Number</h4>
+    <ul>
+        {% for num in num_list %}
+            <li>{{ num }}</li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}
