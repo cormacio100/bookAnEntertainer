@@ -4,6 +4,7 @@ from base import *
 DEBUG = True
 
 INSTALLED_APPS.append('debug_toolbar')
+MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 
 DATABASES = {
     'default': {
