@@ -2,7 +2,6 @@ from base import *
 
 DEBUG = False
 
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -10,15 +9,12 @@ DATABASES = {
     }
 }
 
-# Stripe environment variables
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', '<your STRIPE_PUBLISHABLE key>')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET', '<your STRIPE SECRET key>')
-
-# Paypal environment variables
-PAYPAL_NOTIFY_URL = 'https://291e2d8f.ngrok.io/a-very-hard-to-guess-url/'
-PAYPAL_RECEIVER_EMAIL = 'aaron@codeinstitute.net'
-
-SITE_URL = 'https://your-heroku-app.herokuapp.com'
+#   PAYPAL SETTINGS
+PAYPAL_NOTIFY_URL = 'https://aac1c9ee.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
+                                                                            #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
+                                                                            #    HERE
+PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
+SITE_URL = 'http://your-heroku-app.herokuapp.com'
 ALLOWED_HOSTS.append('your-heroku-app.herokuapp.com')
 
 # Log DEBUG information to the console
@@ -37,4 +33,3 @@ LOGGING = {
         },
     },
 }
-'''

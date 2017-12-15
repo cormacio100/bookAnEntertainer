@@ -22,8 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'md517-*6s^q(z1$c@ik&*c)veq_s^q%luwar7b6*&g)k*ay7!r'
 
-ALLOWED_HOSTS = ['127.0.0.1']
-
+ALLOWED_HOSTS = ['localhost','127.0.0.1','bookanentertainer.herokuapp.com']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK - this changes each time ngrok is run
 
 # Application definition
 
@@ -34,13 +33,44 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'settings'
+    'home',
+    'entertainers',
+    'multiselectfield',
+    'user_accounts',
+    'debug_toolbar',
+    'django_forms_bootstrap',
+    'accounts',
+    'rest_framework',
+    'paypal.standard.ipn',
+    'paypal_store'
 ]
+
+########################################################################################
+#   CUSTOM USER AUTHENTICATION
+#   Accounts app Files involved:
+#   -   settings.py,
+#   -   backends.py,
+#   -   forms.py,
+#   -   models.py,
+#   -   views.py,
+#   -   urls.py
+#   -   templates
+
+#   TELL DJANGO TO USE accounts.User instead of the default User class for authentication
+AUTH_USER_MODEL = 'accounts.User'
+
+#   TELL DJANGO TO OVERRIDE THE DEFAULT get_user AND authenticate METHODS
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.EmailAuth',
+)
+########################################################################################
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -52,8 +82,7 @@ ROOT_URLCONF = 'bookAnEntertainer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,18 +96,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bookAnEntertainer.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -116,10 +133,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+MEDIA_URL = '/pics/'    #   Can access images directly in browser with address <host>:<port>/pics/media/<folder>/<image>
+MEDIA_ROOT = BASE_DIR
+
+INTERNAL_IPS = ('127.0.0.1',)
+
+
