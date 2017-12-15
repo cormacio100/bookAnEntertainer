@@ -17,67 +17,58 @@
     {% block head_js %}{% endblock %}
 </head>
 <body>
- <nav class="navbar navbar-expand-lg navbar-white">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">Book an Entertainer</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-md-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'entertainers:listings' %}" id="navbarDropdown" class="navbar_grey_a_href_orange text-right">
-                        <i class="fa fa-search" aria-hidden="true"></i> Search
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="navbarDropdown" class="navbar_grey_a_href_orange text-right">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i> Contact Us
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" class="navbar_grey_a_href_orange float-right" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMembers">
-                        {% if user.is_active %}
-                            <a class="dropdown-item nav-link navbar_grey_a_href_orange" href="#" id="logged-in-">User: {{request.user.first_name}} {{request.user.last_name}}</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item nav-link" href="{% url 'accounts:logout' %}" class="navbar_grey_a_href_orange">Log Out</a>
-                        {% else %}
-                            <a class="dropdown-item nav-link" href="{% url 'accounts:register' %}" class="navbar_grey_a_href_orange">Register</a>
-                            <a class="dropdown-item nav-link" href="{% url 'accounts:login' %}" class="navbar_grey_a_href_orange">Login</a>
-                        {% endif %}
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<main>
-    <section id="section1">
+    <nav class="navbar navbar-expand-lg navbar-white">
         <div class="container">
-            {% if messages %}
-                <div class="alert alert-success">
-                    <div class="messages">
-                        {% for message in messages %}
-                            {{ message }}
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endif %}
-            {% block content %}
-            {% endblock %}
+            <a class="navbar-brand" href="{% url 'home' %}">Book an Entertainer</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-md-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'entertainers:listings' %}" id="navbarDropdown" class="navbar_grey_a_href_orange text-right">
+                            <i class="fa fa-search" aria-hidden="true"></i> Search
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" class="navbar_grey_a_href_orange float-right" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMembers">
+                            {% if user.is_active %}
+                                <a class="dropdown-item nav-link navbar_grey_a_href_orange" href="{% url 'accounts:profile' %}" id="logged-in-">User: {{request.user.first_name}} {{request.user.last_name}}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item nav-link" href="{% url 'accounts:logout' %}" class="navbar_grey_a_href_orange">Log Out</a>
+                            {% else %}
+                                <a class="dropdown-item nav-link" href="{% url 'accounts:login' %}" class="navbar_grey_a_href_orange">Login</a>
+                                <a class="dropdown-item nav-link" href="{% url 'accounts:register' %}" class="navbar_grey_a_href_orange">Register</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </section>
-</main>
-
-
-
-
-    <!-- Optional BOOTSTRAP JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+    </nav>
+    <main>
+        <section id="section1">
+            <div class="container">
+                {% if messages %}
+                    <div class="alert alert-success">
+                        <div class="messages">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+    </main>
+    <footer>
+        &nbsp;
+    </footer>
     <!--<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

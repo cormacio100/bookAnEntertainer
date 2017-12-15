@@ -1,22 +1,14 @@
 IN PROGRESS:
 
-    -   PAYPAL INSTALLATION
-        -   NEED TO INSTALL NGROK AND HAVE A HEROKU LOCATION    -   DONE
-        -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL -   DONE
-        -   NEED TO SEE IF THE PAYPAL BUTTON CAN BE STYLED AND TEXT CHANGED ??  - IN PROGRESS
-        -   MUST BE LOGGED IN TO BOOK AN ENTERTAINER    -   DONE
-        -   NEED TO PUT IN A DATE SELECTOR WHICH APPEARS ONCE THE USER IS LOGGED IN
-        -   Log in to book button needs to do something - DONE
+-   FIX HOME PAGE AND ADD FOOTER
 
+    -   NEED TO PUT IN A DATE SELECTOR WHICH APPEARS ONCE THE USER IS LOGGED IN
     -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
-
-
-    -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer
 
     -   CHECK RESPONSIVENESS
 
 TO DO:
--   Use RedditClone to build blog in reviews section
+
 -   log out message on home screen is ugly
 -   Allow GENERAL USER TO HAVE FAVOURITES. ON LOGIN THEY WILL BE PRESENTED WITH A LIST OF FAVOURITES
 ------------------------------------------------------------------------------------
@@ -25,10 +17,7 @@ TO DO:
         -   https://www.codeply.com/go/bRlHp8MxtJ
         -   https://stackoverflow.com/questions/40476201/bootstrap-4-hidden-classes-only-hide-on-small-screens
 ------------------------------------------------------------------------------------
--   FIX HOME PAGE AND ADD FOOTER
--   NEED A LANDING PAGE AFTER LOGGING IN AND ALSO CREATE AN EDIT PROFILE OPTION FOR ENTERTAINERS
--   ADD A FOOTER    
--   CONTACT PAGE - may just put in contact form for each entertainer
+
 -   SWITCH TO USING BOOTSTRAP 3.3??
 -   bootstrap loading placeholder on entertainers page
 -   select menu styling
@@ -99,3 +88,13 @@ DONE:
 
 -   STYLE THE FORMS BETTER. Examples here
     -   https://stackoverflow.com/questions/5827590/css-styling-in-django-forms
+
+-   PAYPAL INSTALLATION
+    -   NEED TO INSTALL NGROK AND HAVE A HEROKU LOCATION    -   DONE
+    -   NEED TO PROCESS THE PROPERTIES RETURNED FROM PAYPAL -   DONE
+    -   NEED TO SEE IF THE PAYPAL BUTTON CAN BE STYLED AND TEXT CHANGED ??  - IN PROGRESS
+    -   MUST BE LOGGED IN TO BOOK AN ENTERTAINER    -   DONE
+    -   Log in to book button needs to do something - DONE
+    -   When logged in USER is displayed, can click on name and be shown the Entertainer profile if an entertainer -DONE
+    -- WHY AM I ONLY RECEIVING THE TITLE OF THE ENTERTAINER on the User LOGIN screen WHEN I am doing a query based on the ID?? DONE
+--   NEED A LANDING PAGE AFTER LOGGING IN AND ALSO

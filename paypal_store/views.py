@@ -47,7 +47,7 @@ def paypal_return(request):
 
         booked_entertainer_str = "{'entertainer':'"+str(entertainer_id)+"','date':'2008-11-22'}"
 
-        if user.booked_entertainers == 'None':
+        if user.booked_entertainers == 'No Bookings':
             user.booked_entertainers = booked_entertainer_str
         else:
             user.booked_entertainers += ','+booked_entertainer_str

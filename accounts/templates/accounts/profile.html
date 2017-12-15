@@ -4,7 +4,40 @@
     {% if message %}
         {{ message }}
     {% endif %}
-    {% if last_login %}
-        last login: {{ last_login }}
-    {% endif %}
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12 center-aligned " >
+                    {% if account_type_entertainer %}
+                        <h4><a href="{% url 'entertainers:edit_profile' associated_entertainer.id %}">Edit Entertainer Profile</a></h4>
+                    {% else %}
+                        <h4>General User Account</h4>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-12 center-aligned">
+                    <div class="jumbotron">
+                        <div class="container ul-blank">
+                            {% if bookings_made %}
+                                <h4>You have booked the following Entertainers</h4>
+                                <ul>
+                                    {% for entertainer in booked_entertainers %}
+                                        <li><a href="{% url 'entertainers:profile' entertainer.id %}">{{ entertainer.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <h4>You have not booked any Entertainers</h4>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 {% endblock %}
