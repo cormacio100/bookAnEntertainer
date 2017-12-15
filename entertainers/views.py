@@ -98,7 +98,7 @@ def edit_profile(request,pk):
         entertainer=Entertainer.objects.get(pk=pk)
         form = EntertainerRegistrationForm(request.user, instance=entertainer)
 
-    return render(request,'entertainers/edit_profile_test.html',{'pk':pk,'edit':edit,'title':entertainer.title,'form':form})
+    return render(request, 'entertainers/edit_profile.html', {'pk':pk, 'edit':edit, 'title':entertainer.title, 'form':form})
 
 
 

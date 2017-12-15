@@ -5,10 +5,10 @@
     {% if message %}
         {{ message }}
     {% endif %}
-    <form role="form" method="post" action="{% url 'entertainers:create_profile' %}" class="account-form">
-        <legend>Entertainer Profile</legend>
+    <form role="form" method="post" action="{% url 'entertainers:edit_profile' pk %}" class="account-form">
+        <legend class="legend-centre brown-text">Entertainer Profile Update</legend>
         <hr>
-        <div class="row">
+         <div class="row">
             <div class="col-1">
                 &nbsp;
             </div>
@@ -19,21 +19,18 @@
                         {{ form | as_bootstrap }}
                     {% endif %}
                     <div class="form-group">
-                        <button type="submit" class="btn btn-orange btn-block">Create</button>
+                        <button type="submit" class="btn btn-orange btn-block">Update</button>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                &nbsp;
-            </div>
+            <div class="col-1">
+            &nbsp;
         </div>
+        </div>
+
     </form>
+
 {% endblock %}
 {% block script %}
-    <script src="{% static "js/entertainer_create.js" %}"></script>
-    <script>
-        $(document).ready(function(){
-            $('input[type=file]').addClass('btn-orange');
-        });
-    </script>
+    <script src="{% static "js/entertainer_update.js" %}"></script>
 {% endblock %}

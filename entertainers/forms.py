@@ -40,11 +40,11 @@ class EntertainerRegistrationForm(forms.ModelForm):
                     'bio',
                     'set_list',
                     'influences',
-                    'set_up_requirements',
                     'travel_distance',
                     'min_price',
                     'max_price',
                     'soundcloud_audio',
-                    'youtube_video')
+                    'youtube_video',
+                  'set_up_requirements',)
 
 
