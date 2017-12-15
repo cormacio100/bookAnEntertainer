@@ -79,9 +79,15 @@ def create_profile(request):
 
 @login_required()
 def edit_profile(request, pk):
-    #   If page was just loaded then an empty form is displayed
-    form = EntertainerRegistrationForm(request.user)
-    return render(request, 'entertainers/create_profile.html',{'form': form})
+    if request.method == 'POST':
+        #   retrieve the entertainer
+        entertainer = Entertainer.objects.get(pk=pk)
+        #   If page was just loaded then an empty form is displayed
+        #form = EntertainerRegistrationForm(request.user,request.POST,instance=entertainer)
+        #form = EntertainerRegistrationForm(request.session['_auth_user_id'],request.POST, instance=entertainer)
+        form = EntertainerRegistrationForm(request.user,request.POST)
+        form.save()
+        return render(request, 'entertainers/create_profile.html',{'form': form})
 
 #   increment the number of likes for an entertainer
 def like(request,pk):
