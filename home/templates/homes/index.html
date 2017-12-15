@@ -1,7 +1,21 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
+{% extends "base.html" %}
+{% load bootstrap_tags %}
 {% block content %}
-    <h2>Book an Entertainer</h2>
-    <p>Our very simple site</p>
-    <div id="home-imagery"></div>
+    <div class="profile-highlight brown-text white-transparent">
+        <div class="row">
+            <div class="col-4">
+                &nbsp;
+            </div>
+            <div class="col-4 profile-highlight text-centered orange-text">
+                    <h2>Welcome</h2>
+                    <hr>
+            </div>
+            <div class="col-4">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="profile-highlight centered">BookAnEntertainer allows you to find the right entertainer for every occasion</div>
+        </div>
+    </div>
 {% endblock %}

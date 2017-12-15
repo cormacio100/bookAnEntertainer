@@ -9,38 +9,6 @@
             <div class="row">
                 <div class="col-sm-12 center-aligned " >
                     {% if account_type_entertainer %}
-
-                        <form role="form" method="POST" action="" class="">
-                            {% csrf_token %}
-                            <input type="hidden" name="id" value="{{ associated_entertainer.id }}">
-                            <input type="hidden" name="title" value="{{ associated_entertainer.title }}">
-                            <input type="hidden" name="description" value="{{ associated_entertainer.description }}">
-                            <input type="hidden" name="bio" value="{{ associated_entertainer.bio }}">
-                            <input type="hidden" name="genre" value="{{ associated_entertainer.genre }}">
-                            <input type="hidden" name="location" value="{{ associated_entertainer.location }}">
-                            <input type="hidden" name="language" value="{{ associated_entertainer.language }}">
-                            <input type="hidden" name="gig_length_from" value="{{ associated_entertainer.gig_length_from }}">
-                            <input type="hidden" name="gig_length_to" value="{{ associated_entertainer.gig_length_to }}">
-                            <input type="hidden" name="music" value="{{ associated_entertainer.music }}">
-                            <input type="hidden" name="influences" value="{{ associated_entertainer.influences }}">
-                            <input type="hidden" name="set_list" value="{{ associated_entertainer.set_list }}">
-                            <input type="hidden" name="set_up_requirements" value="{{ associated_entertainer.set_up_requirements }}">
-                            <input type="hidden" name="image1" value="{{ associated_entertainer.image1 }}">
-                            <input type="hidden" name="image2" value="{{ associated_entertainer.image2 }}">
-                            <input type="hidden" name="image3" value="{{ associated_entertainer.image3 }}">
-                            <input type="hidden" name="image4" value="{{ associated_entertainer.image4 }}">
-                            <input type="hidden" name="image5" value="{{ associated_entertainer.image5 }}">
-                            <input type="hidden" name="travel_distance" value="{{ associated_entertainer.travel_distance }}">
-                            <input type="hidden" name="max_price" value="{{ associated_entertainer.max_price }}">
-                            <input type="hidden" name="min_price" value="{{ associated_entertainer.min_price }}">
-                            <input type="hidden" name="soundcloud_audio" value="{{ associated_entertainer.soundcloud_audio }}">
-                            <input type="hidden" name="youtube_video" value="{{ associated_entertainer.youtube_video }}">
-                            <input type="hidden" name="user_id" value="{{ associated_entertainer.user_id }}">
-                            <input type="hidden" name="dislikes_total" value="{{ associated_entertainer.dislikes_total }}">
-                            <input type="hidden" name="likes_total" value="{{ associated_entertainer.likes_total }}">
-                            <input type="hidden" name="profile_image" value="{{ associated_entertainer.profile_image }}">
-                            <input type="submit" value="Edit Entertainer Profile" class="btn-orange">
-                        </form>
                         <h4><a href="{% url 'entertainers:edit_profile' associated_entertainer.id %}">Edit Entertainer Profile</a></h4>
                     {% else %}
                         <h4>General User Account</h4>

@@ -1,6 +1,6 @@
 IN PROGRESS:
 
-    -   CREATE AN EDIT PROFILE OPTION FOR ENTERTAINERS
+-   FIX HOME PAGE AND ADD FOOTER
 
     -   NEED TO PUT IN A DATE SELECTOR WHICH APPEARS ONCE THE USER IS LOGGED IN
     -   See RedditClone project for how to do favourites. could work in a similar way to like and dislike
@@ -17,7 +17,7 @@ TO DO:
         -   https://www.codeply.com/go/bRlHp8MxtJ
         -   https://stackoverflow.com/questions/40476201/bootstrap-4-hidden-classes-only-hide-on-small-screens
 ------------------------------------------------------------------------------------
--   FIX HOME PAGE AND ADD FOOTER
+
 -   SWITCH TO USING BOOTSTRAP 3.3??
 -   bootstrap loading placeholder on entertainers page
 -   select menu styling

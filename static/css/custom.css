@@ -247,6 +247,13 @@ ol#carousel-links li{
 footer{
     text-align:center;
     color: #dd6622;
+    background-color: rgba(186,180,176, 0.7);
+    padding:2em;
+    margin-top:1em;
+    position:relative;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
 }
 /************************************************************************/
 /* INDIVIDUAL PAGE */
@@ -327,6 +334,9 @@ div#info-tabs {
     xcolor: #ffffff;
     padding: 1em;
     border-radius: 10px;
+}
+div#REST-data {
+    margin-bottom: 3em;
 }
 /************************************************************************/
 /* ENTERTAINER LISTINGS*/
