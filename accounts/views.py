@@ -9,6 +9,7 @@ from accounts.forms import UserRegistrationForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from accounts.models import User
+from entertainers.models import Entertainer
 
 # VIEW TO DISPLAY REGISTER FORM
 def auth_register(request):
@@ -69,8 +70,6 @@ def auth_login(request):
             if user is not None:
                 auth.login(request, user)
                 request.user.last_login = user.last_login
-
-                messages.success(request,"Logged in as: "+user.email)
                 return redirect(reverse('accounts:profile'))
             else:
                 form.add_error(None,"Your email or password was not recognised")
@@ -101,15 +100,19 @@ def auth_profile(request):
     ##################################################################################################################
     user_id = request.session['_auth_user_id']
     user = User.objects.get(pk=user_id)
-
+    messages.success(request,'Logged in as: '+user.username)
     booked_entertainers = user.booked_entertainers
-    message = 'string is '+booked_entertainers
+    #message = 'string is '+booked_entertainers
 
     booked_entertainers_list = booked_entertainers.split("},{")
     comma_list = []
-    #substr1_list = []
-    num_list =[]
+    entertainer_id_list =[]
     date_list = []
+
+    ##################################################################################
+    #   Loop used to extract the IDs of entertainers booked by user
+    #   and also the date of the bookings
+    ##################################################################################
     i = 0
     while i < len(booked_entertainers_list):
         #   defaults to length of string
@@ -133,6 +136,16 @@ def auth_profile(request):
             date = substr[colon_idx:].lstrip(':')
             return date
 
+        def retrieve_entertainer_list(entertainer_id_list):
+            entertainer_list = []
+            x = 0
+            while x < len(entertainer_id_list):
+                entertainer = Entertainer.objects.get(pk=entertainer_id_list[x])
+                entertainer_list.append(entertainer)
+                x += 1
+            return entertainer_list
+
+
         #   strip external brackets and quotes from each string in the list
         #   LEFT WITH 3 STRINGS
         booked_entertainers_list[i] = str(booked_entertainers_list[i]).replace("'","").lstrip('{').rstrip('}')
@@ -142,9 +155,16 @@ def auth_profile(request):
         #   call to inner functions to extract entertainer ID and dates
         num = find_entertainer_id(booking_str,comma_idx )          #   e.g. entertainer:2,date:2008-11-22
         date = find_booking_date(booking_str,comma_idx)
-        num_list.append(num)
+        entertainer_id_list.append(num)
         date_list.append(date)
         i+=1
 
-    args = {'message': message,  'booked_entertainers_list': booked_entertainers_list,'comma_list':comma_list,'date_list':date_list,'num_list':num_list}
+        #############################################
+        #   From the list of entertainer IDs
+        #   RETRIEVE a list of entertainers
+        #   using an inner function
+        #############################################
+        booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
+
+    args = { 'date_list':date_list,'entertainer_id_list':entertainer_id_list,'booked_entertainers':booked_entertainers}
     return render(request, 'accounts/profile.html',args)

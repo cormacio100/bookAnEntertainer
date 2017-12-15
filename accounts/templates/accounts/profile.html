@@ -2,31 +2,48 @@
 {% load bootstrap_tags %}
 {% block content %}
     {% if message %}
-        <h4>String</h4>
         {{ message }}
     {% endif %}
-    <ul>
-        {% for entertainer in booked_entertainers_list %}
-            <li>{{ entertainer }}</li>
-        {% endfor %}
-    </ul>
-    <h4>comma idx</h4>
-    <ul>
-        {% for comma in comma_list %}
-            <li>{{ comma }}</li>
-        {% endfor %}
-    </ul>
-    <h4>Dates</h4>
-    <ul>
-        {% for date in date_list %}
-            <li>{{ date }}</li>
-        {% endfor %}
-    </ul>
-    <h4>Number</h4>
-    <ul>
-        {% for num in num_list %}
-            <li>{{ num }}</li>
-        {% endfor %}
-    </ul>
+    <div class="row">
+        <div class="col-sm-2">
+            &nbsp;
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>You have booked the following Entertainers</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul>
+                        {% for entertainer in booked_entertainers %}
+                            <li>{{ entertainer}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            &nbsp;
+        </div>
+    <div class="row">
+
+    </div>
+        <h4>Dates</h4>
+        <ul>
+            {% for date in date_list %}
+                <li>{{ date }}</li>
+            {% endfor %}
+        </ul>
+        <h4>Number</h4>
+        <ul>
+            {% for entertainer_id in entertainer_id_list %}
+                <li>{{ entertainer_id }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
 
 {% endblock %}
