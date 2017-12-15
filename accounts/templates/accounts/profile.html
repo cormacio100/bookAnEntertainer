@@ -5,45 +5,35 @@
         {{ message }}
     {% endif %}
     <div class="row">
-        <div class="col-sm-2">
-            &nbsp;
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12 center-aligned " >
+                    {% if account_type_entertainer %}
+                        <h4><a href="{% url 'entertainers:edit_profile' %}">Edit Entertainer Profile</a></h4>
+                    {% else %}
+                        <h4>General User Account</h4>
+                    {% endif %}
+                </div>
+            </div>
         </div>
         <div class="col-sm-8">
             <div class="row">
-                <div class="col-sm-12">
-                    <h4>You have booked the following Entertainers</h4>
+                <div class="col-sm-12 center-aligned">
+                    <div class="jumbotron">
+                        <div class="container ul-blank">
+                            <h4>You have booked the following Entertainers</h4>
+                            <ul>
+                                {% for entertainer in booked_entertainers %}
+                                    <li><a href="{% url 'entertainers:profile' entertainer.id %}">{{ entertainer.title}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <ul>
-                        {% for entertainer in booked_entertainers %}
-                            <li>{{ entertainer}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+
         </div>
-        <div class="col-sm-2">
-            &nbsp;
-        </div>
-    <div class="row">
-
     </div>
-        <h4>Dates</h4>
-        <ul>
-            {% for date in date_list %}
-                <li>{{ date }}</li>
-            {% endfor %}
-        </ul>
-        <h4>Number</h4>
-        <ul>
-            {% for entertainer_id in entertainer_id_list %}
-                <li>{{ entertainer_id }}</li>
-            {% endfor %}
-        </ul>
-
-    </div>
-
 
 {% endblock %}

@@ -8,9 +8,15 @@ body,
     color:#7c6659;
     font-family: 'Righteous', cursive;
 }
+.center-aligned{
+    text-align: center;
+}
 .centered{
     margin-left:auto;
     margin-right:auto;
+}
+.ul-blank ul li{
+    list-style-type: none;
 }
 .transparent{
 
@@ -76,11 +82,18 @@ a{
 }
 a:hover{
     color: #bab4b0;
+    text-decoration: none;
 }
 div#navbarSupportedContent {
     margin-top: 1em;
     margin-bottom: 1em;
     background-color:#ffffff;
+}
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #bab4b0;
+    border-radius: .3rem;
 }
 
 /************************************************************************/
@@ -350,6 +363,10 @@ p#spinner{
 .card-img-top{
     height:140px;
 }
+.card-text{
+    font-size: 0.8em;
+}
+
 /**************************************************************************/
 /*  HOME  */
 /**************************************************************************/
@@ -385,6 +402,7 @@ p#spinner{
     border: 1px solid #dd6622;
     color: #dd6622;
     margin-top: 1em;
+    text-align: center;
 }
 /**************************************************************************/
 /*  HEADINGS */
@@ -400,7 +418,7 @@ p#spinner{
     xbackground-color:#bab4b0;
     border:1px solid #dd6622;
     padding:1em;
-    margin:2em;
+    margin:2em  2em 0 2em;
 }
 #listing-row{
     margin:0;

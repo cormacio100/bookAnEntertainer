@@ -13,7 +13,7 @@ var populateTemplate = function(){
         console.log('location:'+apiResponseArr[i].location);
         console.log('profile_image_url:'+apiResponseArr[i].profile_image_url);
         console.log('bio_summary:'+apiResponseArr[i].bio_summary);
-        var card = $('<div class="col-lg-3 col-md-6 col-xs-12 ent-listing"><div class="card"><img class="card-img-top" src="'+apiResponseArr[i].profile_image_url+'" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap" /><div class="card-body"><h4 class="card-title">'+apiResponseArr[i].title+'</h4><p class="card-text">'+apiResponseArr[i].bio_summary+'</p></div><div class="card-footer"><small class="text-muted"><a href="/entertainers/profile/'+apiResponseArr[i].id+'">...Read More</a></small></div></div></div>');
+        var card = $('<div class="col-lg-3 col-md-6 col-xs-12 margin-top-1"><a href="/entertainers/profile/'+apiResponseArr[i].id+'"><div class="card h-100"><img class="card-img-top" src="'+apiResponseArr[i].profile_image_url+'" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="Card image cap" /><div class="card-body"><h4 class="card-title">'+apiResponseArr[i].title+'</h4><p class="card-text">'+apiResponseArr[i].bio_summary+'</p></div></div></a></div>');
 
         restDataDiv.append(card);
     }

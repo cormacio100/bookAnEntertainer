@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import EntertainerRegistrationForm
 from django.contrib import messages
 from accounts.models import User
+from django.http import HttpResponse
 
 ################
 #   API Stuff
@@ -58,7 +59,6 @@ def display_entertainer_profile(request,entertainer_id):
 
 @login_required()
 def create_profile(request):
-
     if request.method == 'POST':
         #   If the form was submitted the contents of the form are passed in
         form = EntertainerRegistrationForm(request.user,request.POST)
@@ -76,6 +76,12 @@ def create_profile(request):
         form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form})
 
+
+@login_required()
+def edit_profile(request, pk):
+    #   If page was just loaded then an empty form is displayed
+    form = EntertainerRegistrationForm(request.user)
+    return render(request, 'entertainers/create_profile.html',{'form': form})
 
 #   increment the number of likes for an entertainer
 def like(request,pk):

@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^listings/$', views.listings, name="listings"),
     url(r'^profile/(?P<entertainer_id>[0-9]+)/$', views.display_entertainer_profile, name="profile"),
     url(r'^create_profile/$', views.create_profile, name="create_profile"),
+    url(r'^edit_profile/$', views.edit_profile, name="edit_profile"),
 
     #   actions / voting
     url(r'^(?P<pk>[0-9]+)/like/', views.like, name="like"),
