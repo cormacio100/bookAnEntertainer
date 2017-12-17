@@ -18,7 +18,7 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 
 #   PAYPAL SETTINGS
-SITE_URL = 'http://bookanentertainer.herokuapp.com'
+SITE_URL = 'http://127.0.0.1:8000'
 PAYPAL_NOTIFY_URL = 'https://aac1c9ee.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
                                                                             #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
                                                                             #    HERE

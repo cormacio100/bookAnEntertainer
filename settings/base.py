@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'paypal.standard.ipn',
     'paypal_store',
-    'settings'
+    #'settings'
 ]
 
 ########################################################################################
