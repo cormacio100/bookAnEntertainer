@@ -22,7 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'md517-*6s^q(z1$c@ik&*c)veq_s^q%luwar7b6*&g)k*ay7!r'
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','bookanentertainer.herokuapp.com']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK - this changes each time ngrok is run
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ['localhost','127.0.0.1','https://aac1c9ee.ngrok.io']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK
+
 
 # Application definition
 
@@ -37,12 +41,12 @@ INSTALLED_APPS = [
     'entertainers',
     'multiselectfield',
     'user_accounts',
+    'debug_toolbar',
     'django_forms_bootstrap',
     'accounts',
     'rest_framework',
     'paypal.standard.ipn',
-    'paypal_store',
-    'settings'
+    'paypal_store'
 ]
 
 ########################################################################################
@@ -70,6 +74,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -95,6 +100,18 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bookAnEntertainer.wsgi.application'
+
+
+# Database
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -142,6 +159,24 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/pics/'    #   Can access images directly in browser with address <host>:<port>/pics/media/<folder>/<image>
 MEDIA_ROOT = BASE_DIR
 
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': 'bookAnEntertainer.settings.show_toolbar',
+}
+
 INTERNAL_IPS = ('127.0.0.1',)
+
+#   PAYPAL SETTINGS
+SITE_URL = 'http://127.0.0.1:8000'
+PAYPAL_NOTIFY_URL = 'https://aac1c9ee.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
+                                                                            #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
+                                                                            #    HERE
+PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
+
+
+#   DEBUG TOOLBAR
+def show_toolbar(request):
+    if not request.is_ajax(): # and request.user: # and request.user.username == "cormacio":
+        return True
+    return True
 
 
