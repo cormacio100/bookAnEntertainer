@@ -4,7 +4,7 @@ import dj_database_url
 DEBUG = False
 
 DATABASES = {
-    'default': dj_database_url.config('CLEARDB_DATABASE_URL')
+    'default': dj_database_url.config('mysql://be6c49145477e6:22e76b20@eu-cdbr-west-01.cleardb.com/heroku_64d3015aa87ee2f?')
 }
 
 #   PAYPAL SETTINGS
