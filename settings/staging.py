@@ -12,8 +12,8 @@ PAYPAL_NOTIFY_URL = 'https://aac1c9ee.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   
                                                                             #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
                                                                             #    HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
-SITE_URL = 'http://your-heroku-app.herokuapp.com'
-ALLOWED_HOSTS.append('your-heroku-app.herokuapp.com')
+SITE_URL = 'http://bookanentertainer.herokuapp.com'
+ALLOWED_HOSTS.append('bookanentertainer.herokuapp.com')
 
 # Log DEBUG information to the console
 LOGGING = {
