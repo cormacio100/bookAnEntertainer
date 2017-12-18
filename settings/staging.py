@@ -4,8 +4,9 @@ import dj_database_url
 DEBUG = False
 
 DATABASES = {
-    'default': dj_database_url.config('mysql://b75ca10aad0726:fe49e080@eu-cdbr-west-01.cleardb.com/heroku_d28248eb1f8e96b?')
+    'default': dj_database_url.config('mysql://b75ca10aad0726:fe49e080@eu-cdbr-west-01.cleardb.com/heroku_d28248eb1f8e96b?') # book-an-entertainer
 }
+
 
 #   PAYPAL SETTINGS
 SITE_URL = 'http://book-an-entertainer.herokuapp.com'
