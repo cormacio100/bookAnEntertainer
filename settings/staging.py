@@ -8,12 +8,12 @@ DATABASES = {
 }
 
 #   PAYPAL SETTINGS
-SITE_URL = 'http://bookanentertainer.herokuapp.com'
-PAYPAL_NOTIFY_URL = 'https://bookanentertainer.herokuapp.com/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
+SITE_URL = 'http://book-an-entertainer.herokuapp.com'
+PAYPAL_NOTIFY_URL = 'https://book-an-entertainer.herokuapp.com/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
                                                                             #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
                                                                             #    HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
-ALLOWED_HOSTS.append('bookanentertainer.herokuapp.com')
+ALLOWED_HOSTS.append('book-an-entertainer.herokuapp.com')
 
 # Log DEBUG information to the console
 LOGGING = {

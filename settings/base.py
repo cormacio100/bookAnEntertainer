@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'md517-*6s^q(z1$c@ik&*c)veq_s^q%luwar7b6*&g)k*ay7!r'
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','bookanentertainer.herokuapp.com']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK - this changes each time ngrok is run
+SITE_ID =2
 
 # Application definition
 
