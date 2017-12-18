@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'md517-*6s^q(z1$c@ik&*c)veq_s^q%luwar7b6*&g)k*ay7!r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','https://aac1c9ee.ngrok.io']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK
 
@@ -42,12 +41,12 @@ INSTALLED_APPS = [
     'entertainers',
     'multiselectfield',
     'user_accounts',
-    #'debug_toolbar',
+    'debug_toolbar',
     'django_forms_bootstrap',
     'accounts',
     'rest_framework',
     'paypal.standard.ipn',
-    'paypal_store',
+    'paypal_store'
 ]
 
 ########################################################################################
@@ -75,7 +74,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -106,7 +105,6 @@ WSGI_APPLICATION = 'bookAnEntertainer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -114,11 +112,10 @@ DATABASES = {
     }
 }
 """
-
 DATABASES = {
     'default': dj_database_url.config('mysql://be6c49145477e6:22e76b20@eu-cdbr-west-01.cleardb.com/heroku_64d3015aa87ee2f?')
 }
-
+"""
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 

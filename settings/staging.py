@@ -4,15 +4,15 @@ import dj_database_url
 DEBUG = False
 
 DATABASES = {
-    'default': dj_database_url.config('mysql://be6c49145477e6:22e76b20@eu-cdbr-west-01.cleardb.com/heroku_64d3015aa87ee2f?')
+    'default': dj_database_url.config('mysql://b04dad47c09741:c839778c@eu-cdbr-west-01.cleardb.com/heroku_0ec0fc4d7ab16c5?')
 }
 
 #   PAYPAL SETTINGS
+SITE_URL = 'http://bookanentertainer.herokuapp.com'
 PAYPAL_NOTIFY_URL = 'https://bookanentertainer.herokuapp.com/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
                                                                             #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
                                                                             #    HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
-SITE_URL = 'http://bookanentertainer.herokuapp.com'
 ALLOWED_HOSTS.append('bookanentertainer.herokuapp.com')
 
 # Log DEBUG information to the console
