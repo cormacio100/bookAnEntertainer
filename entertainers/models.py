@@ -8,7 +8,8 @@ from accounts.models import User
 #   PAYPAL SETTINGS
 import uuid
 from django.db import models
-from django.conf import settings
+#from django.conf import settings
+import settings
 from paypal.standard.forms import PayPalPaymentsForm
 
 
