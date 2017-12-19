@@ -10,6 +10,7 @@ import uuid
 from django.db import models
 #from django.conf import settings
 import settings
+from settings import base
 from paypal.standard.forms import PayPalPaymentsForm
 
 
@@ -25,14 +26,14 @@ class Entertainer(models.Model):
     @property
     def paypal_form(self):
         paypal_dict = {
-            "business": settings.PAYPAL_RECEIVER_EMAIL,
+            "business": settings.base.PAYPAL_RECEIVER_EMAIL,
             "amount": self.min_price,
             "currency": "EUR",
             "item_name": self.title+' Booking Fee',
             "invoice": "%s-%s-%s" % (self.title,self.pk, uuid.uuid4()),
-            "notify_url": settings.PAYPAL_NOTIFY_URL,
-            "return_url": "%s/paypal-return" % settings.SITE_URL,
-            "cancel-return": "%s/paypal-cancel" % settings.SITE_URL
+            "notify_url": settings.base.PAYPAL_NOTIFY_URL,
+            "return_url": "%s/paypal-return" % settings.base.SITE_URL,
+            "cancel-return": "%s/paypal-cancel" % settings.base.SITE_URL
         }
         
         return PayPalPaymentsForm(initial=paypal_dict)

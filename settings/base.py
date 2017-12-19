@@ -145,4 +145,7 @@ MEDIA_ROOT = BASE_DIR
 
 INTERNAL_IPS = ('127.0.0.1',)
 
+PAYPAL_RECEIVER_EMAIL = 'cormac.music@gmail.com'
+PAYPAL_NOTIFY_URL = 'https://bookanentertainer.herokuapp.com/to-ngrok-or-not-to-ngrok/'     #   URL taken from name of HEROKU App
+SITE_URL = 'http://bookanentertainer.herokuapp.com'
 
