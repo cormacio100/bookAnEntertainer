@@ -8,16 +8,14 @@ DATABASES = {
     'default': dj_database_url.config('mysql://b04dad47c09741:c839778c@eu-cdbr-west-01.cleardb.com/heroku_0ec0fc4d7ab16c5?') # bookanentertainer
 }
 
+ALLOWED_HOSTS.append('bookanentertainer.herokuapp.com')
 
 #   PAYPAL SETTINGS
-SITE_URL = 'http://book-an-entertainer.herokuapp.com'
-PAYPAL_NOTIFY_URL = 'https://book-an-entertainer.herokuapp.com/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
-                                                                            #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY>
-                                                                            #    HERE
+SITE_URL = 'http://bookanentertainer.herokuapp.com'
+PAYPAL_NOTIFY_URL = 'https://bookanentertainer.herokuapp.com/to-ngrok-or-not-to-ngrok/'     #   URL taken from name of HEROKU App
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
-ALLOWED_HOSTS.append('book-an-entertainer.herokuapp.com')
 
-# Log DEBUG information to the console
+# Since DEBUG = False, you can log DEBUG information to the HEROKU console
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

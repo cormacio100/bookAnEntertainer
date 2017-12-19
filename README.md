@@ -59,9 +59,11 @@ This app talks to an API to filter out entertainers by type and location. Users 
 2. For testing, ensure you have a PAYPAL Personal and Business accounts set up as they will be needed to make purchases
 3. Download ngrok.exe to suit your platform from ngrok. Save it to your app's route folder
 4. Open cmd prompt and navigate to app's route folder
-   1. RUN NGROK by typing 'ngrok http 8000
+   1.If running locally, open cmd or Pycharm terminal, tell manage.py that you want to run in developer environment each time you do a command involving manage.py
+        1. E.G. Type 'python manage.py runserver --settings=settings.dev'
+   2.RUN NGROK by typing 'ngrok http 8000'
         1. Can view requests in browser @ http://127.0.0.1:4040
-   2. In settings.py copy the https forwarding address setting from the running ngrok console. 
+   3. In settings.py copy the https forwarding address setting from the running ngrok console. 
       1. We need to add the address to the ALLOW_HOSTS list
       2. Also set PAYPAL_NOTIFY_URL with the same address 
          1. E.G. PAYPAL_NOTIFY_URL = 'https://9f37a350.ngrok.io/to-ngrok-or-not-to-ngrok/

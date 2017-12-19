@@ -17,8 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from home import views as home_views
 from django.conf.urls.static import static
-#from django.conf import settings
-import settings
+from django.conf import settings
 
 #   PAYPAL SETTINGS
 from paypal.standard.ipn import urls as paypal_urls
