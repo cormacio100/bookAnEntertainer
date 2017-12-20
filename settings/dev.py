@@ -13,8 +13,8 @@ DATABASES = {
 ALLOWED_HOSTS.append('aac1c9ee.ngrok.io')
 
 #   DEBUG TOOLBAR SETTINGS
-#INSTALLED_APPS.append('debug_toolbar')
-#MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+INSTALLED_APPS.append('debug_toolbar')
+MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': 'bookAnEntertainer.settings.show_toolbar',
 }
@@ -26,10 +26,8 @@ PAYPAL_NOTIFY_URL = 'https://aac1c9ee.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
 
 #   DEBUG TOOLBAR - needs to go at bottom
-"""
 def show_toolbar(request):
     if not request.is_ajax(): # and request.user: # and request.user.username == "cormacio":
         return True
     return True
 
-"""
