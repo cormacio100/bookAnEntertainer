@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import os
 import sys
-import settings
+#import settings
 
 if __name__ == "__main__":
     #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bookAnEntertainer.settings")
     #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.staging")
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.base")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.dev") # should change
     #os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)
     #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
     try:
