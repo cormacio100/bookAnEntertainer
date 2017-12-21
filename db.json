@@ -1,0 +1,1340 @@
+[
+{
+    "model": "sessions.session",
+    "pk": "83tra30x9hrrp3ewmb09al6641bvy67m",
+    "fields": {
+        "session_data": "MDcyNGQ0MjNlNmVhNDRkYjY5N2M2Yzg2ZDE0YTE5ZDQzZjY0MTllNTp7Il9hdXRoX3VzZXJfaGFzaCI6ImU0OTEwY2JlNWVkY2MwMWU0N2ExODI4NDVkNTEyNjMzOWYwZDA0MTEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=",
+        "expire_date": "2017-12-27T23:32:08.242Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "no50k2637dx47wp96kdxekey8509rf74",
+    "fields": {
+        "session_data": "ODlkYjA0YTI3ODVmNGU4NGEzOGFjZWNjNzBjOWY2NmEwYjhjOWM3Njp7fQ==",
+        "expire_date": "2017-12-28T21:26:40.718Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "p46537n85wdbon7sei671kxsb6269krx",
+    "fields": {
+        "session_data": "N2RhZmQxODAxNzg0Zjg2NmNkNTMwMzQ3Y2VjNDc3ZjlkYjhhYmVkOTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImFjY291bnRzLmJhY2tlbmRzLkVtYWlsQXV0aCIsIl9hdXRoX3VzZXJfaGFzaCI6IjkzZTEyNDk0MGJhZWQwZmM5ZTNmMjQ2YWFkZTBhY2UwMDg1ZWJiZmIiLCJfYXV0aF91c2VyX2lkIjoiOCJ9",
+        "expire_date": "2018-01-04T01:43:09.846Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "tqb1lwrpg1tot3mv1x7g7dav3a5l0kwl",
+    "fields": {
+        "session_data": "MjUwZDk0Y2Y2OWRmYzg1NTI0ZDE3NDNkNzA3YjlkNDM0NDRkYzU3YTp7Il9hdXRoX3VzZXJfaGFzaCI6IjkzZTEyNDk0MGJhZWQwZmM5ZTNmMjQ2YWFkZTBhY2UwMDg1ZWJiZmIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJhY2NvdW50cy5iYWNrZW5kcy5FbWFpbEF1dGgiLCJfYXV0aF91c2VyX2lkIjoiOCJ9",
+        "expire_date": "2018-01-02T23:48:32.566Z"
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$Jnn73imTrkGr$fuAR3dU9Rz7534OQ0CH4ZcwbT/198aJhSDnTbT+zf5I=",
+        "last_login": "2017-12-11T01:07:35.967Z",
+        "is_superuser": false,
+        "username": "mac14@gmail.com",
+        "first_name": "mac",
+        "last_name": "14",
+        "email": "mac14@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-12-11T01:07:35.243Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$kqTxAMQbZhS1$WDaekvy36R4oYAAA10lacQpTqp9zeKPYH66CpplqHcI=",
+        "last_login": "2017-12-15T19:10:10.353Z",
+        "is_superuser": true,
+        "username": "macio@macio.com",
+        "first_name": "generic",
+        "last_name": "user",
+        "email": "macio@macio.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-12-11T01:25:01.926Z",
+        "account_type": "General",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$j1yXU26s8gvp$vs7qd+diXNaSWfmqSzHiHNJuHrxxLPm7Rmt2QauR5kE=",
+        "last_login": "2017-12-11T02:08:48.299Z",
+        "is_superuser": false,
+        "username": "felix@gmail.com",
+        "first_name": "Felix",
+        "last_name": "Lynch",
+        "email": "felix@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-11T02:08:47.684Z",
+        "account_type": "General",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$bRpnhDUNNPeq$LJi7YtSHHvcPFBs8QVVfl1LwTWfwOL0y/dJHOKaqA0Y=",
+        "last_login": "2017-12-11T02:38:59.631Z",
+        "is_superuser": false,
+        "username": "jinilsson@gmail.com",
+        "first_name": "Ji",
+        "last_name": "Nilsson",
+        "email": "jinilsson@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-11T02:38:59.049Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$rGgUZVEzHAfK$cfCZPi/e5KllckdYvQEGfOKL6E+zU6m9xz2Kksjqrgk=",
+        "last_login": "2017-12-11T17:07:14.818Z",
+        "is_superuser": false,
+        "username": "inezlucia1@gmail.com",
+        "first_name": "Inez",
+        "last_name": "Lucia1",
+        "email": "inezlucia1@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-11T17:07:14.235Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$ajdO1tlt7P2d$9cSgDRwIfulLIMUAA0xfs4qOTNQRmUJtoz2GsS7IwpA=",
+        "last_login": "2017-12-13T03:05:23.755Z",
+        "is_superuser": false,
+        "username": "inezlucia2@gmail.com",
+        "first_name": "inez",
+        "last_name": "lucia2",
+        "email": "inezlucia2@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-11T17:22:12.332Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$H0xOE5srz0AI$xqHeEM/89phBV6RS8l/FI9PxLeCc8XJRrweD/aJFzuc=",
+        "last_login": "2017-12-15T14:20:59.336Z",
+        "is_superuser": false,
+        "username": "inezlucia3@gmail.com",
+        "first_name": "inez",
+        "last_name": "lucia3",
+        "email": "inezlucia3@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-11T17:32:03.449Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "{'entertainer':'4','date':'2008-11-22'},{'entertainer':'5','date':'2008-11-22'}",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$Evvs5x7V0vP4$6vslO1WnYm021fuelhF/dBloV13MzbW6C/S3EZ50jak=",
+        "last_login": "2017-12-20T00:38:06.070Z",
+        "is_superuser": false,
+        "username": "inezlucia4@gmail.com",
+        "first_name": "Inez",
+        "last_name": "Lucia4",
+        "email": "inezlucia4@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-11T21:48:57.168Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "{'entertainer':'2','date':'2008-11-22'},{'entertainer':'4','date':'2008-11-22'},{'entertainer':'2','date':'2008-11-22'},{'entertainer':'2','date':'2008-11-22'},{'entertainer':'6','date':'2008-11-22'},{'entertainer':'7','date':'2008-11-22'},{'entertainer':'14','date':'2008-11-22'},{'entertainer':'5','date':'2008-11-22'},{'entertainer':'2','date':'2008-11-22'},{'entertainer':'4','date':'2008-11-22'}",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$j8q2xuGRflDZ$aZX6uq+ahOPhAIo5rZOdXQaNtV4rsih/TcGLaOuEo/k=",
+        "last_login": "2017-12-13T22:32:02.557Z",
+        "is_superuser": false,
+        "username": "freddy@gmail.com",
+        "first_name": "freddy",
+        "last_name": "lynch",
+        "email": "freddy@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-13T22:25:02.197Z",
+        "account_type": "General",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$Rre6x3pxxx8C$Flqp7h27vlwuvZbJDoIhvH1b+baiKF2g4UA9X05cVko=",
+        "last_login": "2017-12-13T23:12:23.507Z",
+        "is_superuser": false,
+        "username": "patrick@gmail.com",
+        "first_name": "patrick",
+        "last_name": "bergin",
+        "email": "patrick@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-13T23:12:23.005Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$G2XikyqynViY$P/wqxINXQ0+A1DebYJJBmujQiYVu/uwUXMZfW0fY5SE=",
+        "last_login": "2017-12-15T12:50:06.005Z",
+        "is_superuser": false,
+        "username": "james@metallica.com",
+        "first_name": "James",
+        "last_name": "Hetfield",
+        "email": "james@metallica.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-15T12:50:05.478Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$GQk703n0o3tn$qmfWmvG+wSPqX88mAOyU0mPOPsIUXos9P98O/5biYf0=",
+        "last_login": "2017-12-15T14:19:44.245Z",
+        "is_superuser": false,
+        "username": "layne@stayley.com",
+        "first_name": "Layne",
+        "last_name": "Staley",
+        "email": "layne@stayley.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-15T13:32:05.690Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$lFGd2JrKPjfv$pDpkE+tLP5j1t6zva/VuSfMfkUgV99bGtgB3Hqilqt0=",
+        "last_login": "2017-12-15T13:45:54.133Z",
+        "is_superuser": false,
+        "username": "peter@fleetwoodmac.com",
+        "first_name": "Peter",
+        "last_name": "Green",
+        "email": "peter@fleetwoodmac.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-12-15T13:45:53.621Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$wCU0i8x6YnyZ$yE7VI/vUWCcgFv7bjJk4OHrZJM9aL6YthpFDim3Vlw4=",
+        "last_login": "2017-12-15T14:20:35.533Z",
+        "is_superuser": false,
+        "username": "jeff@buckley.com",
+        "first_name": "Jeff",
+        "last_name": "Buckley",
+        "email": "jeff@buckley.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-15T13:55:32.234Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$aI9WGe0C4cvc$JaVzGuEX44nGIkMlssvGXSJeJalq3PHSn9ASAUoGc7w=",
+        "last_login": "2017-12-15T14:01:36.196Z",
+        "is_superuser": false,
+        "username": "dave.gahan@gmail.com",
+        "first_name": "Dave",
+        "last_name": "Gahan",
+        "email": "dave.gahan@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-12-15T14:01:35.702Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 16,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$GjbYyRKzd05u$jU1L6kmB2TsC56biHeM1S9mYCXmRIhj2K0LcmRmD91E=",
+        "last_login": "2017-12-15T19:52:27.970Z",
+        "is_superuser": true,
+        "username": "terry@thespecials.com",
+        "first_name": "Terry",
+        "last_name": "Hall",
+        "email": "terry@thespecials.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-12-15T14:08:53.372Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 17,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$COwk49Ml7M7f$jK9jpQMs+02O4ULpoke1ZhJC3SuyNhZ5Kt97FIlsUuw=",
+        "last_login": "2017-12-15T15:32:34.854Z",
+        "is_superuser": false,
+        "username": "bertiemagee@gmail.com",
+        "first_name": "Bertie",
+        "last_name": "Magee",
+        "email": "bertiemagee@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-15T15:32:16.881Z",
+        "account_type": "General",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 18,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$LL7oN5KH0xzo$J4NupGK4Gvjfq2kNttoxlKbiZturNcyhiuLSm59cHsw=",
+        "last_login": "2017-12-15T20:29:53.875Z",
+        "is_superuser": false,
+        "username": "charles@bradley.com",
+        "first_name": "Charles",
+        "last_name": "Bradley",
+        "email": "charles@bradley.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-15T20:29:53.331Z",
+        "account_type": "Entertainer",
+        "booked_entertainers": "No Bookings",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "mac14@gmail.com"
+        ],
+        "title": "NightBlind",
+        "description": "Band",
+        "genre": "Rock",
+        "location": "Dublin",
+        "profile_image": "media/profile/2017/12/13/profile.JPG",
+        "image1": "media/img1/2017/12/13/1.JPG",
+        "image2": "media/img2/2017/12/13/2.JPG",
+        "image3": "media/img3/2017/12/13/3.JPG",
+        "image4": "media/img4/2017/12/13/4.JPG",
+        "image5": "media/img5/2017/12/13/5.JPG",
+        "language": "English,Irish,Spanish",
+        "music": "Original",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "Formed in in Dublin in 2011 with the aim of playing original Rock Music with a bluesy edge in the vein of Alice In Chains, Soundgarden, Gun's N'Roses, Captain Beefheart, Thin Lizzy, ACDC, Faith No More, The Doors etc etc\r\nWe work hard at what we do and have achieved good acclaim with audiences and promoters alike in Dublin venues such as Sweeneys, Whelans, Grand Social and various house parties\r\nThe band has just released a brand new 6 track EP called \"Take Forever\"",
+        "set_list": "Bad Season Drums\r\nWalk Away\r\nNight Blind\r\nSexellent\r\nPressure Cooker\r\nSudden Feelings\r\nSuper Cool\r\nAll With a Say\r\nAll Together\r\nThere's No Wine\r\nRhythm n'Lose\r\nBlack Eye",
+        "influences": "Alice In Chains, Soundgarden, Captain Beefheart, Entombed, ACDC, Pantera, English Beat, Peter Green's Fleetwood Mac, The Big 4 of Thrash, Jimi Hendrix, The Doors, GNR, RATM, Faith No More, CCR, Rory Gallagher, Thin Lizzy, Corrosion of Conformity, Rancid, Jurassic 5, The Reverend Horton Heat, Tom Waits, Sepultura, The Strokes, The Melvins, Black Sabbath",
+        "set_up_requirements": "Power Source",
+        "travel_distance": "nationwide",
+        "min_price": "100",
+        "max_price": "500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/320250097&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/xaE2wV-HMxs\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 28,
+        "dislikes_total": 17
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "macio@macio.com"
+        ],
+        "title": "Gangsters",
+        "description": "Band",
+        "genre": "Ska",
+        "location": "Louth",
+        "profile_image": "media/profile/2017/12/13/profile_WoKMY10.JPG",
+        "image1": "media/img1/2017/12/13/3.JPG",
+        "image2": "media/img2/2017/12/13/4.JPG",
+        "image3": "media/img3/2017/12/13/1.JPG",
+        "image4": "media/img4/2017/12/13/2.JPG",
+        "image5": "media/img5/2017/12/13/5_mfoUJFg.JPG",
+        "language": "English",
+        "music": "Original",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "Gangsters are a ska band from Dublin.They were formed in the early Ninety's They were influenced by the ska scene of the early eighties They made several appearances on tv in the ninety's They are regarded by many as Ireland's best Ska band.They have billed with most of the top Ska band's from England, including Bad manners The Selecter The Special Beat and many more,even billing with the Godfather of Ska, Laurel Aitken on many occasion's Their Music is a must to listen to.they're song's have a fun element but also Target issue's from everyday life,listen and enjoy.",
+        "set_list": "Available on Request.",
+        "influences": "All Genres and decades.",
+        "set_up_requirements": "Power Source",
+        "travel_distance": "nationwide",
+        "min_price": "100",
+        "max_price": "500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/299934828&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/5fUEt7OtsS0\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 7,
+        "dislikes_total": 5
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "inezlucia1@gmail.com"
+        ],
+        "title": "Ji Nilsson",
+        "description": "Solo",
+        "genre": "Pop",
+        "location": "Galway",
+        "profile_image": "media/profile/2017/12/15/profile.png",
+        "image1": "media/no_image.png",
+        "image2": "media/no_image.png",
+        "image3": "media/no_image.png",
+        "image4": "media/no_image.png",
+        "image5": "media/no_image.png",
+        "language": "English,Irish",
+        "music": "Original",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "Ji Nilsson is a singer songwriter from Stockholm, Sweden. Her debut single, I'm Her, was released 5 March 2014.\r\nStockholm based pop artists and BFF's Ji Nilsson and Marlene teamed up together for Love You Anyway in honour of 2014's International Women's Day.",
+        "set_list": "Available on Request.",
+        "influences": "All Genres and decades.",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside",
+        "travel_distance": "nationwide",
+        "min_price": "100",
+        "max_price": "500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254017841&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a4TQKbVtLb8\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 3,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "inezlucia2@gmail.com"
+        ],
+        "title": "Extreme",
+        "description": "Band",
+        "genre": "Rock",
+        "location": "Kilkenny",
+        "profile_image": "media/profile/2017/12/15/profile_DZQ11ne.jpg",
+        "image1": "media/img1/2017/12/15/1_MylOFxs.jpg",
+        "image2": "media/img2/2017/12/15/2_csceHZq.jpg",
+        "image3": "media/img3/2017/12/15/3_yka29ri.jpg",
+        "image4": "media/img4/2017/12/15/4_ouXXGNX.jpg",
+        "image5": "media/img5/2017/12/15/5_A7SKa7q.jpg",
+        "language": "English",
+        "music": "Original",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "Extreme is an American rock band, headed by frontmen Gary Cherone and Nuno Bettencourt, that reached the height of their popularity in the late 1980s and early 1990s.\r\n\r\nAmong some of Extreme's musical influences are Van Halen, Queen, Aerosmith and Led Zeppelin. The band played at The Freddie Mercury Tribute Concert in 1992 and Cherone joined Van Halen in 1996.[8] The band has described their music as \"funky metal\" in the early days, but it would evolve much more in the mid-1990s by blending classic rock influences with post-grunge and alternative rock.\r\n\r\nThey have released five studio albums, two EPs (in Japan) and two compilation albums since their formation. The band was one of the most successful rock acts of the early 1990s, selling over 10 million albums worldwide.[9] Extreme achieved their greatest success with their 1990 album Pornograffitti, which peaked at number 10 on the Billboard 200, and was certified gold in May 1991 and double platinum in October 1992.[10] That album featured the acoustic ballad single \"More Than Words\", which reached No. 1 on the Billboard Hot 100 in the United States.",
+        "set_list": "It ('s a Monster)\r\nLi'l Jack Horny.\r\nGet the Funk Out.\r\nRest in Peace.\r\nHip Today.\r\nKid Ego.\r\nPlay with Me.\r\nTragic Comic.",
+        "influences": "Queen Van Halen Dream Theater DramaGods Tribe of Judah Adrenaline Mob Mourning Widows Satellite Party Hurtsmile Super TransAtlantic Twisted Sister Dweezil Zappa Amazing Journey Population One Paul Gilbert",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside,Accomodation,Food,Beverages",
+        "travel_distance": "nationwide",
+        "min_price": "1000",
+        "max_price": "2000",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253185089&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/odz3c68JE1c\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 3,
+        "dislikes_total": 2
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "inezlucia3@gmail.com"
+        ],
+        "title": "Paul Simon",
+        "description": "Solo",
+        "genre": "Folk",
+        "location": "Galway",
+        "profile_image": "media/profile/paul_simon_ZHEgKZ0.jpg",
+        "image1": "media/no_image.png",
+        "image2": "media/no_image.png",
+        "image3": "media/no_image.png",
+        "image4": "media/no_image.png",
+        "image5": "media/no_image.png",
+        "language": "English,French",
+        "music": "Original",
+        "gig_length_from": "90",
+        "gig_length_to": "120",
+        "bio": "Paul Frederic Simon (born October 13, 1941) is an American singer-songwriter and actor. Simon's musical career has spanned seven decades, with his fame and commercial success beginning as half of the duo Simon & Garfunkel, which was formed in 1964 with Art Garfunkel. Simon was responsible for writing nearly all of the pair's songs, including three that reached No. 1 on the U.S. singles charts: \"The Sound of Silence\", \"Mrs. Robinson\", and \"Bridge over Troubled Water\".[1]\r\n\r\nThe duo split up in 1970 at the height of their popularity and Simon began a successful solo career as a guitarist and singer-songwriter, recording three highly acclaimed albums over the next five years.[2] In 1986, he released Graceland, an album inspired by South African township music, which sold 14 million copies worldwide on its release and remains his most popular solo work.[3] Simon also wrote and starred in the film One-Trick Pony (1980) and co-wrote the Broadway musical The Capeman (1998) with the poet Derek Walcott.[4] On June 3, 2016, Simon released his 13th solo album, titled Stranger to Stranger, which debuted at No. 1 on the Billboard Album Chart and the UK charts.",
+        "set_list": "Available on Request.",
+        "influences": "Simon & Garfunkel Art Garfunkel Ladysmith Black Mambazo Paul McCartney",
+        "set_up_requirements": "Power Source",
+        "travel_distance": "nationwide",
+        "min_price": "1000",
+        "max_price": "1500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270208274&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3FEBDNJtNWk\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 2,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 7,
+    "fields": {
+        "user": [
+            "inezlucia4@gmail.com"
+        ],
+        "title": "ACDC",
+        "description": "Band",
+        "genre": "Rock",
+        "location": "Dublin",
+        "profile_image": "media/profile/2017/12/15/logo.jpg",
+        "image1": "media/img1/2017/12/15/1.jpg",
+        "image2": "media/img2/2017/12/15/2.jpg",
+        "image3": "media/img3/2017/12/15/3.jpg",
+        "image4": "media/img4/2017/12/15/4.jpg",
+        "image5": "media/img5/2017/12/15/5.jpg",
+        "language": "English",
+        "music": "Original",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "AC/DC are an Australian rock band, formed in Sydney in 1973 by brothers Malcolm and Angus Young.[1] A hard rock/blues rock band,[2] they have also been considered a heavy metal band,[3][4][5][6] although they have always dubbed their music simply \"rock and roll\".[7]\r\n\r\nAC/DC underwent several line-up changes before releasing their first album, High Voltage, in 1975. Membership subsequently stabilised until bassist Mark Evans was replaced by Cliff Williams in 1977 for the album Powerage. Within months of recording the album Highway to Hell, lead singer and co-songwriter Bon Scott died on 19 February 1980 after a night of heavy alcohol consumption. The group considered disbanding, but buoyed by support from Scott's parents, decided to continue and set about finding a new vocalist.[8] Ex-Geordie singer Brian Johnson was auditioned and selected to replace Scott. Later that year, the band released the new album Back in Black, which was made as a tribute to Bon Scott. The album launched them to new heights of success and became their all-time best-seller.",
+        "set_list": "Available on Request.",
+        "influences": "Chuck Berry, Elvis, The MC5, Check Berry",
+        "set_up_requirements": "Power Source",
+        "travel_distance": "nationwide",
+        "min_price": "100",
+        "max_price": "500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/30413711&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/v2AC41dglnM\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 1,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 8,
+    "fields": {
+        "user": [
+            "james@metallica.com"
+        ],
+        "title": "Metallica",
+        "description": "Band",
+        "genre": "Metal",
+        "location": "Carlow",
+        "profile_image": "media/profile/2017/12/15/profile.jpg",
+        "image1": "media/img1/2017/12/15/1_sVXDbfC.jpg",
+        "image2": "media/img2/2017/12/15/2_JsQLdiJ.jpg",
+        "image3": "media/img3/2017/12/15/3_uUVIipK.jpg",
+        "image4": "media/img4/2017/12/15/4_8dXYcCx.jpg",
+        "image5": "media/img5/2017/12/15/5_Lg9r1ks.jpg",
+        "language": "English",
+        "music": "Original,Covers",
+        "gig_length_from": "90",
+        "gig_length_to": "180",
+        "bio": "Metallica is an American heavy metal band from Los Angeles, California. The band was formed in 1981 by drummer Lars Ulrich and vocalist/guitarist James Hetfield. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Guitarist Dave Mustaine (who formed Megadeth) and bassists Ron McGovney, Cliff Burton and Jason Newsted are former members of the band.\r\n\r\nMetallica earned a growing fan base in the underground music community and won critical acclaim with its first five albums.[1] The band's third album, Master of Puppets (1986), was described as one of the heaviest and most influential thrash metal albums, and its eponymous fifth album, Metallica (1991), appealed to a more mainstream audience, achieving substantial commercial success and selling over 16 million copies in the United States to date, making it the best-selling album of the SoundScan era. In 2000, Metallica joined with other artists who filed a lawsuit against Napster for sharing the band's copyright-protected material without consent; a settlement was reached and Napster became a pay-to-use service. In 2009, Metallica was inducted into the Rock and Roll Hall of Fame.\r\n\r\nMetallica has released ten studio albums, four live albums, a cover album, five extended plays, 39 music videos, and 37 singles. The band has won nine Grammy Awards and its last six studio albums have consecutively debuted at number one on the Billboard 200. Metallica ranks as one of the most commercially successful bands of all time, having sold over 125 million records worldwide.[2] Metallica has been listed as one of the greatest artists of all time by magazines such as Rolling Stone, which ranked them at no. 61 on its 100 Greatest Artists of All Time list.[3] As of 2017, Metallica is the third best-selling music artist since Nielsen SoundScan began tracking sales in 1991,[4] selling a total of 58 million albums in the United States.[5]",
+        "set_list": "Hardwired Intro\r\nHardwired\r\nFor Whom the Bell Tolls\r\nFade to Black\r\nThe Memory Remains\r\nThe Unforgiven\r\nWherever I May Roam\r\nSad but True\r\nOne\r\nMaster of Puppets\r\nNothing Else Matters\r\nEnter Sandman",
+        "influences": "MotorHead\r\nIron Maiden\r\nDiamond Head\r\nKing Diamond\r\nVenom\r\nThin Lizzy\r\nEtc",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside,Accomodation,Food,Beverages",
+        "travel_distance": "nationwide",
+        "min_price": "2000",
+        "max_price": "2500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/108672044&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/WM8bTdBs-cw\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 1,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 9,
+    "fields": {
+        "user": [
+            "layne@stayley.com"
+        ],
+        "title": "Alice In Chains",
+        "description": "Band",
+        "genre": "Rock",
+        "location": "Kerry",
+        "profile_image": "media/profile/2017/12/15/profile_Tz3ibcD.jpg",
+        "image1": "media/no_image.png",
+        "image2": "media/no_image.png",
+        "image3": "media/no_image.png",
+        "image4": "media/no_image.png",
+        "image5": "media/no_image.png",
+        "language": "English,Spanish",
+        "music": "Original",
+        "gig_length_from": "90",
+        "gig_length_to": "120",
+        "bio": "Alice in Chains is an American rock band formed in Seattle, Washington, in 1987 by guitarist/vocalist Jerry Cantrell and drummer Sean Kinney,[1] who then recruited bassist Mike Starr[1] and lead vocalist Layne Staley.[1][2][3] Mike Starr was replaced in 1993 by Mike Inez.[4] The band took its name from Staley's previous group, the glam metal band Alice N' Chains.[5][2]\r\n\r\nAlthough widely associated with grunge music, the band's sound incorporates heavy metal elements. Since its formation, Alice in Chains has released five studio albums, three EPs, two live albums, four compilations, two DVDs, 30 music videos[6][7] and 28 singles. The band is known for its distinctive vocal style,[8] which often included the harmonized vocals between Staley and Cantrell[9][10] (and later Cantrell and William DuVall).[11][12] Cantrell started to sing lead on the 1992 acoustic EP Sap, and his role continued to grow in the following albums, making Alice in Chains a two-vocal band.[10][11][12]\r\n\r\nAlice in Chains rose to international fame as part of the grunge movement of the early 1990s, along with other Seattle bands such as Nirvana, Pearl Jam, and Soundgarden. The band was one of the most successful music acts of the 1990s, selling over 20 million records worldwide,[13] and over 14 million records in the US alone,[14] with two No. 1 albums and six Top 10 albums on the Billboard 200 chart.[15] The band has had 16 Top 10 songs on Billboard's Mainstream Rock Tracks chart,[16] 5 No. 1 hits,[16] and nine Grammy Award nominations.[17][18] Their debut album, Facelift, was released in 1990 and has been certified double-platinum by the RIAA, selling over two million copies.[19] In 1992, the band's second album, Dirt, was released to critical acclaim and was certified quadruple platinum.[20] Their second acoustic EP, Jar of Flies, debuted at number one on the Billboard 200 chart in 1994, becoming the first ever EP and first Alice in Chains release to top the charts, and it has been certified triple platinum by the RIAA.[21] The band's third album, Alice in Chains, was released in 1995 and has been certified double platinum.[22] It achieved No. 1 position on the Billboard 200 chart.[16]\r\n\r\nAlthough never officially disbanding, Alice in Chains was plagued by extended inactivity from 1996 onwards due to Staley's substance abuse, which resulted in his death in 2002. The band reunited in 2005 for a live benefit show, performing with a number of guest vocalists. They toured in 2006, with William DuVall taking over as lead vocalist full-time.[23] The new line-up released the band's fourth studio album, Black Gives Way to Blue, in 2009, which received gold certification by the RIAA[22] and two Grammy nominations.[17] Their fifth studio album, The Devil Put Dinosaurs Here, was released in 2013. The band toured extensively and released several videos in support of these albums.[24]\r\n\r\nAlice in Chains is currently working on their sixth studio album, tentatively set for release in early 2018.[25]",
+        "set_list": "Hollow\r\nThem Bones\r\nDam That River\r\nAgain\r\nCheck My Brain\r\nNutshell\r\nAngry Chair\r\nMan in the Box\r\nYour Decision\r\nDown in a Hole\r\nStone\r\nLast of My Kind\r\nWe Die Young\r\nGot Me Wrong\r\nIt Ain't Like That\r\nEncore:\r\nRooster\r\nNo Excuses\r\nWould?",
+        "influences": "Sleze Alice N' Chains Diamond Lie Mad Season Spys4Darwin Comes with the Fall Black Sabbath Metallica Megadeth Pantera",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside,Accomodation,Food,Beverages",
+        "travel_distance": "nationwide",
+        "min_price": "900",
+        "max_price": "1800",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253572851&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Nco_kh8xJDs\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 1,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 10,
+    "fields": {
+        "user": [
+            "peter@fleetwoodmac.com"
+        ],
+        "title": "Fleetwood Mac",
+        "description": "Band",
+        "genre": "Blues",
+        "location": "Tipperary",
+        "profile_image": "media/profile/2017/12/15/profile_uwZqOVE.jpg",
+        "image1": "media/img1/2017/12/15/1_f3EGdil.jpg",
+        "image2": "media/img2/2017/12/15/2_gJxicnv.jpg",
+        "image3": "media/img3/2017/12/15/3_QptaTdf.jpg",
+        "image4": "media/img4/2017/12/15/4_9awBSXd.jpg",
+        "image5": "media/img5/2017/12/15/5_8Edl1Ur.jpg",
+        "language": "English",
+        "music": "Original,Covers",
+        "gig_length_from": "60",
+        "gig_length_to": "120",
+        "bio": "Green's new band, with former Bluesbreaker, Mick Fleetwood on drums and Jeremy Spencer on guitar, was initially called \"Peter Green's Fleetwood Mac featuring Jeremy Spencer\". Bob Brunning was temporarily employed on bass guitar, as Green's first choice, Bluesbreakers' bassist John McVie, was not yet ready to join the band.[15] Within a month they played at the Windsor National Jazz and Blues Festival in August 1967 and were quickly signed to Mike Vernon's Blue Horizon label.[citation needed] Their repertoire consisted mainly of blues covers and originals, mostly written by Green, but some were written by slide guitarist Jeremy Spencer. The band's first single, \"I Believe My Time Ain't Long\" with \"Rambling Pony\" as a B-side, did not chart but their eponymous debut album made a significant impression, remaining in the British charts for over a year. By September 1967, John McVie had replaced Brunning.\r\n\r\nAlthough classic blues covers and blues-styled originals remained prominent in the band's repertoire through this period, Green rapidly blossomed as a songwriter and contributed many successful original compositions from 1968 onwards. The songs chosen for single release showed Green's style gradually moving away from the group's blues roots into new musical territory. Their second studio album Mr. Wonderful was released in 1968 and continued the formula of the first album. In the same year they scored a hit with Green's \"Black Magic Woman\" (later covered more successfully by Santana), followed by the guitar instrumental \"Albatross\" (1969), which reached number one in the British singles charts. More hits written by Green followed, including \"Oh Well\", \"Man of the World\" (both 1969) and the ominous \"The Green Manalishi\" (1970).[12] The double album Blues Jam in Chicago (1969)[16] was recorded at the Chess Records Ter-Mar Studio in Chicago. There, under the joint supervision of Vernon and Marshall Chess, they recorded with some of their American blues heroes including Otis Spann, Big Walter Horton, Willie Dixon, J.T. Brown and Buddy Guy.\r\n\r\nIn 1969, after signing to Immediate Records for one single (\"Man of the World\",[17] prior to that label's collapse) the group signed with Warner Bros. Records' Reprise Records label and recorded their fourth studio album Then Play On, prominently featuring the group's new third guitarist Danny Kirwan. Green had first seen Kirwan in 1967, playing with his blues trio Boilerhouse, with Trevor Stevens on bass and Dave Terrey on drums.[18] Green was impressed with Kirwan's playing and used the band as a support act for Fleetwood Mac, before finally recruiting Kirwan to his own band. Spencer, however, made virtually no contribution to Then Play On, owing to his reported refusal to play on any of Green's original material.[citation needed]\r\n\r\nBeginning with \"Man of the World\"'s melancholy lyric, Green's bandmates began to notice changes in his state of mind. He was taking large doses of LSD, grew a beard and began to wear robes and a crucifix. Mick Fleetwood recalls Green becoming concerned about wealth: \"I had conversations with Peter Green around that time and he was obsessive about us not making money, wanting us to give it all away. And I'd say, 'Well you can do it, I don't wanna do that, and that doesn't make me a bad person.'\"[12]\r\n\r\nWhile touring Europe in late March 1970, Green took LSD at a party at a commune in Munich, an incident cited by Fleetwood Mac manager Clifford Davis as the crucial point in his mental decline.[19] Communard Rainer Langhans mentions in his autobiography that he and Uschi Obermaier met Green in Munich, where they invited him to their Highfisch-Kommune. Their real intention was to persuade Green to help arrange for Jimi Hendrix and The Rolling Stones to perform as headline acts at a Woodstock-styled festival in Bavaria.[citation needed] Fleetwood Mac roadie Dinky Dawson remembers that Green went to the party with another roadie, Dennis Keane, and that when Keane returned to the band's hotel to explain that Green would not leave the commune, Keane, Dawson and Mick Fleetwood travelled there to fetch Green.[20] By contrast, Green stated that he had fond memories of jamming at the commune when speaking in 2009: \"I had a good play there, it was great, someone recorded it, they gave me a tape. There were people playing along, a few of us just fooling around and it was... yeah it was great.\" He told Jeremy Spencer at the time \"That's the most spiritual music I've ever recorded in my life.\" After a final performance on 20 May 1970, Green left Fleetwood Mac",
+        "set_list": "Available on Request.",
+        "influences": "John Mayall & the Bluesbreakers Fleetwood Mac Peter Green Splinter Group",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside,Accomodation,Food,Beverages",
+        "travel_distance": "nationwide",
+        "min_price": "100",
+        "max_price": "500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254399482&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/RtmW2ek7WkQ\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 1,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 11,
+    "fields": {
+        "user": [
+            "jeff@buckley.com"
+        ],
+        "title": "Jeff Buckley",
+        "description": "Solo",
+        "genre": "Other",
+        "location": "Cork",
+        "profile_image": "media/profile/2017/12/15/profile_SsT6fPF.jpg",
+        "image1": "media/img1/2017/12/15/1_Liw2ajn.jpg",
+        "image2": "media/img2/2017/12/15/2_FHJ6Ian.jpg",
+        "image3": "media/img3/2017/12/15/3_UvJveL8.jpg",
+        "image4": "media/img4/2017/12/15/4_CriHGKP.jpg",
+        "image5": "media/img5/2017/12/15/5_pO0tC6b.jpg",
+        "language": "English",
+        "music": "Original",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "Jeffrey Scott \"Jeff\" Buckley (November 17, 1966 \u2013 May 29, 1997), raised as Scott Moorhead,[1] was an American singer-songwriter and guitarist. After a decade as a session guitarist in Los Angeles, Buckley amassed a following in the early 1990s by playing cover songs at venues in Manhattan's East Village, such as Sin-\u00e9, gradually focusing more on his own material. After rebuffing much interest from record labels[2] and his father Tim Buckley's manager Herb Cohen,[3] he signed with Columbia, recruited a band, and recorded what would be his only studio album, Grace, in 1994.\r\n\r\nIn 2004, Rolling Stone Magazine listed him at number 39 on their list of greatest singers of all time.[4] In the December 2013 Mojo, Grace was named the 12th best album of the magazine's 20-year lifetime.[5]\r\n\r\nOver the following three years, the band toured extensively to promote the album, including concerts in the U.S., Europe, Japan, and Australia. In 1996, they stopped touring[6] and made sporadic attempts to record Buckley's second album in New York City with Tom Verlaine as producer.\r\n\r\nIn 1997, Buckley moved to Memphis, Tennessee, to resume work on the album, to be titled My Sweetheart the Drunk, recording many four-track demos while also playing weekly solo shows at a local venue. On May 29, 1997, while awaiting the arrival of his band from New York, he drowned during a spontaneous evening swim, fully clothed, in the Mississippi River when he was caught in the wake of a passing boat; his body was found on June 4.[7]\r\n\r\nSince his death, there have been many posthumous releases of his material, including a collection of four-track demos and studio recordings for his unfinished second album My Sweetheart the Drunk, expansions of Grace, and the Live at Sin-\u00e9 EP. Chart success also came posthumously: with his cover of Leonard Cohen's song \"Hallelujah\" he attained his first number one on Billboard's Hot Digital Songs in March 2008 and reached number 2 in the UK Singles Chart that December. Buckley and his work remain popular[8] and are regularly featured in \"greatest\" lists in the music press.[9][10]",
+        "set_list": "Available on Request.",
+        "influences": "The A.M. Shinehead Gods and Monsters",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside,Accomodation,Food,Beverages",
+        "travel_distance": "nationwide",
+        "min_price": "900",
+        "max_price": "1700",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/255914248&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3MMXjunSx80\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 1,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 12,
+    "fields": {
+        "user": [
+            "dave.gahan@gmail.com"
+        ],
+        "title": "Depeche Mode",
+        "description": "Band",
+        "genre": "Electronic",
+        "location": "Kilkenny",
+        "profile_image": "media/profile/2017/12/15/profile_dIHhVZn.jpg",
+        "image1": "media/img1/2017/12/15/1_MTLSY2P.jpg",
+        "image2": "media/img2/2017/12/15/2_VbjFh9i.jpg",
+        "image3": "media/img3/2017/12/15/3_elgmp5m.jpg",
+        "image4": "media/img4/2017/12/15/4_JcF1GSR.jpg",
+        "image5": "media/img5/2017/12/15/5_CfCWpjm.jpg",
+        "language": "English",
+        "music": "Original,Covers",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "Depeche Mode /d\u026a\u02ccp\u025b\u0283\u02c8mo\u028ad/ are an English electronic band that formed in Basildon, Essex in 1980. The group consists of founders Dave Gahan (lead vocals), Martin Gore (guitar, keyboards, vocals), and Andy Fletcher (keyboards). Depeche Mode released their debut album Speak & Spell in 1981, bringing the band onto the British new wave scene. Original band member Vince Clarke (keyboards, guitar), left the band after the release of the album, leaving the band as a trio to record A Broken Frame, released the following year. Gore took over the lead songwriting duties and, later in 1982, Alan Wilder (keyboards, drums, bass guitar) officially joined the band to fill Clarke's spot, establishing a line up that would continue for the next 13 years.\r\n\r\nThe band's last albums of the 1980s, Black Celebration and Music for the Masses, established them as a dominant force within the electronic music scene. A highlight of this era was the band's June 1988 concert at the Pasadena Rose Bowl, where they drew a crowd in excess of 60,000 people; it formed the basis for the D. A. Pennebaker-directed documentary film 101, released the following year. In the new decade, Depeche Mode released Violator, an international mainstream success. The subsequent album, Songs of Faith and Devotion, and the supporting Devotional Tour exacerbated tensions within the band to the point where Wilder quit in 1995, leading to intense media and fan speculation that the band would split. Now a trio once again, the band released Ultra in 1997, recorded at the height of Gahan's near-fatal drug abuse, Gore's alcoholism and seizures, and Fletcher's clinical depression. The release of Exciter confirmed Depeche Mode's willingness to remain together, the subsequent, and very successful, Exciter Tour being their first tour in support of an original album in eight years since the Devotional Tour, although the band had toured in 1998 to support The Singles 86\u201398 compilation album.\r\n\r\nDepeche Mode have had 50 songs in the UK Singles Chart and seventeen top 10 albums in the UK chart; they have sold over 100 million records worldwide.[1][2] Q included the band in the list of the \"50 Bands That Changed the World!\".[3] Depeche Mode also rank number 98 on VH1's \"100 Greatest Artists of All Time\".[4] In December 2016, Billboard magazine named Depeche Mode the 10th most successful dance club artist of all time.[5]\r\n\r\nIn October 2017, it was announced Depeche Mode is one of the nominees for the Rock and Roll Hall of Fame in 2018.",
+        "set_list": "Available on Request.",
+        "influences": "All Genres and decades.",
+        "set_up_requirements": "Power Source",
+        "travel_distance": "nationwide",
+        "min_price": "100",
+        "max_price": "500",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/77311201&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/u1xrNaTO1bI\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 1,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 13,
+    "fields": {
+        "user": [
+            "terry@thespecials.com"
+        ],
+        "title": "The Specials",
+        "description": "Band",
+        "genre": "Ska",
+        "location": "Clare",
+        "profile_image": "media/profile/2017/12/15/profile_vOCz1XU.jpg",
+        "image1": "media/img1/2017/12/15/1_vahrgTR.jpg",
+        "image2": "media/img2/2017/12/15/2_X1GfRHM.jpg",
+        "image3": "media/img3/2017/12/15/3_G9ImXpC.jpg",
+        "image4": "media/img4/2017/12/15/4_sUz3C9Y.jpg",
+        "image5": "media/img5/2017/12/15/5_G6M068C.jpg",
+        "language": "English",
+        "music": "Original",
+        "gig_length_from": "60",
+        "gig_length_to": "90",
+        "bio": "The Specials, are also known as The Special AKA, are an English 2 Tone and ska revival band formed in 1977 in Coventry. Their music combines a \"danceable ska and rocksteady beat with punk's energy and attitude\". Lyrically they present a \"more focused and informed political and social stance\".\r\n\r\nThe band wore mod-style \"1960s period rude boy outfits (pork pie hats, tonic and mohair suits and loafers)\". In 1980, the song \"Too Much Too Young\", the lead track on their The Special AKA Live! EP, reached No. 1 in the UK.In 1981, the unemployment-themed single \"Ghost Town\" also hit No. 1 in the UK Singles Chart.\r\n\r\nAfter seven consecutive UK Top 10 singles between 1979 and 1981, three members of the group abruptly left to form Fun Boy Three.[1] Continuing on as \"The Special AKA\" (a name they used frequently on earlier Specials releases), a substantially revised Specials line-up issued new material through 1984, including the top 10 UK hit single \"Free Nelson Mandela\". Afterwards, founder and songwriter Jerry Dammers dissolved the band and pursued political activism.\r\n\r\nThe group reformed in 1993, and have continued to perform and record with varying line-ups (but without Dammers).",
+        "set_list": "Available on Request.",
+        "influences": "The Selecter Fun Boy Three the Swinging Cats Sunday Best the Colourfield General Public Special Beat the Skabilly Rebels Box of Blues Stiff Upper Lip Pama International the Tearjerkers JB's Allstars Vegas Desmond Dekker the Spatial AKA Orchestra Ocean Colour Scene Paul Weller the Libertines Madness",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside,Accomodation,Food,Beverages",
+        "travel_distance": "nationwide",
+        "min_price": "1000",
+        "max_price": "1900",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/252973420&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/0eWzrqHYmZs\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 1,
+        "dislikes_total": 1
+    }
+},
+{
+    "model": "entertainers.entertainer",
+    "pk": 14,
+    "fields": {
+        "user": [
+            "charles@bradley.com"
+        ],
+        "title": "Charles Bradley",
+        "description": "Solo",
+        "genre": "Soul",
+        "location": "Dublin",
+        "profile_image": "media/profile/2017/12/15/profile_Kk4Kal9.jpg",
+        "image1": "media/img1/2017/12/15/1_WsJSAue.jpg",
+        "image2": "media/img2/2017/12/15/2_qI1tkAD.jpg",
+        "image3": "media/img3/2017/12/15/3_RFwZZNj.jpg",
+        "image4": "media/img4/2017/12/15/4_VeHG70m.jpg",
+        "image5": "media/img5/2017/12/15/5_qacOE49.jpg",
+        "language": "English",
+        "music": "Original,Covers",
+        "gig_length_from": "60",
+        "gig_length_to": "120",
+        "bio": "Charles Edward Bradley (November 5, 1948 \u2013 September 23, 2017) was an American singer, signed to the Daptone Records label under the Dunham Records division.[1] His performances and recording style were consistent with Daptone's revivalist approach, celebrating the feel of funk and soul music from the 1960s and 1970s.[2] One review said he \"echoes the evocative delivery of Otis Redding\".[3]\r\n\r\nCalling himself \"the screaming eagle of soul\", Bradley was the subject of the documentary Soul of America which premiered at South by Southwest in 2012. \r\nIn 1996, Bradley's mother called him and asked him to move back in with her in Brooklyn so she could get to know him.[5] It was there he began making a living moonlighting as a James Brown impersonator in local clubs under the name \"Black Velvet.\"[11][12] During this time, Bradley experienced more difficulties, including almost dying in a hospital after having an allergic reaction to penicillin, and, in a separate episode, awaking at his mother's house to a commotion as police and ambulances were arriving to the scene of his brother's murder, just down the road from there.[5]\r\n\r\nWhile performing as \"Black Velvet,\" he was eventually discovered by Gabriel Roth (better known as \"Bosco Mann\"), a co-founder of Daptone Records. Roth introduced Bradley to Daptone artist and his future producer Tom Brenneck, then the songwriter and guitarist for The Bullets, and later for Menahan Street Band, who invited Bradley to his band's rehearsal. Bradley asked that the band simply perform while he made up lyrics on the spot. After writing several songs, Daptone released some of these initial recordings on vinyl starting in 2002",
+        "set_list": "Tony Danza\r\n(Instrumental Intro)\r\nHeartaches and Pain\r\nLove Bug Blues\r\nThe World (Is Going Up in Flames)\r\nYou Put the Flame on It\r\nLovin' You, Baby\r\nIn You (I Found a Love)\r\nAin't It a Sin\r\nChanges\r\n(Black Sabbath cover)",
+        "influences": "The Budos Band\r\nMenahan Street Band\r\nJames Brown\r\nOtis Redding",
+        "set_up_requirements": "Power Source,Stage Cover - If Outside,Accomodation,Food,Beverages",
+        "travel_distance": "nationwide",
+        "min_price": "400",
+        "max_price": "1100",
+        "soundcloud_audio": "<iframe width=\"100%\" height=\"300\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/327848047&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true\"></iframe>",
+        "youtube_video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/yBdTVmSVq14\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>",
+        "likes_total": 4,
+        "dislikes_total": 4
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2017-12-11T01:25:40.649Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "1",
+        "object_repr": "NightBlind",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2017-12-11T01:29:17.085Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "2",
+        "object_repr": "Gangsters",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2017-12-11T01:48:50.702Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "2",
+        "object_repr": "Gangsters",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"location\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2017-12-11T17:13:37.829Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "4",
+        "object_repr": "Ji Nilsson",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"bio\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2017-12-11T17:35:38Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "6",
+        "object_repr": "Paul Simon",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2017-12-13T01:57:27.361Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "1",
+        "object_repr": "NightBlind",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"bio\", \"set_list\", \"influences\", \"youtube_video\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2017-12-13T23:06:04.528Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "1",
+        "object_repr": "NightBlind",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2017-12-13T23:32:53.035Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "1",
+        "object_repr": "NightBlind",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\", \"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2017-12-13T23:41:53.716Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "2",
+        "object_repr": "Gangsters",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\", \"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2017-12-13T23:43:45.326Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "2",
+        "object_repr": "Gangsters",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"soundcloud_audio\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2017-12-13T23:46:00.150Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "2",
+        "object_repr": "Gangsters",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2017-12-15T12:40:58.368Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "7",
+        "object_repr": "ACDC",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\", \"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2017-12-15T13:04:28.721Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "8",
+        "object_repr": "Metallica",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2017-12-15T13:05:05.621Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "8",
+        "object_repr": "Metallica",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2017-12-15T13:10:46.906Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "4",
+        "object_repr": "Ji Nilsson",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2017-12-15T13:26:56.262Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "5",
+        "object_repr": "Extreme",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"set_list\", \"influences\", \"set_up_requirements\", \"min_price\", \"max_price\", \"youtube_video\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2017-12-15T13:30:04.386Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "5",
+        "object_repr": "Extreme",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\", \"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2017-12-15T19:10:38.604Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "9",
+        "object_repr": "Alice In Chains",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2017-12-15T19:10:56.999Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "10",
+        "object_repr": "Fleetwood Mac",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2017-12-15T19:11:19.482Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "11",
+        "object_repr": "Jeff Buckley",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2017-12-15T19:11:35.769Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "12",
+        "object_repr": "Depeche Mode",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2017-12-15T19:11:57.133Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "13",
+        "object_repr": "The Specials",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2017-12-15T19:14:02.267Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "12",
+        "object_repr": "Depeche Mode",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2017-12-15T19:16:30.293Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "10",
+        "object_repr": "Fleetwood Mac",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2017-12-15T19:18:57.154Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "11",
+        "object_repr": "Jeff Buckley",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2017-12-15T19:19:32.621Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "11",
+        "object_repr": "Jeff Buckley",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2017-12-15T19:21:11.959Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "13",
+        "object_repr": "The Specials",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2017-12-15T20:38:58.241Z",
+        "user": [
+            "macio@macio.com"
+        ],
+        "content_type": [
+            "entertainers",
+            "entertainer"
+        ],
+        "object_id": "14",
+        "object_repr": "Charles Bradley",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"profile_image\", \"image1\", \"image2\", \"image3\", \"image4\", \"image5\"]}}]"
+    }
+}
+]
