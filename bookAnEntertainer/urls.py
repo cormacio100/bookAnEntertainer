@@ -42,15 +42,13 @@ urlpatterns = [
     url(r'^to-ngrok-or-not-to-ngrok/', include(paypal_urls)),
     url(r'^paypal-return',paypal_views.paypal_return),          #   handles the return of a customer after payment
     url(r'^paypal-cancel',paypal_views.paypal_cancel),          #   handles what happens when a customer cancels at the Paypal site
-] + static(settings.base.MEDIA_URL,document_root=settings.base.MEDIA_ROOT)
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 
 #   CODE FOR DJANGO DEBUG TOOLBAR
-"""
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
         url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
-"""
 
