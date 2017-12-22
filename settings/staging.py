@@ -13,7 +13,7 @@ DATABASES = {
 ALLOWED_HOSTS.append('bookanentertainer.herokuapp.com')
 
 #   PAYPAL SETTINGS
-SITE_URL = 'http://bookanentertainer.herokuapp.com'
+SITE_URL = 'https://bookanentertainer.herokuapp.com'
 PAYPAL_NOTIFY_URL = 'https://bookanentertainer.herokuapp.com/to-ngrok-or-not-to-ngrok/'     #   URL taken from name of HEROKU App
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
 

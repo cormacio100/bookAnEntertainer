@@ -21,7 +21,7 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 
 #   PAYPAL SETTINGS
-SITE_URL = 'http://127.0.0.1:8000'
+SITE_URL = 'https://127.0.0.1:8000'
 PAYPAL_NOTIFY_URL = 'https://aac1c9ee.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   ON LOCALHOST NEED TO RUN ngrok AND COPY
                                                                             #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY> HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'

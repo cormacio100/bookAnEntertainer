@@ -44,7 +44,6 @@ urlpatterns = [
     url(r'^paypal-cancel',paypal_views.paypal_cancel),          #   handles what happens when a customer cancels at the Paypal site
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
-
 #   CODE FOR DJANGO DEBUG TOOLBAR
 if settings.DEBUG:
     import debug_toolbar
