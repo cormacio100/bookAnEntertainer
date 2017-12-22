@@ -3,6 +3,10 @@ var requestForJsonData = function(description,location,callingFunction){
     console.log('description is '+description);
     console.log('location is '+location);
     var host = window.location.hostname;
+
+    // IF RUNNING ON LOCALHOST
+    // var entertainerAPI = 'https://' + host + '/entertainers/api/listings/?';
+    // ELSE
     var entertainerAPI = 'https://' + host + '/entertainers/api/listings/?';
     console.log('entertainerAPI is '+entertainerAPI);
 
