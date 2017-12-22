@@ -3,7 +3,7 @@ var requestForJsonData = function(description,location,callingFunction){
     console.log('description is '+description);
     console.log('location is '+location);
     var host = window.location.hostname;
-    var entertainerAPI = 'https://' + host + ':8000/entertainers/api/listings/?';
+    var entertainerAPI = 'https://' + host + '/entertainers/api/listings/?';
     console.log('entertainerAPI is '+entertainerAPI);
 
     //  maybe ADD //format: "json" TO PARAMS????
