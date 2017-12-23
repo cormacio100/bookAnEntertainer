@@ -135,12 +135,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
-#STATICFILES_DIRS = (
- #   os.path.join(BASE_DIR, "static"),
-#)
+"""
+STATIC_URL should be the URL at which a user / client / browser can reach the static files
+that have been aggregated by collectstatic.
+"""
+STATIC_URL = '/static/'
+"""
+STATIC_ROOT should live outside of your Django project – it’s the directory to where your static files are collected,
+for use by a local webserver or similar; Django’s involvement with that directory should end once your static files
+have been collected there
+STATIC_ROOT IS FOR INPUTS and is where static files are stored
+
+SEE https://blog.doismellburning.co.uk/django-and-static-files/
+"""
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+"""
+STATICFILES_DIRS IS FOR OUTPUTS
+It is a set of places to look for static files
+"""
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/pics/'    #   Can access images directly in browser with address <host>:<port>/pics/media/<folder>/<image>
 MEDIA_ROOT = BASE_DIR
