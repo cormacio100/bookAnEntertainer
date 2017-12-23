@@ -141,14 +141,15 @@ STATIC_URL should be the URL at which a user / client / browser can reach the st
 that have been aggregated by collectstatic.
 """
 STATIC_URL = '/static/'
-"""
-STATIC_ROOT should live outside of your Django project – it is the directory to where your static files are collected,
-for use by a local webserver or similar; Djangos involvement with that directory should end once your static files
-have been collected there
-STATIC_ROOT IS FOR INPUTS and is where static files are stored
 
-SEE https://blog.doismellburning.co.uk/django-and-static-files/
-"""
+#   STATIC_ROOT should live outside of your Django project - it is the directory to where your static files
+#   are collected
+#   for use by a local webserver or similar; Djangos involvement with that directory should end once your static files
+#   have been collected there
+#   STATIC_ROOT IS FOR INPUTS and is where static files are stored
+
+#SEE https://blog.doismellburning.co.uk/django-and-static-files/
+
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 """
