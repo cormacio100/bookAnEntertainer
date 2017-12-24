@@ -110,6 +110,7 @@ def auth_profile(request):
     user = User.objects.get(pk=user_id)
 
     account_type_entertainer = False
+    associated_entertainer = {}
 
     if 'Entertainer' == user.account_type:
         account_type_entertainer = True
@@ -158,7 +159,6 @@ def auth_profile(request):
         """
         INNER FUNCTION TO RETIREVE A LIST OF ENTERTAINER OBJECTS
         """
-
         def retrieve_entertainer_list(entertainer_id_list):
             entertainer_list = []
             x = 0
@@ -202,5 +202,5 @@ def auth_profile(request):
         #   -   date_list: CONTAINS STRINGS OF DATES
         #   -   entertainer_id_list: CONTAINS STRING OF BOOKED ENTERTAINER IDS
         ##########################################################################################
-        args = {'account_type_entertainer':account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer,'booked_entertainers':booked_entertainers,}
+        args = {'account_type_entertainer':account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer,'booked_entertainers':booked_entertainers}
         return render(request, 'accounts/profile.html',args)
