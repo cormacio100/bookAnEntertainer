@@ -195,8 +195,8 @@ def auth_profile(request):
         #   RETRIEVE a list of entertainers
         #   using an inner function
         #############################################
-        booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
-        #booked_entertainers = []
+        #booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
+        booked_entertainers = []
         ##########################################################################################
         #   UNUSED:
         #   -   date_list: CONTAINS STRINGS OF DATES
