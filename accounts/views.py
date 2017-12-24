@@ -127,7 +127,7 @@ def auth_profile(request):
 
     if booked_entertainers == 'No Bookings':
         #account_type_entertainer = False
-        args = {'account_type_entertainer': account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer}
+        args = {'account_type_entertainer': account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer,'message':''}
         return render(request, 'accounts/profile.html', args)
     else:
         bookings_made = True
@@ -202,5 +202,5 @@ def auth_profile(request):
         #   -   date_list: CONTAINS STRINGS OF DATES
         #   -   entertainer_id_list: CONTAINS STRING OF BOOKED ENTERTAINER IDS
         ##########################################################################################
-        args = {'account_type_entertainer':account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer,'booked_entertainers':booked_entertainers}
+        args = {'account_type_entertainer':account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer,'booked_entertainers':booked_entertainers,'message':''}
         return render(request, 'accounts/profile.html',args)
