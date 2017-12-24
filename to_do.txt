@@ -1,5 +1,13 @@
 IN PROGRESS:
 
+-   HEROKU ISSUES
+    -   HAVE HAD TO DISABLE THE booked_entertainers lookup AS IT STOPPED PROFILE FROM LOADING. NEED TO FIX
+    -   REGISTRATION DOES NOT LOAD THE PROFILE PAGE. TEMPLATE LOOKS TO BE RETURNING A VariableDoesNotExist ERROR
+        -   2017-12-24T13:23:18.971842+00:00 app[web.1]:     (bit, current))  # missing attribute
+2017-12-24T13:23:18.971842+00:00 app[web.1]: VariableDoesNotExist: Failed lookup for key [css_classes] in u"[{'False': False, 'None': None, 'True': True}, {'form': <UserRegistrationForm bound=False, valid=False, fields=(first_name;last_name;email;account_type;password1;password2)>}, {u'forloop': {u'parentloop': {}, u'counter': 6, u'revcounter': 1, u'revcounter0': 0, u'first': False, u'counter0': 5, u'last': True}, u'field': <django.forms.boundfield.BoundField object at 0x7f95ea627110>}, {}]"
+
+
+
 -   FIX HOME PAGE AND ADD FOOTER
 
     -   NEED TO PUT IN A DATE SELECTOR WHICH APPEARS ONCE THE USER IS LOGGED IN
