@@ -196,11 +196,12 @@ def auth_profile(request):
         #   using an inner function
         #############################################
         booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
-
+        #booked_entertainers = []
         ##########################################################################################
         #   UNUSED:
         #   -   date_list: CONTAINS STRINGS OF DATES
         #   -   entertainer_id_list: CONTAINS STRING OF BOOKED ENTERTAINER IDS
         ##########################################################################################
         args = {'account_type_entertainer':account_type_entertainer,'bookings_made':bookings_made,'associated_entertainer':associated_entertainer,'booked_entertainers':booked_entertainers,'message':''}
+
         return render(request, 'accounts/profile.html',args)
