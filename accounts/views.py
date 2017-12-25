@@ -11,6 +11,12 @@ from django.contrib.auth import login
 from accounts.models import User
 from entertainers.models import Entertainer
 
+##########################################
+#   LOGGING
+##########################################
+import logging
+log = logging.getLogger(__name__)
+
 # VIEW TO DISPLAY REGISTER FORM
 def auth_register(request):
     #   ONCE THE REGISTRATION FORM IS SUBMITTED
@@ -197,6 +203,7 @@ def auth_profile(request):
         #############################################
         #booked_entertainers = retrieve_entertainer_list(entertainer_id_list)
         booked_entertainers = []
+        log.debug('TESTING THE DEBUGGER')
         ##########################################################################################
         #   UNUSED:
         #   -   date_list: CONTAINS STRINGS OF DATES
