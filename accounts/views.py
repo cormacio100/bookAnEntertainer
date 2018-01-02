@@ -165,6 +165,20 @@ def auth_profile(request):
                 x += 1
             return entertainer_list
 
+        """
+        INNER FUNCTION TO ASSIST IN DEBUGGING
+        -   PRINTS LIST OF STRING BEFORE THEY GET CONVERTED TO INTEGERS
+        """
+        def print_str_list(booked_entertainers_list):
+            log.debug('before conversion to integers - booked_entertainers_list contains:')
+            for x in booked_entertainers_list:
+                try:
+                    log.debug(x)
+                except ValueError:
+                    pass    #   skip
+
+        print_str_list(booked_entertainers_list)
+
 
         ##################################################################################
         #   Loop used to extract the IDs of entertainers (AS INTEGERS) booked by user
