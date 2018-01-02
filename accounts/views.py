@@ -156,8 +156,10 @@ def auth_profile(request):
         """
         def retrieve_entertainer_list(entertainer_id_list):
             entertainer_list = []
+            log.debug('length of entertainer_id_list is ' + str(len(entertainer_id_list)))
             x = 0
             while x < len(entertainer_id_list):
+                log.debug('booked entertainer ID '+str(entertainer_id_list[x]))
                 entertainer = Entertainer.objects.get(pk=entertainer_id_list[x])
                 entertainer_list.append(entertainer)
                 x += 1
