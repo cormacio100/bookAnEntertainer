@@ -45,12 +45,20 @@ def paypal_return(request):
         # ************************************************************************************************
         user = User.objects.get(pk=booking_user_id)
 
-        booked_entertainer_str = "{'entertainer':'"+str(entertainer_id)+"','date':'2008-11-22'}"
+        '''
+            NEED TO SIMPLIFY THIS JUST TO CREATE A STRING AS FOLLOWS:
+            booked_entertainer_str = str(entertainer_id)
+
+            THEN IN THE ACCOUNTS MODULE ONLY NEED TO SPLIT THE STRING INTO INTEGERS
+        '''
+
+        #   booked_entertainer_str = "{'entertainer':'"+str(entertainer_id)+"','date':'2008-11-22'}"
+        booked_entertainer_str = str(entertainer_id)
 
         if user.booked_entertainers == 'No Bookings':
-            user.booked_entertainers = booked_entertainer_str
+            user.booked_entertainers = booked_entertainer_str+','
         else:
-            user.booked_entertainers += ','+booked_entertainer_str
+            user.booked_entertainers += booked_entertainer_str+','
 
         user.save()
 
