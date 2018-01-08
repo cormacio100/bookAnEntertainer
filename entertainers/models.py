@@ -188,28 +188,29 @@ class Entertainer(models.Model):
         default = 'Antrim'
     )
     profile_image = models.ImageField(
-        upload_to = 'media/profile/%Y/%m/%d',
-        default = 'media/no_image.png'
+        #upload_to = 'profile/%Y/%m/%d',
+        upload_to='profile/',
+        default = 'no_image.png'
     )
     image1 = models.ImageField(
-        upload_to = 'media/img1/%Y/%m/%d',
-        default = 'media/no_image.png'
+        upload_to = 'img1/',
+        default = 'no_image.png'
     )
     image2 = models.ImageField(
-        upload_to = 'media/img2/%Y/%m/%d',
-        default='media/no_image.png'
+        upload_to = 'img2/',
+        default='no_image.png'
     )
     image3 = models.ImageField(
-        upload_to = 'media/img3/%Y/%m/%d',
-        default='media/no_image.png'
+        upload_to = 'img3/',
+        default='no_image.png'
     )
     image4 = models.ImageField(
-        upload_to = 'media/img4/%Y/%m/%d',
-        default='media/no_image.png'
+        upload_to = 'img4/',
+        default='no_image.png'
     )
     image5 = models.ImageField(
-        upload_to = 'media/img5/%Y/%m/%d',
-        default='media/no_image.png'
+        upload_to = 'img5/',
+        default='no_image.png'
     )
     language = MultiSelectField(
         choices = LANGUAGE_TYPES,
