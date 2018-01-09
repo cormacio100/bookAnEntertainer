@@ -188,7 +188,6 @@ class Entertainer(models.Model):
         default = 'Antrim'
     )
     profile_image = models.ImageField(
-        #upload_to = 'profile/%Y/%m/%d',
         upload_to='profile/',
         default = 'no_image.png'
     )
