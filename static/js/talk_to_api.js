@@ -5,9 +5,9 @@ var requestForJsonData = function(description,location,callingFunction){
     var host = window.location.hostname;
 
     // IF RUNNING ON LOCALHOST
-    var entertainerAPI = 'http://' + host + ':8000/entertainers/api/listings/?';
+    //var entertainerAPI = 'http://' + host + ':8000/entertainers/api/listings/?';
     // ELSE
-    //var entertainerAPI = 'https://' + host + '/entertainers/api/listings/?';
+    var entertainerAPI = 'https://' + host + '/entertainers/api/listings/?';
     console.log('entertainerAPI is '+entertainerAPI);
 
     //  maybe ADD //format: "json" TO PARAMS????
