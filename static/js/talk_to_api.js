@@ -7,6 +7,7 @@ var requestForJsonData = function(description,location,callingFunction){
     // IF RUNNING ON LOCALHOST
     //var entertainerAPI = 'http://' + host + ':8000/entertainers/api/listings/?';
     // ELSE
+
     var entertainerAPI = 'https://' + host + '/entertainers/api/listings/?';
     console.log('entertainerAPI is '+entertainerAPI);
 
