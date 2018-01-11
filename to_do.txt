@@ -1,7 +1,10 @@
 IN PROGRESS:
 
 -   HEROKU ISSUES
+    -   On creation of profiles, the default value is always taken
+    -   Amendment to UPLOAD_TO paths in models.py HAS NOT BEEN PUSHED to GITHUB - need to push
     -   fix console errors
+    -   GET ACCESS TO HEROKU DB
     -   I BELIEVE I HAVE THE IMAGE SETTINGS CORRECT NOW. NEED TO RESTART EVERYTHING
         -   THEN TRY TO UPLOAD IMAGES AGAIN AND TEST THE LINKS
         -   CHECK MODEL FILE IS CORRECT

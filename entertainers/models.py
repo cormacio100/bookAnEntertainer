@@ -12,6 +12,7 @@ from django.conf import settings
 #import settings
 from settings import base
 from paypal.standard.forms import PayPalPaymentsForm
+import os
 
 
 class Entertainer(models.Model):
@@ -40,6 +41,48 @@ class Entertainer(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    #   Dynamicly build upload_to folder for different ImageFields
+    def profile_image_path(instance,filename):
+        upload_dir = os.path.join('profile/', instance.title)
+        if not os.path.exists(upload_dir):
+            os.makedirs(upload_dir)
+        return os.path.join(upload_dir, filename)
+
+
+    def img1_image_path(instance,filename):
+        upload_dir = os.path.join('img1/', instance.title)
+        if not os.path.exists(upload_dir):
+            os.makedirs(upload_dir)
+        return os.path.join(upload_dir, filename)
+
+
+    def img2_image_path(instance,filename):
+        upload_dir = os.path.join('img2/', instance.title)
+        if not os.path.exists(upload_dir):
+            os.makedirs(upload_dir)
+        return os.path.join(upload_dir, filename)
+
+
+    def img3_image_path(instance,filename):
+        upload_dir = os.path.join('img3/', instance.title)
+        if not os.path.exists(upload_dir):
+            os.makedirs(upload_dir)
+        return os.path.join(upload_dir, filename)
+
+
+    def img4_image_path(instance,filename):
+        upload_dir = os.path.join('img4/', instance.title)
+        if not os.path.exists(upload_dir):
+            os.makedirs(upload_dir)
+        return os.path.join(upload_dir, filename)
+
+
+    def img5_image_path(instance,filename):
+        upload_dir = os.path.join('img5/', instance.title)
+        if not os.path.exists(upload_dir):
+            os.makedirs(upload_dir)
+        return os.path.join(upload_dir, filename)
 
     ############################################################################
     #   DEFINE CONSTANTS THAT SUPPLY LISTS TO CLASS PROPERTIES
@@ -188,27 +231,33 @@ class Entertainer(models.Model):
         default = 'Antrim'
     )
     profile_image = models.ImageField(
-        upload_to='profile/',
+        #upload_to='profile/',
+        upload_to=profile_image_path,
         default = 'no_image.png'
     )
     image1 = models.ImageField(
-        upload_to = 'img1/',
+        #upload_to = 'img1/',
+        upload_to = img1_image_path,
         default = 'no_image.png'
     )
     image2 = models.ImageField(
-        upload_to = 'img2/',
+        #upload_to = 'img2/',
+        upload_to = img2_image_path,
         default='no_image.png'
     )
     image3 = models.ImageField(
-        upload_to = 'img3/',
+        #upload_to = 'img3/',
+        upload_to = img3_image_path,
         default='no_image.png'
     )
     image4 = models.ImageField(
-        upload_to = 'img4/',
+        #upload_to = 'img4/',
+        upload_to = img4_image_path,
         default='no_image.png'
     )
     image5 = models.ImageField(
-        upload_to = 'img5/',
+        #upload_to = 'img5/',
+        upload_to = img5_image_path,
         default='no_image.png'
     )
     language = MultiSelectField(
@@ -323,5 +372,4 @@ class Entertainer(models.Model):
 
         if self.youtube_video.find(substr1):
             return self.youtube_video.replace(substr1,re_class)
-
 

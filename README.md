@@ -70,3 +70,10 @@ This app talks to an API to filter out entertainers by type and location. Users 
          2. The '/to-ngrok-or-not-to-ngrok/' corresponds to the PAYPAL route defined in <app>/urls.py as 
          3. url(r'^to-ngrok-or-not-to-ngrok/', include(paypal_urls)),
 5. Run the program with command 'python manage.py runserver'    
+
+### Connecting to the database on heroku
+1. Download and install MYSQL Workbench
+2. To retrieve connection settings, open command line and type:
+   1. heroku login
+   2. heroku config --app bookanentertainer
+      1. Retrieve the CLEARDB_DATABASE_URL setting 
