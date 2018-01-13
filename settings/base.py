@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import env
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -21,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'md517-*6s^q(z1$c@ik&*c)veq_s^q%luwar7b6*&g)k*ay7!r'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','bookanentertainer.herokuapp.com']    #   INCLUDE NGROK TO ALLOW PAYPAL TO WORK - this changes each time ngrok is run
 SITE_ID =2
@@ -190,8 +191,8 @@ ALLOWED_HOSTS.append('4ae16e54.ngrok.io')
 #############################################################
 AWS_STORAGE_BUCKET_NAME = 'bookanentertainer'
 AWS_S3_REGION_NAME = 'us-east-2'    #   can find this by clicking on a file in S3 bucket and PROPERTIES
-AWS_ACCESS_KEY_ID = 'AKIAI5T5J7ZFGFZQRLXQ'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 #   TELL DJANGO-STORAGES THE DOMAIN TO USE TO REFER TO STATIC FILES
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
