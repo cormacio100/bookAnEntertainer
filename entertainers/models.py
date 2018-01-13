@@ -16,6 +16,7 @@ import os
 
 
 #   Dynamicly build upload_to folder for different ImageFields
+
 def profile_image_path(instance, filename):
     upload_dir = os.path.join('profile/', instance.title)
     if not os.path.exists(upload_dir):
@@ -234,43 +235,43 @@ class Entertainer(models.Model):
         default = 'Antrim'
     )
     profile_image = models.ImageField(
-        #upload_to='profile/',
-        upload_to = profile_image_path,
+        upload_to='profile/',
+        #upload_to = profile_image_path,
         blank=True,
         null=True,
         default = 'no_image.png'
     )
     image1 = models.ImageField(
-        #upload_to='profile/',
-        upload_to = img1_image_path,
+        upload_to='img1/',
+        #upload_to = img1_image_path,
         blank=True,
         null=True,
         default = 'no_image.png'
     )
     image2 = models.ImageField(
-        #upload_to = 'img2/',
-        upload_to = img2_image_path,
+        upload_to = 'img2/',
+        #upload_to = img2_image_path,
         blank=True,
         null=True,
         default='no_image.png'
     )
     image3 = models.ImageField(
-        #upload_to = 'img3/',
-        upload_to = img3_image_path,
+        upload_to = 'img3/',
+        #upload_to = img3_image_path,
         blank=True,
         null=True,
         default='no_image.png'
     )
     image4 = models.ImageField(
-        #upload_to = 'img4/',
-        upload_to = img4_image_path,
+        upload_to = 'img4/',
+        #upload_to = img4_image_path,
         blank=True,
         null=True,
         default='no_image.png'
     )
     image5 = models.ImageField(
-        #upload_to = 'img5/',
-        upload_to = img5_image_path,
+        upload_to = 'img5/',
+        #upload_to = img5_image_path,
         blank=True,
         null=True,
         default='no_image.png'
