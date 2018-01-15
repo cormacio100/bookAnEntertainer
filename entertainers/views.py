@@ -19,6 +19,7 @@ from rest_framework import status
 from entertainers.serializers import EntertainerSerializer
 from entertainers.models import Entertainer
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -77,6 +78,7 @@ def create_profile(request):
         form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
 
+
 @login_required()
 def edit_profile(request,pk):
     edit = True
@@ -99,7 +101,6 @@ def edit_profile(request,pk):
         form = EntertainerRegistrationForm(request.user, instance=entertainer)
 
     return render(request, 'entertainers/edit_profile.html', {'pk':pk, 'edit':edit, 'title':entertainer.title, 'form':form})
-
 
 
 @login_required()
@@ -125,6 +126,7 @@ def edit_profile_old(request,pk):
         form = EntertainerRegistrationForm(request.user)
         #return redirect(reverse('entertainers:listings'))
     return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
+
 
 #   increment the number of likes for an entertainer
 def like(request,pk):
@@ -172,6 +174,8 @@ class EntertainerView(APIView):
             #   'self' is necessary when using a classed based view
             description = 'all'
             location = 'all'
+            page = 'all'
+            recordsPerPage = 8
 
             if self.request.GET['description'] is not None:
                 if self.request.GET['description'] != 'all':
@@ -181,7 +185,20 @@ class EntertainerView(APIView):
                 if self.request.GET['location'] != 'all':
                     location = self.request.GET['location']
 
-            #   (STEP 1)
+            if self.request.GET['page'] is not None:
+                if self.request.GET['page'] != 'all':
+                    page = self.request.GET['page']
+
+
+            #   (STEP 1A)
+            #   -   Need to retrieve the total number of records
+            #   -   Calculate and return the number of Pages
+            #   -   Return the number of records per page
+            #   -   Calculate the last page count
+            #   -   Add these values to the serialized data as JSON and return
+
+
+            #   (STEP 1B)
             if description != 'all' and location == 'all':
                 entertainers = Entertainer.objects.filter(Q(description=description))
             elif description == 'all' and location != 'all':
@@ -193,7 +210,12 @@ class EntertainerView(APIView):
             else:
                 entertainers = Entertainer.objects.all()
 
-            #   (STEP 2)
+            #   (STEP 1C) - ONLY RETURN DATA RELEVANT TO THE SELECTED PAGE
+            if page != 'all':
+                paginator = Paginator(entertainers, recordsPerPage)
+                entertainers = paginator.page(int(page))
+
+            #   (STEP 2) - CONVERT DATA TO JSON
             serializer = EntertainerSerializer(entertainers,many=True)
             serialized_data = serializer.data
         else:
@@ -205,6 +227,8 @@ class EntertainerView(APIView):
 
         #   (STEP 3)
         return Response(serialized_data)
+
+
 
 
     def post(self,request):

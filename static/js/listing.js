@@ -23,11 +23,19 @@ var populateTemplate = function(){
 var refineSearch = function(menus){
     var description = 'all';
     var location = 'all';
+    var page = 'all'
     /*  Build click event for the refine button */
     $('#refine-button').click(function(){
         description = $('#description-select').val();
         location = $('#location-select').val();
-        requestForJsonData(description,location,'refineSearch');
+        requestForJsonData(description,location,'refineSearch',page);
+    });
+
+    $('.listing-pager').click(function(){
+        var page = $(this).text();
+        description = $('#description-select').val();
+        location = $('#location-select').val();
+        requestForJsonData(description,location,'refineSearch',page);
     });
 };
 
@@ -70,6 +78,6 @@ $(document).ready(function(){
     $('#REST-data').html('<p id="spinner"><i class="fa fa-spinner fa-spin orange-spin"></i></p>');
 
     //  initially load all entertainers
-    requestForJsonData('all','all','initLoad');
+    requestForJsonData('all','all','initLoad','all');
 });
 
