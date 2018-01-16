@@ -1,5 +1,9 @@
 IN PROGRESS:
 
+-   API PAGINATION
+    -   LOOK AT THIS : https://stackoverflow.com/questions/44343425/how-to-show-total-pages-in-json-response-in-django-pagination
+    -   https://www.youtube.com/watch?v=q-Pw7Le30qQ
+
 -   HEROKU ISSUES
     -   On creation of profiles, the default value is always taken
     -   Amendment to UPLOAD_TO paths in models.py HAS NOT BEEN PUSHED to GITHUB - need to push
