@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from entertainers.models import Entertainer
-from rest_framework.pagination import PaginationSerializer
+#from rest_framework.pagination import PaginationSerializer
+
 
 class EntertainerSerializer(serializers.ModelSerializer):
     """
@@ -13,13 +14,17 @@ class EntertainerSerializer(serializers.ModelSerializer):
     """
     #customField = serializers.ReadOnlyField(source='test')
 
-    my_field = serializers.SerializerMethodField('is_named_bar')
+    def __init__(self, *args, **kwargs):
+        self.paginator = kwargs.get('paginator')
+        super(EntertainerSerializer, self).__init__(*args, **kwargs)
 
-    def is_named_bar(self, foo):
-        return foo.name == "bar"
+    paginate = serializers.SerializerMethodField('pages')
+
+    def pages(self, foo):
+        return self.paginator
 
     class Meta:
             model = Entertainer
-            fields = ('id','title','description','genre','location','bio_summary','profile_image_url','my_field')
+            fields = ('id','title','description','genre','location','bio_summary','profile_image_url','paginate')
 
 

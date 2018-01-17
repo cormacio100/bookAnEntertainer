@@ -216,9 +216,12 @@ class EntertainerView(APIView):
                 total_records = paginator.count
                 num_pages = paginator.num_pages
                 entertainers = paginator.page(int(page))
+                #   (STEP 2) - CONVERT DATA TO JSON
+                serializer = EntertainerSerializer(entertainers, many=True,paginator=paginator)
+            else:
+                #   (STEP 2) - CONVERT DATA TO JSON
+                serializer = EntertainerSerializer(entertainers,many=True)
 
-            #   (STEP 2) - CONVERT DATA TO JSON
-            serializer = EntertainerSerializer(entertainers,many=True)
             serialized_data = serializer.data
         else:
             #   (STEP 1)
