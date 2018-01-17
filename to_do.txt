@@ -1,5 +1,9 @@
 IN PROGRESS:
 
+-   PAGINATION LINKS
+    -   http://djangorestframework.readthedocs.io/en/latest/api-guide/pagination/
+    -   https://www.youtube.com/watch?annotation_id=annotation_1059795107&feature=iv&src_vid=y8D3NIjcTxk&v=hr5lJtoY5Fo
+
 -   HEROKU ISSUES
     -   On creation of profiles, the default value is always taken
     -   Amendment to UPLOAD_TO paths in models.py HAS NOT BEEN PUSHED to GITHUB - need to push
