@@ -213,11 +213,12 @@ class EntertainerView(APIView):
             #   (STEP 1C) - ONLY RETURN DATA RELEVANT TO THE SELECTED PAGE
             if page != 'all':
                 paginator = Paginator(entertainers, recordsPerPage)
-                total_records = paginator.count
                 num_pages = paginator.num_pages
+                count = paginator.count
                 entertainers = paginator.page(int(page))
                 #   (STEP 2) - CONVERT DATA TO JSON
-                serializer = EntertainerSerializer(entertainers, many=True,paginator=paginator)
+                #serializer = EntertainerSerializer(entertainers, many=True, num_pages=num_pages, count=count)
+                serializer = EntertainerSerializer(entertainers, many=True, num_pages=num_pages, count=count)
             else:
                 #   (STEP 2) - CONVERT DATA TO JSON
                 serializer = EntertainerSerializer(entertainers,many=True)

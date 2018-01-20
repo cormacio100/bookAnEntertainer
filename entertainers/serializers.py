@@ -14,17 +14,30 @@ class EntertainerSerializer(serializers.ModelSerializer):
     """
     #customField = serializers.ReadOnlyField(source='test')
 
+    """
     def __init__(self, *args, **kwargs):
-        self.paginator = kwargs.get('paginator')
+        #self.paginator = kwargs.get('paginator')
+        self.num_pages = kwargs.get('num_pages')
+        #self.count = kwargs.get('count')
         super(EntertainerSerializer, self).__init__(*args, **kwargs)
+    """
 
-    paginate = serializers.SerializerMethodField('pages')
+    def __init__(self, entertainers, many=False,num_pages=0, count=0):
+        self.num_pages = num_pages
+        self.count = count
+        super(EntertainerSerializer, self).__init__(entertainers, many=False)
 
-    def pages(self, foo):
-        return self.paginator
+    page_count = serializers.SerializerMethodField('num_pages_func')
+    record_count = serializers.SerializerMethodField('count_func')
+
+    def num_pages_func(self,foo):
+        return self.num_pages
+
+    def count_func(self,foo):
+        return self.count
 
     class Meta:
             model = Entertainer
-            fields = ('id','title','description','genre','location','bio_summary','profile_image_url','paginate')
+            fields = ('id','title','description','genre','location','bio_summary','profile_image_url','page_count','record_count')
 
 
