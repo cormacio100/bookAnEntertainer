@@ -5,7 +5,7 @@
     {% if message %}
         {{ message }}
     {% endif %}
-    <form role="form" method="post" action="{% url 'entertainers:edit_profile' pk %}" class="account-form">
+    <form role="form" method="post" action="{% url 'entertainers:edit_profile' pk %}" class="account-form" enctype="multipart/form-data">
         <legend class="legend-centre brown-text">Entertainer Profile Update</legend>
         <hr>
          <div class="row">
