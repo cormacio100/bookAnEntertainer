@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-#import env
+import env          #   activate when on localhost
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -204,6 +204,15 @@ STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 #   WHEN A USER UPLOADS AN AVATAR, IT SHOULD GO INTO /MEDIA/ IN OUR S3 BUCKET
-#   WHEN WE DISPLAY TEH ISMAGE ON A PAGE, THE IMAGE URL WILL INCLUDE '/MEDIA/'
+#   WHEN WE DISPLAY THE IMAGE ON A PAGE, THE IMAGE URL WILL INCLUDE '/MEDIA/'
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+"""
+TO DO
+    CREATE UPLOAD AND URL LOCATIONS FOR ALL IMAGES USING DEFAULT_FILE_STORAGE AS THE DEFAULT LOCATION
+"""
+FS_PROFILE_IMG_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
+FS_PROFILE_IMG_URL = os.path.join(MEDIA_URL,'profile/')
+FS_IMG1_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'img1/')
+FS_IMG1_URL = os.path.join(MEDIA_URL,'img1/')

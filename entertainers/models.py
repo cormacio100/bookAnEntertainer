@@ -234,16 +234,22 @@ class Entertainer(models.Model):
         choices = COUNTIES,
         default = 'Antrim'
     )
+
+    """
+    TO DO
+        REMOVE THE UPLOAD_TO PROPERTIES AS THEY ARE NOT NEEDED
+    """
+
     profile_image = models.ImageField(
         #upload_to='profile/',
-        upload_to = profile_image_path,
+        #upload_to = profile_image_path,
         blank=True,
         null=True,
         default = 'no_image.png'
     )
     image1 = models.ImageField(
         #upload_to='img1/',
-        upload_to = img1_image_path,
+        #upload_to = img1_image_path,
         blank=True,
         null=True,
         default = 'no_image.png'
