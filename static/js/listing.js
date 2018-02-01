@@ -3,6 +3,9 @@ var populateTemplate = function(){
     // clear the SPINNER or previous searches
     $('#REST-data').html('');
 
+    var page_count = 0;
+    var record_count = 0;
+
     //  Parent div
     var restDataDiv = $('#REST-data');
     for(i=0;i<apiResponseArr.length;i++){
@@ -16,18 +19,40 @@ var populateTemplate = function(){
         var card = $('<div class="col-lg-3 col-md-6 col-xs-12 margin-top-1"><a href="/entertainers/profile/'+apiResponseArr[i].id+'"><div class="card h-100"><img class="card-img-top" src="'+apiResponseArr[i].profile_image_url+'" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="'+apiResponseArr[i].profile_image_url+'" /><div class="card-body"><h4 class="card-title">'+apiResponseArr[i].title+'</h4><p class="card-text">'+apiResponseArr[i].bio_summary+'</p></div></div></a></div>');
 
         restDataDiv.append(card);
+
+        if(0==i){
+            page_count = apiResponseArr[i].page_count;
+            record_count = apiResponseArr[i].record_count;
+        }
     }
+
+    console.log('page_count = '+page_count);
+    console.log('record_count = '+record_count);
+
+    /**
+     * TO DO ADD THE PAGE LINKS
+     */
+
+
 };
 
 /* RETRIEVE SEARCH FILTER VALUES AND REQUEST JSON */
 var refineSearch = function(menus){
     var description = 'all';
     var location = 'all';
+    var page = 'all'
     /*  Build click event for the refine button */
     $('#refine-button').click(function(){
         description = $('#description-select').val();
         location = $('#location-select').val();
-        requestForJsonData(description,location,'refineSearch');
+        requestForJsonData(description,location,'refineSearch',page);
+    });
+
+    $('.listing-pager').click(function(){
+        var page = $(this).text();
+        description = $('#description-select').val();
+        location = $('#location-select').val();
+        requestForJsonData(description,location,'refineSearch',page);
     });
 };
 
@@ -70,6 +95,6 @@ $(document).ready(function(){
     $('#REST-data').html('<p id="spinner"><i class="fa fa-spinner fa-spin orange-spin"></i></p>');
 
     //  initially load all entertainers
-    requestForJsonData('all','all','initLoad');
+    requestForJsonData('all','all','initLoad','all');
 });
 

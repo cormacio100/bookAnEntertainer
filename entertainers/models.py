@@ -15,7 +15,7 @@ from paypal.standard.forms import PayPalPaymentsForm
 import os
 
 
-#   Dynamicly build upload_to folder for different ImageFields
+#   Dynamically build upload_to folder for different ImageFields
 
 def profile_image_path(instance, filename):
     upload_dir = os.path.join('profile/', instance.title)
@@ -234,6 +234,12 @@ class Entertainer(models.Model):
         choices = COUNTIES,
         default = 'Antrim'
     )
+
+    """
+    TO DO
+        REMOVE THE UPLOAD_TO PROPERTIES AS THEY ARE NOT NEEDED
+    """
+
     profile_image = models.ImageField(
         #upload_to='profile/',
         #upload_to = profile_image_path,

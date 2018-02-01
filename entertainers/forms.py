@@ -5,6 +5,21 @@ class EntertainerRegistrationForm(forms.ModelForm):
 
     #   constructor
     def __init__(self,user,*args,**kwargs):
+        """
+            TO DO
+            RETRIEVE THE URLS LIST FROM KWARGS
+                _urls = kwargs.pop('_urls',None)
+
+            #   RETRIEVE THE SEPARATE URLS OF THE IMAGES
+            if _urls is not None:
+                self.profile_image = _urls[0]
+                self.img1 = _urls[1]
+        """
+        _urls = kwargs.pop('_urls', None)
+        if _urls is not None:
+            self.profile_image = _urls[0]
+            self.image1 = _urls[1]
+
         self.user = user
         super(EntertainerRegistrationForm,self).__init__(*args,**kwargs)
 
@@ -16,6 +31,16 @@ class EntertainerRegistrationForm(forms.ModelForm):
         #   auto set the user instance to that provided by the view
         instance.user = self.user
 
+        #   auto set the image instance to that provided by the view
+        instance.profile_image = self.profile_image
+        instance.image1 = self.image1
+
+        """
+            TO DO
+            AUTO SET THE USER INSTANCE TO THAT PROVIDED BY THE VIEW
+                instance.profile_image = self.profile_image
+                instance.img1 = self.img1
+        """
         if commit:
             instance.save()
         return instance

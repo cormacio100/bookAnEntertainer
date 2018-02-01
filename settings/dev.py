@@ -26,13 +26,15 @@ PAYPAL_NOTIFY_URL = 'https://aac1c9ee.ngrok.io/to-ngrok-or-not-to-ngrok/'   #   
                                                                             #  URL AS <NGROK-ADDRESS>/<URL FROM URL.PY> HERE
 PAYPAL_RECEIVER_EMAIL = 'cormac.music-facilitator@gmail.com'
 
-
-
 ################################################################
 #   LOGGING
 ################################################################
 
 #SITE_ROOT = 'https://127.0.0.1:8000'
+
+"""
+SITE_ROOT = 'https://127.0.0.1:8000'
+"""
 
 LOGGING = {
     'version': 1,
@@ -49,8 +51,6 @@ LOGGING = {
         },
     },
 }
-
-
 
 #   DEBUG TOOLBAR - needs to go at bottom
 def show_toolbar(request):

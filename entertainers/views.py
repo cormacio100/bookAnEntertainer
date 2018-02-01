@@ -10,16 +10,22 @@ from django.contrib import messages
 from accounts.models import User
 from django.http import HttpResponse
 
-################
+####################
 #   API Stuff
-################
+####################
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from entertainers.serializers import EntertainerSerializer
 from entertainers.models import Entertainer
 from django.db.models import Q
+from django.core.paginator import Paginator
 
+####################
+#   File Storage
+####################
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
 
 # Create your views here.
 def listings(request):
@@ -60,9 +66,68 @@ def display_entertainer_profile(request,entertainer_id):
 @login_required()
 def create_profile(request):
     edit = False
-    if request.method == 'POST':
+
+    """
+    TO DO
+        Check that FILES['profile_image'] exists
+            profile_image = FILES['profile_image']
+
+        SET WHERE THE FILES WILL BE SAVED TO
+            profile_img_fs = FileSystemStorage(
+                location = settings.FS_PROFILE_IMAGE_UPLOADS,       #   NEED TO CREATE THIS VALUE IN SETTINGS FILE UDING DEFAULT_FILE_STORAGE
+                base_url= settings.FS_PROFILE_IMAGE_URL
+            )
+            img1_fs = FileSystemStorage(
+                location = settings.FS_IMAGE1_UPLOADS,       #   NEED TO CREATE THIS VALUE IN SETTINGS FILE UDING DEFAULT_FILE_STORAGE
+                base_url= settings.FS_IMAGE1_URL
+            )
+        SAVE THE FILES
+            profile_image_name = fs_img.save(profile_image.name,profile_image)
+            image1_name = fs_img.save(image1.name,image1)
+        RETRIEVE THE URL OF THE FILE
+            profile_image_url = fs_img.url(profile_image_name)
+            image1_url = fs_img.url(image1_name)
+
+        CREATE LIST TO HOLD THE URLS
+            _URL_LIST = [profile_image_url,image1_url]
+
+        PASS THE LIST TO THE FORM
+        form = EntertainerRegistrationForm(request.user,request.POST,_urls=_URL_LIST)
+
+    """
+
+
+
+    if request.method == 'POST' and request.FILES['profile_image'] and request.FILES['image1']:
+
+        #   Assign the Files to variables
+        profile_image = request.FILES['profile_image']
+        image1 = request.FILES['profile_image']
+
+        #   DEFINE WHERE IMAGES WILL BE SAVED ON THE FILE SYSTEM
+        fs_profile_img = FileSystemStorage(
+            location=settings.FS_PROFILE_IMG_UPLOADS,
+            base_url=settings.FS_PROFILE_IMG_URL
+        )
+        fs_img1 = FileSystemStorage(
+            location=settings.FS_IMG1_UPLOADS,
+            base_url=settings.FS_IMG1_URL
+        )
+
+        #   SAVE THE IMAGE FILES TO THE FILESYSTEM
+        profile_image_name = fs_profile_img.save(profile_image.name, profile_image)
+        image1_name = fs_profile_img.save(image1.name, image1)
+
+        #   RETRIEVE THE URL FROM WHERE THE IMAGE WAS STORED
+        profile_image_url = fs_profile_img.url(profile_image_name)
+        image1_url = fs_profile_img.url(image1_name)
+
+        #   CREATE A LIST TO HOLD THE URLS OF THE IMAGES
+        _URL_LIST = [profile_image_url, image1_url]
+
         #   If the form was submitted the contents of the form are passed in
-        form = EntertainerRegistrationForm(request.user,request.POST)
+        #   ALONG WITH THE LIST OF IMAGE URLS
+        form = EntertainerRegistrationForm(request.user,request.POST,_urls=_URL_LIST)
         #   save the form if it is valid
         if form.is_valid():
             # save the currently logged in user as related to the Enterttainer profile
@@ -76,6 +141,7 @@ def create_profile(request):
         #   If page was just loaded then an empty form is displayed
         form = EntertainerRegistrationForm(request.user)
     return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
+
 
 @login_required()
 def edit_profile(request,pk):
@@ -101,7 +167,6 @@ def edit_profile(request,pk):
     return render(request, 'entertainers/edit_profile.html', {'pk':pk, 'edit':edit, 'title':entertainer.title, 'form':form})
 
 
-
 @login_required()
 def edit_profile_old(request,pk):
     edit = True
@@ -125,6 +190,7 @@ def edit_profile_old(request,pk):
         form = EntertainerRegistrationForm(request.user)
         #return redirect(reverse('entertainers:listings'))
     return render(request, 'entertainers/create_profile.html',{'form': form,'edit':edit})
+
 
 #   increment the number of likes for an entertainer
 def like(request,pk):
@@ -172,6 +238,8 @@ class EntertainerView(APIView):
             #   'self' is necessary when using a classed based view
             description = 'all'
             location = 'all'
+            page = 'all'
+            recordsPerPage = 8
 
             if self.request.GET['description'] is not None:
                 if self.request.GET['description'] != 'all':
@@ -181,7 +249,20 @@ class EntertainerView(APIView):
                 if self.request.GET['location'] != 'all':
                     location = self.request.GET['location']
 
-            #   (STEP 1)
+            if self.request.GET['page'] is not None:
+                if self.request.GET['page'] != 'all':
+                    page = self.request.GET['page']
+
+
+            #   (STEP 1A)
+            #   -   Need to retrieve the total number of records
+            #   -   Calculate and return the number of Pages
+            #   -   Return the number of records per page
+            #   -   Calculate the last page count
+            #   -   Add these values to the serialized data as JSON and return
+
+
+            #   (STEP 1B)
             if description != 'all' and location == 'all':
                 entertainers = Entertainer.objects.filter(Q(description=description))
             elif description == 'all' and location != 'all':
@@ -193,8 +274,19 @@ class EntertainerView(APIView):
             else:
                 entertainers = Entertainer.objects.all()
 
-            #   (STEP 2)
-            serializer = EntertainerSerializer(entertainers,many=True)
+            #   (STEP 1C) - ONLY RETURN DATA RELEVANT TO THE SELECTED PAGE
+            if page != 'all':
+                paginator = Paginator(entertainers, recordsPerPage)
+                num_pages = paginator.num_pages
+                count = paginator.count
+                entertainers = paginator.page(int(page))
+                #   (STEP 2) - CONVERT DATA TO JSON
+                #serializer = EntertainerSerializer(entertainers, many=True, num_pages=num_pages, count=count)
+                serializer = EntertainerSerializer(entertainers, many=True, num_pages=num_pages, count=count)
+            else:
+                #   (STEP 2) - CONVERT DATA TO JSON
+                serializer = EntertainerSerializer(entertainers,many=True)
+
             serialized_data = serializer.data
         else:
             #   (STEP 1)
@@ -205,6 +297,16 @@ class EntertainerView(APIView):
 
         #   (STEP 3)
         return Response(serialized_data)
+
+        """
+        return Response({
+            'count': paginator.count,
+            'num_pages': paginator.num_pages,
+            'results': serialized_data
+        })
+        """
+
+
 
 
     def post(self,request):
