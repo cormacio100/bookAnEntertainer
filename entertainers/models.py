@@ -15,7 +15,7 @@ from paypal.standard.forms import PayPalPaymentsForm
 import os
 
 
-#   Dynamicly build upload_to folder for different ImageFields
+#   Dynamically build upload_to folder for different ImageFields
 
 def profile_image_path(instance, filename):
     upload_dir = os.path.join('profile/', instance.title)
