@@ -1,7 +1,9 @@
 IN PROGRESS:
 
-WHen FS_PROFILE_IMG_UPLOADS = 'profile/' I can see when the app is run locally
- that it uploads files to /profile/ and /image1/ but not in the media folder
+NB
+    WHen FS_PROFILE_IMG_UPLOADS = 'profile/' I can see when the app is run locally
+    that it uploads files to /profile/ and /image1/ but not in the media folder
+    But if
 
 -   PAGINATION LINKS
     -   http://djangorestframework.readthedocs.io/en/latest/api-guide/pagination/

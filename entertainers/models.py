@@ -241,14 +241,16 @@ class Entertainer(models.Model):
     """
 
     profile_image = models.ImageField(
-        upload_to='profile/',
+        #upload_to='profile/',
+        upload_to = settings.FS_PROFILE_IMG_UPLOADS,
         #upload_to = profile_image_path,
         blank=True,
         null=True,
         default = 'no_image.png'
     )
     image1 = models.ImageField(
-        upload_to='image1/',
+        #upload_to='image1/',
+        upload_to=settings.FS_IMG1_UPLOADS,
         #upload_to = img1_image_path,
         blank=True,
         null=True,
