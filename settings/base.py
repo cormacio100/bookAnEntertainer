@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-#import env     #   Needs to be added for DEV and commented out for Staging
+import env     #   Needs to be added for DEV and commented out for Staging
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -210,7 +210,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 """
 UPLOAD AND URL LOCATIONS FOR ALL IMAGES USING DEFAULT_FILE_STORAGE AS THE DEFAULT LOCATION
-
+"""
 FS_PROFILE_IMG_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
 FS_PROFILE_IMG_URL = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
 FS_IMG1_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'img1/')
@@ -218,5 +218,6 @@ FS_IMG1_URL = os.path.join(DEFAULT_FILE_STORAGE,'img1/')
 """
 FS_PROFILE_IMG_UPLOADS = 'profile/'
 FS_PROFILE_IMG_URL = 'profile/'
-FS_IMG1_UPLOADS = 'img1/'
-FS_IMG1_URL = 'img1/'
+FS_IMG1_UPLOADS = 'image1/'
+FS_IMG1_URL = 'image1/'
+"""

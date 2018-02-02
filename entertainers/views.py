@@ -21,6 +21,12 @@ from entertainers.models import Entertainer
 from django.db.models import Q
 from django.core.paginator import Paginator
 
+##########################################
+#   LOGGING
+##########################################
+import logging
+log = logging.getLogger(__name__)
+
 ####################
 #   File Storage
 ####################
@@ -95,7 +101,8 @@ def create_profile(request):
         form = EntertainerRegistrationForm(request.user,request.POST,_urls=_URL_LIST)
 
     """
-
+    profile_image = None
+    image1 = None
 
 
     if request.method == 'POST' and request.FILES['profile_image'] and request.FILES['image1']:
@@ -109,18 +116,22 @@ def create_profile(request):
             location=settings.FS_PROFILE_IMG_UPLOADS,
             base_url=settings.FS_PROFILE_IMG_URL
         )
-        fs_img1 = FileSystemStorage(
+        fs_image1 = FileSystemStorage(
             location=settings.FS_IMG1_UPLOADS,
             base_url=settings.FS_IMG1_URL
         )
 
         #   SAVE THE IMAGE FILES TO THE FILESYSTEM
         profile_image_name = fs_profile_img.save(profile_image.name, profile_image)
-        image1_name = fs_profile_img.save(image1.name, image1)
+        if profile_image_name == None:
+            log.debug('profile_image_save did not save :'+profile_image_name)
+        else:
+            log.debug('profile_image_save is :' + profile_image_name)
+        image1_name = fs_image1.save(image1.name, image1)
 
         #   RETRIEVE THE URL FROM WHERE THE IMAGE WAS STORED
         profile_image_url = fs_profile_img.url(profile_image_name)
-        image1_url = fs_profile_img.url(image1_name)
+        image1_url = fs_image1.url(image1_name)
 
         #   CREATE A LIST TO HOLD THE URLS OF THE IMAGES
         _URL_LIST = [profile_image_url, image1_url]
