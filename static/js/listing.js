@@ -7,7 +7,7 @@ var buildPageLinks = function(page_count,record_count){
         var page_links = $('#page_links');
 
         for(i=0;i<page_count;i++){
-            var page_link = $('<a href="#" class="listing-pager">'+i+'</a>');
+            var page_link = $('<a href="#" class="listing-pager">'+(i+1)+'</a>');
             page_links.append(page_link);
         }
     }
