@@ -1,3 +1,18 @@
+/*  Function Dynamically builds page links on template based on page_count variable */
+var buildPageLinks = function(page_count,record_count){
+    console.log('building page links');
+    console.log('page_count = '+page_count);
+    console.log('record_count = '+record_count);
+    if(0 < page_count){
+        var page_links = $('#page_links');
+
+        for(i=0;i<page_count;i++){
+            var page_link = $('<a href="#" class="listing-pager">'+i+'</a>');
+            page_links.append(page_link);
+        }
+    }
+};
+
 var populateTemplate = function(){
 
     // clear the SPINNER or previous searches
@@ -23,17 +38,11 @@ var populateTemplate = function(){
         if(0==i){
             page_count = apiResponseArr[i].page_count;
             record_count = apiResponseArr[i].record_count;
+
+
+            buildPageLinks(page_count,record_count);
         }
     }
-
-    console.log('page_count = '+page_count);
-    console.log('record_count = '+record_count);
-
-    /**
-     * TO DO ADD THE PAGE LINKS
-     */
-
-
 };
 
 /* RETRIEVE SEARCH FILTER VALUES AND REQUEST JSON */
@@ -47,7 +56,7 @@ var refineSearch = function(menus){
         location = $('#location-select').val();
         requestForJsonData(description,location,'refineSearch',page);
     });
-
+    /* Click event for page links */
     $('.listing-pager').click(function(){
         var page = $(this).text();
         console.log('page number is initially:'+page);

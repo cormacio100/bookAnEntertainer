@@ -249,7 +249,7 @@ class EntertainerView(APIView):
             #   'self' is necessary when using a classed based view
             description = 'all'
             location = 'all'
-            page = 'all'
+            page = '1'
             recordsPerPage = 8
 
             if self.request.GET['description'] is not None:
