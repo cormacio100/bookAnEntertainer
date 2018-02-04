@@ -2,8 +2,26 @@ IN PROGRESS:
 
 NB
     WHen FS_PROFILE_IMG_UPLOADS = 'profile/' I can see when the app is run locally
-    that it uploads files to /profile/ and /image1/ but not in the media folder
-    But if
+    that it uploads files to /profile/ and /image1/ but not in the root folder
+
+    If run on Heroku
+        -   FS_PROFILE_IMG_UPLOADS = 'profile/' generates the link:
+            -   https://bookanentertainer.s3.amazonaws.com/media/profile/800px-HankWilliams1951concert.jpg
+        -   FS_PROFILE_IMG_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
+            -   https://bookanentertainer.s3.amazonaws.com/media/custom_storages.MediaStorage/profile/Waylon_Jennings_RCA_cropped.jpg
+        -   First one is more correct
+        -   Both have models.py imageFields set to:
+            -   upload_to = settings.FS_PROFILE_IMG_UPLOADS,
+        -   NO FILE GENERATED ON AWS
+
+    TO_DO
+        -   NEED TO CHECK WHAT IT DOES LOCALLY IF SET TO os.path.join(DEFAULT_FILE_STORAGE,'profile/')
+        -   FIX API FOR FIRST REQUEST
+
+
+
+
+
 
 -   PAGINATION LINKS
     -   http://djangorestframework.readthedocs.io/en/latest/api-guide/pagination/

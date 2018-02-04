@@ -40,7 +40,7 @@ var populateTemplate = function(){
 var refineSearch = function(menus){
     var description = 'all';
     var location = 'all';
-    var page = 'all'
+    var page = 1
     /*  Build click event for the refine button */
     $('#refine-button').click(function(){
         description = $('#description-select').val();
@@ -50,6 +50,7 @@ var refineSearch = function(menus){
 
     $('.listing-pager').click(function(){
         var page = $(this).text();
+        console.log('page number is initially:'+page);
         description = $('#description-select').val();
         location = $('#location-select').val();
         requestForJsonData(description,location,'refineSearch',page);
