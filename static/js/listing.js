@@ -71,7 +71,7 @@ var populateTemplate = function(){
 var refineSearch = function(menus){
     var description = 'all';
     var location = 'all';
-    var page = 1
+    var page = 1;
     /*  Build click event for the refine button */
     $('#refine-button').click(function(){
         description = $('#description-select').val();
