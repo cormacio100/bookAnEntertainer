@@ -78,7 +78,15 @@ var refineSearch = function(menus){
         location = $('#location-select').val();
         requestForJsonData(description,location,'refineSearch',page);
     });
-    pagerLinkAction(page);
+    //  pagerLinkAction(page);
+    /* Click event for page links */
+    $('.listing-pager').click(function(){
+        var page = $(this).text();
+        console.log('page number is initially:'+page);
+        description = $('#description-select').val();
+        location = $('#location-select').val();
+        requestForJsonData(description,location,'refineSearch',page);
+    });
 };
 
 /*  LOAD THE SELECT MENUS */
