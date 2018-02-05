@@ -1,3 +1,15 @@
+
+var pagerLinkAction = function(){
+    /* Click event for page links */
+    $('.listing-pager').click(function(){
+        var page = $(this).text();
+        console.log('page number is initially:'+page);
+        description = $('#description-select').val();
+        location = $('#location-select').val();
+        requestForJsonData(description,location,'refineSearch',page);
+    });
+};
+
 /*  Function Dynamically builds page links on template based on page_count variable */
 var buildPageLinks = function(page_count,record_count){
     console.log('building page links');
@@ -19,6 +31,7 @@ var buildPageLinks = function(page_count,record_count){
                 page_links.append(' | ');
             }
         }
+        pagerLinkAction();
     }
 };
 
@@ -65,14 +78,7 @@ var refineSearch = function(menus){
         location = $('#location-select').val();
         requestForJsonData(description,location,'refineSearch',page);
     });
-    /* Click event for page links */
-    $('.listing-pager').click(function(){
-        var page = $(this).text();
-        console.log('page number is initially:'+page);
-        description = $('#description-select').val();
-        location = $('#location-select').val();
-        requestForJsonData(description,location,'refineSearch',page);
-    });
+    pagerLinkAction();  
 };
 
 /*  LOAD THE SELECT MENUS */
