@@ -1,5 +1,5 @@
 
-var pagerLinkAction = function(){
+var pagerLinkAction = function(page){
     /* Click event for page links */
     $('.listing-pager').click(function(){
         var page = $(this).text();
@@ -78,7 +78,7 @@ var refineSearch = function(menus){
         location = $('#location-select').val();
         requestForJsonData(description,location,'refineSearch',page);
     });
-    pagerLinkAction();  
+    pagerLinkAction(page);
 };
 
 /*  LOAD THE SELECT MENUS */
