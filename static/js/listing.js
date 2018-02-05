@@ -7,12 +7,13 @@ var buildPageLinks = function(page_count,record_count){
         var page_links = $('#page_links');
 
         /*  clear contents of div */
-        $('#page_links').text('');
+        $('#page_links').html('');
 
-        /*  build page links */
+        /*  rebuild page links */
         for(i=0;i<page_count;i++){
             var page_link = $('<a href="#" class="listing-pager">'+(i+1)+'</a>');
             page_links.append(page_link);
+
             /* Add divider between links */
             if((i+1)<page_count){
                 page_links.append(' | ');
