@@ -31,7 +31,7 @@ var buildPageLinks = function(page_count,record_count){
                 page_links.append(' | ');
             }
         }
-        //pagerLinkAction();
+        pagerLinkAction();
     }
 };
 
