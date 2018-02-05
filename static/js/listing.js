@@ -6,9 +6,17 @@ var buildPageLinks = function(page_count,record_count){
     if(0 < page_count){
         var page_links = $('#page_links');
 
+        /*  clear contents of div */
+        $('#page_links').text('');
+
+        /*  build page links */
         for(i=0;i<page_count;i++){
             var page_link = $('<a href="#" class="listing-pager">'+(i+1)+'</a>');
             page_links.append(page_link);
+            /* Add divider between links */
+            if((i+1)<page_count){
+                page_links.append(' | ');
+            }
         }
     }
 };
