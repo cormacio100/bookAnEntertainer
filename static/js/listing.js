@@ -60,7 +60,7 @@ var populateTemplate = function(){
         if(0==i){
             page_count = apiResponseArr[i].page_count;
             record_count = apiResponseArr[i].record_count;
-            //buildPageLinks(page_count,record_count);
+            buildPageLinks(page_count,record_count);
         }
     }
 };
