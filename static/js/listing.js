@@ -98,6 +98,6 @@ $(document).ready(function(){
     $('#REST-data').html('<p id="spinner"><i class="fa fa-spinner fa-spin orange-spin"></i></p>');
 
     //  initially load all entertainers
-    requestForJsonData('all','all','initLoad','all');
+    requestForJsonData('all','all','initLoad',1);
 });
 
