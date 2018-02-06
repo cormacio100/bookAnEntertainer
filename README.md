@@ -3,7 +3,7 @@
 ## Overview
 
 ### What this app is for?
-This app allows you to search fr and book entertainment for your event
+This app allows you to search for and book entertainment for your event
 
 ### What does it do?
 This app will allow users:
@@ -53,6 +53,10 @@ This app talks to an API to filter out entertainers by type and location. Users 
     - JQuery is used to allow a responsive front end and to talk to the API 
 - [GITHUB](https://github.com/)
     - Facilitates code sharing and version control
+- [heroku](https://heroku.com/)
+    - Hosts the application
+- [AWS](https://aws.amazon.com/)
+    - Stores static and image files
 
 ### Getting the code up and running
 1. Log in to https://developer.paypal.com/
@@ -77,3 +81,9 @@ This app talks to an API to filter out entertainers by type and location. Users 
    1. heroku login
    2. heroku config --app bookanentertainer
       1. Retrieve the CLEARDB_DATABASE_URL setting 
+
+
+### Points to note
+1.  Since static files are hosted on AWS, any change made to JS or CSS files locally must be followed by the command
+   1. python manage.py collectstatic
+2. Then you should push the new code to the master branch on GITHUB
