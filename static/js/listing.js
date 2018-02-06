@@ -45,16 +45,16 @@ var populateTemplate = function(){
             $('#page_links').html('')
 
             for(i=0; i < page_count; i++){
-                link = $('<a href="#" class="listing-pager">'+i+'</a>');
+                link = $('<a href="#" class="listing-pager">'+(i+1)+'</a>');
                 $('#page_links').append(link);
             }
             /**
              * Create click action for the links
              */
-            $('.listing-pager').click(function(){
+            /*$('.listing-pager').click(function(){
                 var page = $(this).text();
                 pagerClick(page)
-            });
+            });*/
         }
     }
 
