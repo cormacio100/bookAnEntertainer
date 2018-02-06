@@ -1,3 +1,14 @@
+/**
+ * Click event for page links
+ */
+var pagerClick = function(pageClicked){
+    var description = $('#description-select').val();
+    var location = $('#location-select').val();
+    var page = pageClicked;
+    console.log('link has been clicked');
+    requestForJsonData(description,location,'refineSearch',page);
+}
+
 var populateTemplate = function(){
 
     // clear the SPINNER or previous searches
@@ -26,6 +37,17 @@ var populateTemplate = function(){
         if(0==i){
             page_count = apiResponseArr[i].page_count;
             record_count = apiResponseArr[i].record_count;
+
+            var pages = '';
+
+            for(i=0; i < page_count; i++){
+                pages = pages.concat($('<a href="#" class="listing-pager">'+i+'</a>'));
+            }
+            /**
+             * CLEAR THE page_links DIV before appending the pages to it
+             */
+            $('#page_links').html('')
+            $('#page_links').append(pages);
         }
     }
 
@@ -39,13 +61,7 @@ var populateTemplate = function(){
 
 };
 
-var pagerClick = function(pageClicked){
-    var description = $('#description-select').val();
-    var location = $('#location-select').val();
-    var page = pageClicked;
-    console.log('link has been clicked');
-    requestForJsonData(description,location,'refineSearch',page);
-}
+
 
 /* RETRIEVE SEARCH FILTER VALUES AND REQUEST JSON */
 var refineSearch = function(menus){
