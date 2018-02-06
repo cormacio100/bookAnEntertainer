@@ -38,16 +38,23 @@ var populateTemplate = function(){
             page_count = apiResponseArr[i].page_count;
             record_count = apiResponseArr[i].record_count;
 
-            var pages = '';
-
-            for(i=0; i < page_count; i++){
-                pages = pages.concat($('<a href="#" class="listing-pager">'+i+'</a>'));
-            }
             /**
              * CLEAR THE page_links DIV before appending the pages to it
              */
+            var link = '';
             $('#page_links').html('')
-            $('#page_links').append(pages);
+
+            for(i=0; i < page_count; i++){
+                link = $('<a href="#" class="listing-pager">'+i+'</a>');
+                $('#page_links').append(link);
+            }
+            /**
+             * Create click action for the links
+             */
+            $('.listing-pager').click(function(){
+                var page = $(this).text();
+                pagerClick(page)
+            });
         }
     }
 
