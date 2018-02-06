@@ -39,6 +39,14 @@ var populateTemplate = function(){
 
 };
 
+var pagerClick = function(pageClicked){
+    var description = $('#description-select').val();
+    var location = $('#location-select').val();
+    var page = pageClicked;
+    console.log('link has been clicked');
+    requestForJsonData(description,location,'refineSearch',page);
+}
+
 /* RETRIEVE SEARCH FILTER VALUES AND REQUEST JSON */
 var refineSearch = function(menus){
     var description = 'all';
@@ -53,9 +61,10 @@ var refineSearch = function(menus){
 
     $('.listing-pager').click(function(){
         var page = $(this).text();
-        description = $('#description-select').val();
-        location = $('#location-select').val();
-        requestForJsonData(description,location,'refineSearch',page);
+        //description = $('#description-select').val();
+        //location = $('#location-select').val();
+        //requestForJsonData(description,location,'refineSearch',page);
+        pagerClick(page)
     });
 };
 
@@ -97,7 +106,7 @@ $(document).ready(function(){
     //  Display loading spinner
     $('#REST-data').html('<p id="spinner"><i class="fa fa-spinner fa-spin orange-spin"></i></p>');
 
-    //  initially load all entertainers
+    //  initially load all entertainers on the first page of 8 records
     requestForJsonData('all','all','initLoad',1);
 });
 
