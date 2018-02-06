@@ -51,10 +51,10 @@ var populateTemplate = function(){
             /**
              * Create click action for the links
              */
-            /*$('.listing-pager').click(function(){
+            $('.listing-pager').click(function(){
                 var page = $(this).text();
                 pagerClick(page)
-            });*/
+            });
         }
     }
 
