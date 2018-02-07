@@ -9,28 +9,18 @@ var pagerClick = function(pageClicked){
 }
 
 var populateTemplate = function(){
-
     // clear the SPINNER or previous searches
     $('#REST-data').html('');
 
     var page_count = 0;
     var record_count = 0;
 
-    console.log("LOOPING THROUGH ID'S");
-
     //  Parent div
     var restDataDiv = $('#REST-data');
     var counter = 0;
-    console.log('In populateTemplate function, the length of apiResponseArr is '+apiResponseArr.length);
-    for(i=0;i<apiResponseArr.length;i++){
 
-        if(2==apiResponseArr[i].id || 4==apiResponseArr[i].id || 5==apiResponseArr[i].id){
-            console.log('id:'+apiResponseArr[i].id+' MISSING');
-        }else{
-            console.log('id:'+apiResponseArr[i].id);
-        }
+    for(i=0;i<apiResponseArr.length;i++){
         var card = $('<div class="col-lg-3 col-md-6 col-xs-12 margin-top-1"><a href="/entertainers/profile/'+apiResponseArr[i].id+'"><div class="card h-100"><img class="card-img-top" src="'+apiResponseArr[i].profile_image_url+'" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="'+apiResponseArr[i].profile_image_url+'" /><div class="card-body"><h4 class="card-title">'+apiResponseArr[i].title+'</h4><p class="card-text">'+apiResponseArr[i].bio_summary+'</p></div></div></a></div>');
-        console.log('counter is '+counter);
         restDataDiv.append(card);
 
         /**
@@ -64,7 +54,6 @@ var populateTemplate = function(){
 
         counter++;
     }
-
     console.log('page_count = '+page_count);
     console.log('record_count = '+record_count);
 };
@@ -73,14 +62,13 @@ var populateTemplate = function(){
 var refineSearch = function(menus){
     var description = 'all';
     var location = 'all';
-    var page = 'all'
+    var page = '1'
     /*  Build click event for the refine button */
     $('#refine-button').click(function(){
         description = $('#description-select').val();
         location = $('#location-select').val();
         requestForJsonData(description,location,'refineSearch',page);
     });
-
     $('.listing-pager').click(function(){
         var page = $(this).text();
         pagerClick(page)
