@@ -36,15 +36,14 @@ var populateTemplate = function(){
         /**
          *  Build the PAGER LINKS
          *  Only need to retrieve the page and record count from first record as all contain the same
-         */
+
         if(0==i){
             console.log('first record. Retrieving the page_count');
             page_count = apiResponseArr[i].page_count;
             record_count = apiResponseArr[i].record_count;
 
-            /**
-             * CLEAR THE page_links DIV before appending the pages to it
-             */
+
+            // CLEAR THE page_links DIV before appending the pages to it
             var link = '';
             $('#page_links').html('')
 
@@ -52,21 +51,12 @@ var populateTemplate = function(){
                 link = $('<a href="#" class="listing-pager">'+(i+1)+'</a>');
                 $('#page_links').append(link);
             }
-            /**
-             * Create click action for the links
-             */
+            //  Create click action for the links
             $('.listing-pager').click(function(){
                 var page = $(this).text();
                 //pagerClick(page)
             });
-
-            /**
-             * TO DO
-             * ONLY 5 OUT OF 8 RECORDS ARE DISPLAYING??
-             * FIND OUT WHY
-             */
-
-        }
+        }*/
 
         counter++;
     }
