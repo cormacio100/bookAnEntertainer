@@ -22,6 +22,7 @@ var requestForJsonData = function(description,location,callingFunction, page){
         console.log('json is:');
         console.log( json );
         apiResponseArr = json;
+        console.log('In requestForJsonData function, the length of apiResponseArr is '+apiResponseArr.length);
         // Check which function called the requestForJsonDat function
         if('refineSearch' == callingFunction || 'initLoad' == callingFunction){
             //  Call to populate the templates with the JSON data

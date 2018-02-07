@@ -21,6 +21,7 @@ var populateTemplate = function(){
     //  Parent div
     var restDataDiv = $('#REST-data');
     var counter = 0;
+    console.log('In populateTemplate function, the length of apiResponseArr is '+apiResponseArr.length);
     for(i=0;i<apiResponseArr.length;i++){
 
         //if(apiResponseArr[i].id){
