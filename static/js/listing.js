@@ -22,19 +22,19 @@ var populateTemplate = function(){
     var restDataDiv = $('#REST-data');
     var counter = 0;
     console.log('In populateTemplate function, the length of apiResponseArr is '+apiResponseArr.length);
-    //for(i=0;i<apiResponseArr.length;i++){
-    for(i=0;i<8;i++){
-        //if(apiResponseArr[i].id){
-            //console.log('id:'+apiResponseArr[i].id+' NOT FOUND');
+    for(i=0;i<apiResponseArr.length;i++){
+        
+        if(2==apiResponseArr[i].id || 4==apiResponseArr[i].id || 5==apiResponseArr[i].id){
+            console.log('id:'+apiResponseArr[i].id+' MISSING');
+        }else{
             console.log('id:'+apiResponseArr[i].id);
-        //}else{
-          //  console.log('id:'+apiResponseArr[i].id);
-        //}
+        }
         var card = $('<div class="col-lg-3 col-md-6 col-xs-12 margin-top-1"><a href="/entertainers/profile/'+apiResponseArr[i].id+'"><div class="card h-100"><img class="card-img-top" src="'+apiResponseArr[i].profile_image_url+'" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="'+apiResponseArr[i].profile_image_url+'" /><div class="card-body"><h4 class="card-title">'+apiResponseArr[i].title+'</h4><p class="card-text">'+apiResponseArr[i].bio_summary+'</p></div></div></a></div>');
         console.log('counter is '+counter);
         restDataDiv.append(card);
 
         /**
+         *  Build the PAGER LINKS
          *  Only need to retrieve the page and record count from first record as all contain the same
          */
         if(0==i){
