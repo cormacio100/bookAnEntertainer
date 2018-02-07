@@ -22,8 +22,8 @@ var populateTemplate = function(){
     var restDataDiv = $('#REST-data');
     var counter = 0;
     console.log('In populateTemplate function, the length of apiResponseArr is '+apiResponseArr.length);
-    for(i=0;i<apiResponseArr.length;i++){
-
+    //for(i=0;i<apiResponseArr.length;i++){
+    for(i=0;i<8;i++){
         //if(apiResponseArr[i].id){
             //console.log('id:'+apiResponseArr[i].id+' NOT FOUND');
             console.log('id:'+apiResponseArr[i].id);
