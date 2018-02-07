@@ -23,7 +23,7 @@ var populateTemplate = function(){
     var counter = 0;
     console.log('In populateTemplate function, the length of apiResponseArr is '+apiResponseArr.length);
     for(i=0;i<apiResponseArr.length;i++){
-        
+
         if(2==apiResponseArr[i].id || 4==apiResponseArr[i].id || 5==apiResponseArr[i].id){
             console.log('id:'+apiResponseArr[i].id+' MISSING');
         }else{
@@ -38,6 +38,7 @@ var populateTemplate = function(){
          *  Only need to retrieve the page and record count from first record as all contain the same
          */
         if(0==i){
+            console.log('first record. Retrieving the page_count');
             page_count = apiResponseArr[i].page_count;
             record_count = apiResponseArr[i].record_count;
 
@@ -56,7 +57,7 @@ var populateTemplate = function(){
              */
             $('.listing-pager').click(function(){
                 var page = $(this).text();
-                pagerClick(page)
+                //pagerClick(page)
             });
 
             /**
