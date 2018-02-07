@@ -48,15 +48,23 @@ var populateTemplate = function(){
             $('#page_links').html('')
 
             for(j=0; j < page_count; j++){
-                link = $('<a href="#" class="listing-pager">'+(j+1)+'</a>');
+                if(0==j){
+                    link = $('Page: <a href="#" class="listing-pager">'+(j+1)+'</a>');
+                }else{
+                    link = $('<a href="#" class="listing-pager">'+(j+1)+'</a>');
+                }
                 $('#page_links').append(link);
+
+                /* Add divider between links */
+                if((j+1)<page_count){
+                    page_links.append(' | ');
+                }
             }
             //  Create click action for the links
-            /*
             $('.listing-pager').click(function(){
                 var page = $(this).text();
                 pagerClick(page)
-            });*/
+            });
         }
 
         counter++;
