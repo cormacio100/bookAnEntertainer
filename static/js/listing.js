@@ -48,11 +48,7 @@ var populateTemplate = function(){
             $('#page_links').html('')
 
             for(j=0; j < page_count; j++){
-                if(0==j){
-                    link = $('Page: <a href="#" class="listing-pager">'+(j+1)+'</a>');
-                }else{
-                    link = $('<a href="#" class="listing-pager">'+(j+1)+'</a>');
-                }
+                link = $('<a href="#" class="listing-pager">'+(j+1)+'</a>');
                 $('#page_links').append(link);
 
                 /* Add divider between links */
