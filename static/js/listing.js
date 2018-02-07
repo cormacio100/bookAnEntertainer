@@ -47,8 +47,8 @@ var populateTemplate = function(){
             var link = '';
             $('#page_links').html('')
 
-            for(i=0; i < page_count; i++){
-                link = $('<a href="#" class="listing-pager">'+(i+1)+'</a>');
+            for(j=0; j < page_count; j++){
+                link = $('<a href="#" class="listing-pager">'+(j+1)+'</a>');
                 $('#page_links').append(link);
             }
             //  Create click action for the links
