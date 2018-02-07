@@ -425,9 +425,8 @@ p#spinner{
     color:#7c6659;
 }
 #listing-menu{
-    xbackground-color:#bab4b0;
     border:1px solid #dd6622;
-    padding:1em;
+    padding-top:1em;
 }
 #listing-row{
     margin:0;
