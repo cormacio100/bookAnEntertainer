@@ -36,7 +36,7 @@ var populateTemplate = function(){
         /**
          *  Build the PAGER LINKS
          *  Only need to retrieve the page and record count from first record as all contain the same
-
+         */
         if(0==i){
             console.log('first record. Retrieving the page_count');
             page_count = apiResponseArr[i].page_count;
@@ -52,11 +52,12 @@ var populateTemplate = function(){
                 $('#page_links').append(link);
             }
             //  Create click action for the links
+            /*
             $('.listing-pager').click(function(){
                 var page = $(this).text();
-                //pagerClick(page)
-            });
-        }*/
+                pagerClick(page)
+            });*/
+        }
 
         counter++;
     }
