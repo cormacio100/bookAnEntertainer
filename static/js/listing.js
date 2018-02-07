@@ -5,7 +5,6 @@ var pagerClick = function(pageClicked){
     var description = $('#description-select').val();
     var location = $('#location-select').val();
     var page = pageClicked;
-    console.log('link has been clicked');
     requestForJsonData(description,location,'refineSearch',page);
 }
 
@@ -23,10 +22,6 @@ var populateTemplate = function(){
         console.log('id:'+apiResponseArr[i].id);
         console.log('title:'+apiResponseArr[i].title);
         console.log('description:'+apiResponseArr[i].description);
-        console.log('genre:'+apiResponseArr[i].genre);
-        console.log('location:'+apiResponseArr[i].location);
-        console.log('profile_image_url:'+apiResponseArr[i].profile_image_url);
-        console.log('bio_summary:'+apiResponseArr[i].bio_summary);
         var card = $('<div class="col-lg-3 col-md-6 col-xs-12 margin-top-1"><a href="/entertainers/profile/'+apiResponseArr[i].id+'"><div class="card h-100"><img class="card-img-top" src="'+apiResponseArr[i].profile_image_url+'" class="img-fluid center-block img-thumbnail" style="max-height:150px;" alt="'+apiResponseArr[i].profile_image_url+'" /><div class="card-body"><h4 class="card-title">'+apiResponseArr[i].title+'</h4><p class="card-text">'+apiResponseArr[i].bio_summary+'</p></div></div></a></div>');
 
         restDataDiv.append(card);
@@ -55,20 +50,19 @@ var populateTemplate = function(){
                 var page = $(this).text();
                 pagerClick(page)
             });
+
+            /**
+             * TO DO
+             * ONLY 5 OUT OF 8 RECORDS ARE DISPLAYING??
+             * FIND OUT WHY
+             */
+
         }
     }
 
     console.log('page_count = '+page_count);
     console.log('record_count = '+record_count);
-
-    /**
-     * TO DO ADD THE PAGE LINKS
-     */
-
-
 };
-
-
 
 /* RETRIEVE SEARCH FILTER VALUES AND REQUEST JSON */
 var refineSearch = function(menus){
@@ -84,9 +78,6 @@ var refineSearch = function(menus){
 
     $('.listing-pager').click(function(){
         var page = $(this).text();
-        //description = $('#description-select').val();
-        //location = $('#location-select').val();
-        //requestForJsonData(description,location,'refineSearch',page);
         pagerClick(page)
     });
 };
@@ -120,7 +111,6 @@ var loadMenus = function(menus){
 
 /*  When the listing page loads */
 $(document).ready(function(){
-    console.log('page loaded');
     var menus = ['description','location'];
 
     loadMenus(menus);
