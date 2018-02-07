@@ -38,7 +38,6 @@ var populateTemplate = function(){
          *  Only need to retrieve the page and record count from first record as all contain the same
          */
         if(0==i){
-            console.log('first record. Retrieving the page_count');
             page_count = apiResponseArr[i].page_count;
             record_count = apiResponseArr[i].record_count;
 
@@ -53,7 +52,7 @@ var populateTemplate = function(){
 
                 /* Add divider between links */
                 if((j+1)<page_count){
-                    page_links.append(' | ');
+                    $('#page_links').append(' | ');
                 }
             }
             //  Create click action for the links
