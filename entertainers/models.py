@@ -240,8 +240,8 @@ class Entertainer(models.Model):
         REMOVE THE UPLOAD_TO PROPERTIES AS THEY ARE NOT NEEDED
     """
 
-    profile_image = models.ImageField(upload_to="profile/", blank=True, null=True)
-    image1 = models.ImageField(upload_to="image1/", blank=True, null=True)
+    profile_image = models.ImageField(upload_to="images/profile/", blank=True, null=True)
+    image1 = models.ImageField(upload_to="images/image1/", blank=True, null=True)
 
     """
     profile_image = models.ImageField(
