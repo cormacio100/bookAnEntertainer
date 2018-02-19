@@ -241,44 +241,44 @@ class Entertainer(models.Model):
     """
 
     profile_image = models.ImageField(
-        #upload_to='profile/',
-        upload_to = settings.FS_PROFILE_IMG_UPLOADS,
+        upload_to='media/profile/',
+        #upload_to = settings.FS_PROFILE_IMG_UPLOADS,
         #upload_to = profile_image_path,
         blank=True,
         null=True,
         default = 'no_image.png'
     )
     image1 = models.ImageField(
-        #upload_to='image1/',
-        upload_to=settings.FS_IMG1_UPLOADS,
+        upload_to='media/image1/',
+        #upload_to=settings.FS_IMG1_UPLOADS,
         #upload_to = img1_image_path,
         blank=True,
         null=True,
         default = 'no_image.png'
     )
     image2 = models.ImageField(
-        #upload_to = 'img2/',
+        upload_to = 'media/img2/',
         #upload_to = img2_image_path,
         blank=True,
         null=True,
         default='no_image.png'
     )
     image3 = models.ImageField(
-        #upload_to = 'img3/',
+        upload_to = 'media/img3/',
         #upload_to = img3_image_path,
         blank=True,
         null=True,
         default='no_image.png'
     )
     image4 = models.ImageField(
-        #upload_to = 'img4/',
+        upload_to = 'media/img4/',
         #upload_to = img4_image_path,
         blank=True,
         null=True,
         default='no_image.png'
     )
     image5 = models.ImageField(
-        #upload_to = 'img5/',
+        upload_to = 'media/img5/',
         #upload_to = img5_image_path,
         blank=True,
         null=True,

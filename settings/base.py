@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-#import env     #   Needs to be added for DEV and commented out for Staging
+import env     #   Needs to be added for DEV and commented out for Staging
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -49,10 +49,6 @@ INSTALLED_APPS = [
     'storages',
 ]
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000',
-}
 ########################################################################################
 #   CUSTOM USER AUTHENTICATION
 #   Accounts app Files involved:
@@ -189,13 +185,25 @@ ALLOWED_HOSTS.append('4ae16e54.ngrok.io')
 #   AWS (S3 BUCKET) SETTINGS
 #   -   ENABLES MEDIA AND STATIC FILES TO BE STORED ON S3
 #############################################################
-AWS_STORAGE_BUCKET_NAME = 'bookanentertainer'
-AWS_S3_REGION_NAME = 'us-east-2'    #   can find this by clicking on a file in S3 bucket and PROPERTIES
+#AWS_STORAGE_BUCKET_NAME = 'bookanentertainer'
+#AWS_S3_REGION_NAME = 'us-east-2'    #   can find this by clicking on a file in S3 bucket and PROPERTIES
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 #   TELL DJANGO-STORAGES THE DOMAIN TO USE TO REFER TO STATIC FILES
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+#   Tell the staticfiles app to use S3Boto3 storage when writing the collected static files
+#   (when you run the command 'python manage.py collectstatic')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #   TELL THE STATICFILES APP TO USE S3BOTO3 STORAGE WHEN WRITING THE COLLECTED STATIC FILES
 #   WHEN YOU RUN 'collectstatic'
@@ -206,11 +214,11 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 #   WHEN A USER UPLOADS AN AVATAR, IT SHOULD GO INTO /MEDIA/ IN OUR S3 BUCKET
 #   WHEN WE DISPLAY THE IMAGE ON A PAGE, THE IMAGE URL WILL INCLUDE '/MEDIA/'
 MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_STORAGE = 'custom_storages.MediaStorage'
 
 """
 UPLOAD AND URL LOCATIONS FOR ALL IMAGES USING DEFAULT_FILE_STORAGE AS THE DEFAULT LOCATION
-
+"""
 FS_PROFILE_IMG_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
 FS_PROFILE_IMG_URL = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
 FS_IMG1_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'img1/')
@@ -220,4 +228,4 @@ FS_PROFILE_IMG_UPLOADS = 'profile/'
 FS_PROFILE_IMG_URL = 'profile/'
 FS_IMG1_UPLOADS = 'image1/'
 FS_IMG1_URL = 'image1/'
-
+"""
