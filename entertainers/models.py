@@ -240,6 +240,10 @@ class Entertainer(models.Model):
         REMOVE THE UPLOAD_TO PROPERTIES AS THEY ARE NOT NEEDED
     """
 
+    profile_image = models.ImageField(upload_to="profile/", blank=True, null=True)
+    image1 = models.ImageField(upload_to="image1/", blank=True, null=True)
+
+    """
     profile_image = models.ImageField(
         upload_to='media/profile/',
         #upload_to = settings.FS_PROFILE_IMG_UPLOADS,
@@ -284,6 +288,7 @@ class Entertainer(models.Model):
         null=True,
         default='no_image.png'
     )
+    """
     language = MultiSelectField(
         choices = LANGUAGE_TYPES,
         default = 'English'

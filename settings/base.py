@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'paypal_store',
     'settings',
-    'storages',
+    #'storages',
 ]
 
 ########################################################################################
@@ -134,7 +134,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
@@ -164,9 +163,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#MEDIA_URL = '/pics/'    #   Can access images directly in browser with address <host>:<port>/pics/media/<folder>/<image>
-#MEDIA_ROOT = BASE_DIR
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+"""
+MEDIA FILE STORAGE SETTINGS FOR LOCAL USE
+"""
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'    #   Can access images directly in browser with address <host>:<port>/pics/media/<folder>/<image>
 
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -185,9 +187,7 @@ ALLOWED_HOSTS.append('4ae16e54.ngrok.io')
 #   AWS (S3 BUCKET) SETTINGS
 #   -   ENABLES MEDIA AND STATIC FILES TO BE STORED ON S3
 #############################################################
-#AWS_STORAGE_BUCKET_NAME = 'bookanentertainer'
-#AWS_S3_REGION_NAME = 'us-east-2'    #   can find this by clicking on a file in S3 bucket and PROPERTIES
-
+"""
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=94608000',
@@ -215,14 +215,16 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 #   WHEN WE DISPLAY THE IMAGE ON A PAGE, THE IMAGE URL WILL INCLUDE '/MEDIA/'
 MEDIAFILES_LOCATION = 'media'
 MEDIAFILES_STORAGE = 'custom_storages.MediaStorage'
-
+"""
 """
 UPLOAD AND URL LOCATIONS FOR ALL IMAGES USING DEFAULT_FILE_STORAGE AS THE DEFAULT LOCATION
+"""
 """
 FS_PROFILE_IMG_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
 FS_PROFILE_IMG_URL = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
 FS_IMG1_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'img1/')
 FS_IMG1_URL = os.path.join(DEFAULT_FILE_STORAGE,'img1/')
+"""
 """
 FS_PROFILE_IMG_UPLOADS = 'profile/'
 FS_PROFILE_IMG_URL = 'profile/'

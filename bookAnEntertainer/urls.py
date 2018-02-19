@@ -18,7 +18,8 @@ from django.contrib import admin
 from home import views as home_views
 from django.conf.urls.static import static
 from django.conf import settings
-#import settings
+from django.views.static import serve
+import settings
 #from settings import base
 
 #   PAYPAL SETTINGS
@@ -42,6 +43,9 @@ urlpatterns = [
     url(r'^to-ngrok-or-not-to-ngrok/', include(paypal_urls)),
     url(r'^paypal-return',paypal_views.paypal_return),          #   handles the return of a customer after payment
     url(r'^paypal-cancel',paypal_views.paypal_cancel),          #   handles what happens when a customer cancels at the Paypal site
+
+    #   MEDIA ROUTE URL (for local access)
+    url(r'^media/(?P<path>.*)$',serve, {'document_root':settings.MEDIA_ROOT})
 ] #+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 #   CODE FOR DJANGO DEBUG TOOLBAR
