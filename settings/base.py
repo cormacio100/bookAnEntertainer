@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'paypal_store',
     'settings',
-    #'storages',
+    'storages',
 ]
 
 ########################################################################################
@@ -187,7 +187,7 @@ ALLOWED_HOSTS.append('4ae16e54.ngrok.io')
 #   AWS (S3 BUCKET) SETTINGS
 #   -   ENABLES MEDIA AND STATIC FILES TO BE STORED ON S3
 #############################################################
-"""
+
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=94608000',
@@ -203,19 +203,19 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 #   Tell the staticfiles app to use S3Boto3 storage when writing the collected static files
 #   (when you run the command 'python manage.py collectstatic')
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #   TELL THE STATICFILES APP TO USE S3BOTO3 STORAGE WHEN WRITING THE COLLECTED STATIC FILES
 #   WHEN YOU RUN 'collectstatic'
-#   STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 #   WHEN A USER UPLOADS AN AVATAR, IT SHOULD GO INTO /MEDIA/ IN OUR S3 BUCKET
 #   WHEN WE DISPLAY THE IMAGE ON A PAGE, THE IMAGE URL WILL INCLUDE '/MEDIA/'
 MEDIAFILES_LOCATION = 'media'
-MEDIAFILES_STORAGE = 'custom_storages.MediaStorage'
-"""
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
 """
 UPLOAD AND URL LOCATIONS FOR ALL IMAGES USING DEFAULT_FILE_STORAGE AS THE DEFAULT LOCATION
 """
