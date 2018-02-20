@@ -45,7 +45,7 @@ urlpatterns = [
     url(r'^paypal-cancel',paypal_views.paypal_cancel),          #   handles what happens when a customer cancels at the Paypal site
 
     #   MEDIA ROUTE URL (for local access)
-    url(r'^media/(?P<path>.*)$',serve, {'document_root':settings.MEDIA_ROOT})
+    #url(r'^media/(?P<path>.*)$',serve, {'document_root':settings.MEDIA_ROOT})
 ] #+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 #   CODE FOR DJANGO DEBUG TOOLBAR
