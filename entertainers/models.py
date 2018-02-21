@@ -334,8 +334,8 @@ class Entertainer(models.Model):
         choices = PRICE_PER_HOUR,
         default = '500'
     )
-    soundcloud_audio = models.TextField(default = '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209382959&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>')
-    youtube_video = models.TextField(default = '<iframe width="560" height="315" src="https://www.youtube.com/embed/xaE2wV-HMxs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>')
+    soundcloud_embed_audio = models.TextField(default = '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209382959&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>')
+    youtube_embed_video = models.TextField(default = '<iframe width="560" height="315" src="https://www.youtube.com/embed/xaE2wV-HMxs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>')
     likes_total = models.IntegerField(default = 1)
     dislikes_total = models.IntegerField(default = 1)
 
@@ -392,17 +392,17 @@ class Entertainer(models.Model):
         #   new class for the iframe so that it fits in the carousel
         re_class = 'class="d-block w-100 img-centered carouselled"'
 
-        if self.soundcloud_audio.find(substr1):
-            return self.soundcloud_audio.replace(substr1,re_class)
+        if self.soundcloud_embed_audio.find(substr1):
+            return self.soundcloud_embed_audio.replace(substr1,re_class)
 
-        if self.soundcloud_audio.find(substr2):
-            return self.soundcloud_audio.replace(substr2,re_class)
+        if self.soundcloud_embed_audio.find(substr2):
+            return self.soundcloud_embed_audio.replace(substr2,re_class)
 
     #   need to fit the youtube link in the carousel
     def youtube_video_re_class(self):
         substr1 = 'width="560" height="315"'
         re_class = 'class="d-block w-100 img-centered carouselled"'
 
-        if self.youtube_video.find(substr1):
-            return self.youtube_video.replace(substr1,re_class)
+        if self.youtube_embed_video.find(substr1):
+            return self.youtube_embed_video.replace(substr1,re_class)
 
