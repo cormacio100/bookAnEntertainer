@@ -1,4 +1,5 @@
 /*  When the listing page loads */
+
 $(document).ready(function(){
     /**
      * STYLE THE FORM
@@ -13,4 +14,6 @@ $(document).ready(function(){
     $('.form-group:contains(Create)').addClass('col-12');
     $('.form-group:contains(Create)').addClass('margin-top-1');
 
+
+    checkMenus();
 });

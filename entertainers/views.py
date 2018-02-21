@@ -78,13 +78,6 @@ def create_profile(request):
     #if request.method == 'POST' and request.FILES['profile_image'] and request.FILES['image1']:
     if request.method == 'POST':
 
-        #   Assign the Files to variables for debugging
-        if request.FILES['profile_image'] and request.FILES['image1']:
-            profile_image = request.FILES['profile_image']
-            image1 = request.FILES['profile_image']
-            #log.debug('profile_image is :' + profile_image)
-            #log.debug('image1 is :' + image1)
-
         #   If the form was submitted the contents of the form are passed in
         #   ALONG WITH THE LIST OF IMAGE URLS
         form = EntertainerRegistrationForm(request.user, request.POST, request.FILES)

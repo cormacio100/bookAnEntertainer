@@ -13,4 +13,10 @@ $(document).ready(function(){
     $('.form-group:contains(Update)').addClass('col-12');
     $('.form-group:contains(Update)').addClass('margin-top-1');
 
+    /**
+     * Check the value of the Description menu
+     * -    If Comedian, Genre and Music options will auto populate
+     */
+    checkDescription();
+
 });

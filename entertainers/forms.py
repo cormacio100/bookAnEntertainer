@@ -70,8 +70,8 @@ class EntertainerRegistrationForm(forms.ModelForm):
                     'travel_distance',
                     'min_price',
                     'max_price',
-                    'soundcloud_audio',
-                    'youtube_video',
+                    'soundcloud_embed_audio',
+                    'youtube_embed_video',
                   'set_up_requirements',)
 
 

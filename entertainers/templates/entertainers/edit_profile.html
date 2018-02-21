@@ -32,5 +32,11 @@
 
 {% endblock %}
 {% block script %}
+    <script src="{% static "js/entertainer_check_menu_selections.js" %}"></script>
     <script src="{% static "js/entertainer_update.js" %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('input[type=file]').addClass('btn-orange-no-hover');
+        });
+    </script>
 {% endblock %}
