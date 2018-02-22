@@ -1,26 +1,12 @@
 IN PROGRESS:
 
-NB
-    WHen FS_PROFILE_IMG_UPLOADS = 'profile/' I can see when the app is run locally
-    that it uploads files to /profile/ and /image1/ but not in the root folder
-
-    If run on Heroku
-        -   FS_PROFILE_IMG_UPLOADS = 'profile/' generates the link:
-            -   https://bookanentertainer.s3.amazonaws.com/media/profile/800px-HankWilliams1951concert.jpg
-        -   FS_PROFILE_IMG_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
-            -   https://bookanentertainer.s3.amazonaws.com/media/custom_storages.MediaStorage/profile/Waylon_Jennings_RCA_cropped.jpg
-        -   First one is more correct
-        -   Both have models.py imageFields set to:
-            -   upload_to = settings.FS_PROFILE_IMG_UPLOADS,
-        -   NO FILE GENERATED ON AWS
-
-    TO_DO
+TO_DO
         -   NEED TO CHECK WHAT IT DOES LOCALLY IF SET TO os.path.join(DEFAULT_FILE_STORAGE,'profile/')
         -   FIX API FOR FIRST REQUEST
 
+-   entertainer profile should be loaded from response from api
 
-
-
+-   NEED to do DOCS FOR API
 
 
 -   PAGINATION LINKS
@@ -35,10 +21,7 @@ NB
     -   On creation of profiles, the default value is always taken
     -   Amendment to UPLOAD_TO paths in models.py HAS NOT BEEN PUSHED to GITHUB - need to push
     -   fix console errors
-    -   GET ACCESS TO HEROKU DB
-    -   I BELIEVE I HAVE THE IMAGE SETTINGS CORRECT NOW. NEED TO RESTART EVERYTHING
-        -   THEN TRY TO UPLOAD IMAGES AGAIN AND TEST THE LINKS
-        -   CHECK MODEL FILE IS CORRECT
+
 
     -   HAVE HAD TO DISABLE THE booked_entertainers lookup AS IT STOPPED PROFILE FROM LOADING. NEED TO FIX
     -   REGISTRATION DOES NOT LOAD THE PROFILE PAGE. TEMPLATE LOOKS TO BE RETURNING A VariableDoesNotExist ERROR
@@ -114,6 +97,29 @@ TO DO:
 --------------------------------------------------------------------------------------------------------------------------
 
 DONE:
+
+-   Navbar responsiveness
+
+
+-   -   GET ACCESS TO HEROKU DB
+    -   I BELIEVE I HAVE THE IMAGE SETTINGS CORRECT NOW. NEED TO RESTART EVERYTHING
+        -   THEN TRY TO UPLOAD IMAGES AGAIN AND TEST THE LINKS
+        -   CHECK MODEL FILE IS CORRECT
+
+-   NB
+    WHen FS_PROFILE_IMG_UPLOADS = 'profile/' I can see when the app is run locally
+    that it uploads files to /profile/ and /image1/ but not in the root folder
+
+    If run on Heroku
+        -   FS_PROFILE_IMG_UPLOADS = 'profile/' generates the link:
+            -   https://bookanentertainer.s3.amazonaws.com/media/profile/800px-HankWilliams1951concert.jpg
+        -   FS_PROFILE_IMG_UPLOADS = os.path.join(DEFAULT_FILE_STORAGE,'profile/')
+            -   https://bookanentertainer.s3.amazonaws.com/media/custom_storages.MediaStorage/profile/Waylon_Jennings_RCA_cropped.jpg
+        -   First one is more correct
+        -   Both have models.py imageFields set to:
+            -   upload_to = settings.FS_PROFILE_IMG_UPLOADS,
+        -   NO FILE GENERATED ON AWS
+
 
 -	ENTERTAINER SEARCH PAGE:
 	-	ADD DYNAMIC SEARCH AT THE TOP using REST API
