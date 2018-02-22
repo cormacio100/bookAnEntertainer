@@ -1,11 +1,6 @@
 IN PROGRESS:
 
-
-
 TO_DO
-
-
-
         -   NEED TO CHECK WHAT IT DOES LOCALLY IF SET TO os.path.join(DEFAULT_FILE_STORAGE,'profile/')
         -   FIX API FOR FIRST REQUEST
 

@@ -7,7 +7,6 @@ var pagerClick = function(pageClicked){
     var page = pageClicked;
     requestForJsonData(description,location,'refineSearch',page);
 }
-
 /**
  * Build the entertainer listing
  */
