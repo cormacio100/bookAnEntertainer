@@ -8,6 +8,9 @@ var pagerClick = function(pageClicked){
     requestForJsonData(description,location,'refineSearch',page);
 }
 
+/**
+ * Build the entertainer listing
+ */
 var populateTemplate = function(){
     // clear the SPINNER or previous searches
     $('#REST-data').html('');

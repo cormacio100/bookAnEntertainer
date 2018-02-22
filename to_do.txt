@@ -2,13 +2,16 @@ IN PROGRESS:
 
 
 
-    TO_DO
+TO_DO
+
+
+
         -   NEED TO CHECK WHAT IT DOES LOCALLY IF SET TO os.path.join(DEFAULT_FILE_STORAGE,'profile/')
         -   FIX API FOR FIRST REQUEST
 
+-   entertainer profile should be loaded from response from api
 
-
--   NEED TO DOCS FOR API
+-   NEED to do DOCS FOR API
 
 
 -   PAGINATION LINKS
