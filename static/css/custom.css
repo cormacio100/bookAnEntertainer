@@ -338,6 +338,9 @@ div#info-tabs {
 div#REST-data {
     margin-bottom: 3em;
 }
+div#entertainer_bio{
+    text-align:left;
+}
 /************************************************************************/
 /* ENTERTAINER LISTINGS*/
 /************************************************************************/
