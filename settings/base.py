@@ -140,6 +140,37 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 """
+CORS SETTINGS
+"""
+
+INSTALLED_APPS.append('corsheaders')
+
+MIDDLEWARE.insert(0,'corsheaders.middleware.CorsMiddleware',)
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
+
+"""
 STATIC_URL should be the URL at which a user / client / browser can reach the static files
 that have been aggregated by collectstatic.
 """
