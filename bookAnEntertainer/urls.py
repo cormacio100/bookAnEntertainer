@@ -48,7 +48,7 @@ urlpatterns = [
     #url(r'^media/(?P<path>.*)$',serve, {'document_root':settings.MEDIA_ROOT})
 ] #+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
-
+"""
 #   CODE FOR DJANGO DEBUG TOOLBAR
 if settings.DEBUG:
     import debug_toolbar
@@ -56,3 +56,4 @@ if settings.DEBUG:
         url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
 
+"""
