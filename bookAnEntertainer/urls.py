@@ -28,6 +28,7 @@ from paypal_store import views as paypal_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^docs/', include('rest_framework_docs.urls')),    #   API Documentation
     url(r'^$',home_views.get_index, name="home"),
 
     #   ENTERTAINERS APP URLS

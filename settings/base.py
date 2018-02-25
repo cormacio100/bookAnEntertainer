@@ -43,11 +43,14 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'accounts',
     'rest_framework',
+    'rest_framework_docs',
     'paypal.standard.ipn',
     'paypal_store',
     'settings',
     'storages',
 ]
+
+
 
 ########################################################################################
 #   CUSTOM USER AUTHENTICATION
@@ -149,6 +152,8 @@ MIDDLEWARE.insert(0,'corsheaders.middleware.CorsMiddleware',)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOW_METHODS = (
     'DELETE',
     'GET',
@@ -246,6 +251,9 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 #   WHEN WE DISPLAY THE IMAGE ON A PAGE, THE IMAGE URL WILL INCLUDE '/MEDIA/'
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+
+
 
 """
 UPLOAD AND URL LOCATIONS FOR ALL IMAGES USING DEFAULT_FILE_STORAGE AS THE DEFAULT LOCATION

@@ -261,8 +261,6 @@ class EntertainerView(APIView):
         """
 
 
-
-
     def post(self,request):
         """
         This view will:
