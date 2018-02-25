@@ -83,6 +83,8 @@ This app talks to an API to filter out entertainers by type and location. Users 
    2. heroku config --app bookanentertainer
       1. Retrieve the CLEARDB_DATABASE_URL setting 
 
+### API Documentation
+1.  Browse to https://bookanentertainer.herokuapp.com/docs/
 
 ### Points to note
 1.  Since static files are hosted on AWS, any change made to JS or CSS files locally must be followed by the command

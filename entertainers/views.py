@@ -65,7 +65,8 @@ def display_entertainer_profile(request,entertainer_id):
     ######################################################################
 
     entertainer = get_object_or_404(Entertainer, pk=entertainer_id)
-    args = {'entertainer': entertainer,'get':get, 'logged_in':logged_in}
+    user = User.objects.get(pk=entertainer.user_id)
+    args = {'entertainer': entertainer,'user':user, 'get':get, 'logged_in':logged_in}
     return render(request,'entertainers/entertainer_profile.html',args)
 
 
