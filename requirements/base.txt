@@ -18,7 +18,7 @@ idna==2.6
 jmespath==0.9.3
 olefile==0.44
 Pillow==2.9.0
-PyJWT==1.5.3
+PyJWT==2.4.0
 python-dateutil==2.6.1
 pytz==2017.3
 requests==2.18.4
